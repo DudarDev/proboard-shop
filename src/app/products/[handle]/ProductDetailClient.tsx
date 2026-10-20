@@ -11,6 +11,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ProductCard } from '@/components/ProductCard';
 import { OneClickModal } from '@/components/OneClickModal';
+import { SizeGuideModal } from '@/components/SizeGuideModal';
 import {
   Heart,
   ShoppingBag,
@@ -24,6 +25,8 @@ import {
   ArrowLeft,
   Share2,
   Zap,
+  Ruler,
+  Sparkles,
 } from 'lucide-react';
 
 interface Props {
@@ -43,6 +46,8 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
   const [isOneClickOpen, setIsOneClickOpen] = useState(false);
+  const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
+  const [bundleAdded, setBundleAdded] = useState(false);
   const [activeTab, setActiveTab] = useState<'desc' | 'specs' | 'shipping' | 'reviews'>('desc');
   const [copied, setCopied] = useState(false);
 
@@ -251,9 +256,19 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
               {/* Variants */}
               {product.variants?.edges && product.variants.edges.length > 1 && (
                 <div className="mt-8">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-800 mb-3">
-                    Выберите вариант ({product.variants.edges.length} доступно)
-                  </label>
+                  <div className="flex items-center justify-between mb-3">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-zinc-800">
+                      Оберіть варіант ({product.variants.edges.length} доступно)
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => setIsSizeGuideOpen(true)}
+                      className="flex items-center gap-1 text-xs font-semibold text-emerald-700 hover:text-emerald-800 underline"
+                    >
+                      <Ruler className="h-3.5 w-3.5" />
+                      <span>Таблиця розмірів</span>
+                    </button>
+                  </div>
                   <div className="flex flex-wrap gap-2.5">
                     {product.variants.edges.map(({ node }) => (
                       <button
@@ -344,6 +359,12 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                 onClose={() => setIsOneClickOpen(false)}
               />
 
+              {/* Size Guide Modal */}
+              <SizeGuideModal
+                isOpen={isSizeGuideOpen}
+                onClose={() => setIsSizeGuideOpen(false)}
+              />
+
               {/* Key Guarantees */}
               <div className="mt-6 grid grid-cols-3 gap-4 text-xs text-zinc-600 border-t border-zinc-100 pt-6">
                 <div className="flex flex-col items-center text-center gap-1.5">
@@ -365,6 +386,117 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Frequently Bought Together Bundle */}
+        {relatedProducts.length > 0 && (() => {
+          const bundleItem = relatedProducts[0];
+          const p1 = Number(currentPrice.amount) || 0;
+          const p2 = Number(bundleItem.priceRange?.minVariantPrice.amount) || 38;
+          const originalTotal = p1 + p2;
+          const discountedTotal = originalTotal * 0.85;
+
+          const handleAddBundle = () => {
+            if (!selectedVariant) return;
+            // Add main product
+            addToCart({
+              id: selectedVariant.id,
+              productId: product.id,
+              title: product.title,
+              variantTitle: selectedVariant.title,
+              price: selectedVariant.price,
+              image: images[0],
+              handle: product.handle,
+            }, 1);
+
+            // Add bundle partner
+            const partnerVariant = bundleItem.variants?.edges?.[0]?.node;
+            if (partnerVariant) {
+              addToCart({
+                id: partnerVariant.id,
+                productId: bundleItem.id,
+                title: bundleItem.title,
+                variantTitle: partnerVariant.title,
+                price: partnerVariant.price,
+                image: bundleItem.featuredImage?.url,
+                handle: bundleItem.handle,
+              }, 1);
+            }
+
+            setBundleAdded(true);
+            setTimeout(() => setBundleAdded(false), 2000);
+          };
+
+          return (
+            <div className="mt-16 rounded-3xl border border-zinc-200/90 bg-zinc-50/60 p-6 sm:p-8">
+              <div className="flex items-center gap-2 mb-6">
+                <Sparkles className="h-4 w-4 text-emerald-600" />
+                <h3 className="text-base font-extrabold text-zinc-950">
+                  Часто купують разом (Комплект зі знижкою -15%)
+                </h3>
+              </div>
+
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                  {/* Item 1 */}
+                  <div className="flex items-center gap-3 rounded-2xl bg-white p-3 border border-zinc-200 shadow-sm max-w-xs">
+                    <img src={images[0]} alt={product.title} className="h-14 w-14 rounded-xl object-cover" />
+                    <div>
+                      <h4 className="text-xs font-bold text-zinc-900 truncate max-w-[140px]">{product.title}</h4>
+                      <span className="text-xs font-bold text-zinc-700">{formatPrice(p1, 'USD', currency)}</span>
+                    </div>
+                  </div>
+
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-200 text-zinc-600 font-bold text-sm">
+                    +
+                  </span>
+
+                  {/* Item 2 */}
+                  <div className="flex items-center gap-3 rounded-2xl bg-white p-3 border border-zinc-200 shadow-sm max-w-xs">
+                    <img src={bundleItem.featuredImage?.url} alt={bundleItem.title} className="h-14 w-14 rounded-xl object-cover" />
+                    <div>
+                      <h4 className="text-xs font-bold text-zinc-900 truncate max-w-[140px]">{bundleItem.title}</h4>
+                      <span className="text-xs font-bold text-zinc-700">{formatPrice(p2, 'USD', currency)}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Price and CTA */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:pl-6 lg:border-l border-zinc-200">
+                  <div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-xl font-black text-zinc-950">
+                        {formatPrice(discountedTotal, 'USD', currency)}
+                      </span>
+                      <span className="text-xs text-zinc-400 line-through">
+                        {formatPrice(originalTotal, 'USD', currency)}
+                      </span>
+                    </div>
+                    <span className="text-[11px] font-semibold text-emerald-700">Економія 15% на комплекті</span>
+                  </div>
+
+                  <button
+                    onClick={handleAddBundle}
+                    className={`flex items-center gap-2 rounded-2xl px-6 py-3.5 text-xs font-bold shadow-md transition-all active:scale-95 ${
+                      bundleAdded ? 'bg-emerald-600 text-white' : 'bg-zinc-900 text-white hover:bg-zinc-800'
+                    }`}
+                  >
+                    {bundleAdded ? (
+                      <>
+                        <Check className="h-4 w-4" />
+                        <span>Комплект у кошику!</span>
+                      </>
+                    ) : (
+                      <>
+                        <ShoppingBag className="h-4 w-4" />
+                        <span>Купити комплект</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Detailed Tabs Section */}
         <div className="mt-20 border-t border-zinc-200 pt-12">

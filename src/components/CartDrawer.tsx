@@ -21,14 +21,17 @@ export function CartDrawer() {
 
   const handleApplyPromo = (e: React.FormEvent) => {
     e.preventDefault();
-    if (promoCode.trim().toUpperCase() === 'WELCOME10') {
+    if (promoCode.trim().toUpperCase() === 'LUCKY15') {
+      setDiscountPercent(15);
+      setPromoMessage('Промокод LUCKY15 застосовано (-15%)');
+    } else if (promoCode.trim().toUpperCase() === 'WELCOME10') {
       setDiscountPercent(10);
-      setPromoMessage('Промокод WELCOME10 применен (-10%)');
+      setPromoMessage('Промокод WELCOME10 застосовано (-10%)');
     } else if (promoCode.trim().toUpperCase() === 'SHOPIFY20') {
       setDiscountPercent(20);
-      setPromoMessage('Промокод SHOPIFY20 применен (-20%)');
+      setPromoMessage('Промокод SHOPIFY20 застосовано (-20%)');
     } else {
-      setPromoMessage('Неверный промокод (попробуйте WELCOME10)');
+      setPromoMessage('Невірний промокод (спробуйте LUCKY15 або WELCOME10)');
     }
   };
 

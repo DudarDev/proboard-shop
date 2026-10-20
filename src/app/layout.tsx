@@ -10,6 +10,7 @@ import { StoreSettingsModal } from '@/components/StoreSettingsModal';
 import { MobileNav } from '@/components/MobileNav';
 import { AnnouncementBar } from '@/components/AnnouncementBar';
 import { LiveSalesToasts } from '@/components/LiveSalesToasts';
+import { LuckyDiscountModal } from '@/components/LuckyDiscountModal';
 
 export const metadata: Metadata = {
   title: 'ATELIER | Headless Shopify Storefront',
@@ -35,6 +36,7 @@ export default function RootLayout({
               <StoreSettingsModal />
               <MobileNav />
               <LiveSalesToasts />
+              <LuckyDiscountModal />
             </WishlistProvider>
           </CartProvider>
         </ConfigProvider>
