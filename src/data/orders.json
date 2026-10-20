@@ -1,0 +1,71 @@
+[
+  {
+    "id": "ORD-36249",
+    "createdAt": "2026-10-20T13:04:56.966Z",
+    "customer": {
+      "name": "???? ????????",
+      "phone": "+380 99 111 22 33",
+      "city": "?????, ???? ????? ?5",
+      "messenger": "Telegram"
+    },
+    "items": [
+      {
+        "price": 189,
+        "title": "Minimalist Leather Backpack",
+        "variantTitle": "Black / One Size",
+        "id": "gid://shopify/ProductVariant/101",
+        "quantity": 1
+      }
+    ],
+    "total": 189,
+    "currency": "UAH",
+    "status": "new",
+    "paymentMethod": "cod"
+  },
+  {
+    "id": "ORD-10492",
+    "createdAt": "2026-10-20T11:30:00.000Z",
+    "customer": {
+      "name": "Андрій Коваленко",
+      "phone": "+380 67 123 45 67",
+      "city": "Київ, Відділення №24",
+      "messenger": "Telegram"
+    },
+    "items": [
+      {
+        "id": "gid://shopify/ProductVariant/101",
+        "title": "Minimalist Leather Backpack",
+        "variantTitle": "Black / One Size",
+        "price": 189,
+        "quantity": 1
+      }
+    ],
+    "total": 189,
+    "currency": "USD",
+    "status": "new",
+    "paymentMethod": "cod"
+  },
+  {
+    "id": "ORD-10491",
+    "createdAt": "2026-10-20T09:15:00.000Z",
+    "customer": {
+      "name": "Ольга Мельник",
+      "phone": "+380 50 987 65 43",
+      "city": "Львів, Відділення №12",
+      "messenger": "Viber"
+    },
+    "items": [
+      {
+        "id": "gid://shopify/ProductVariant/201",
+        "title": "Oversized Organic Cotton Hoodie",
+        "variantTitle": "S / Sand",
+        "price": 89,
+        "quantity": 1
+      }
+    ],
+    "total": 89,
+    "currency": "USD",
+    "status": "processing",
+    "paymentMethod": "online"
+  }
+]

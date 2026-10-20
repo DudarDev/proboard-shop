@@ -5,6 +5,8 @@ const endpoints = [
   '/',
   '/about',
   '/contact',
+  '/admin',
+  '/api/orders',
   '/products/minimalist-leather-backpack',
   '/products/oversized-organic-cotton-hoodie',
   '/products/wireless-anc-headphones',

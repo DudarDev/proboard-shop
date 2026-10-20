@@ -10,6 +10,7 @@ import { useConfig } from '@/context/ConfigContext';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ProductCard } from '@/components/ProductCard';
+import { OneClickModal } from '@/components/OneClickModal';
 import {
   Heart,
   ShoppingBag,
@@ -22,6 +23,7 @@ import {
   Minus,
   ArrowLeft,
   Share2,
+  Zap,
 } from 'lucide-react';
 
 interface Props {
@@ -40,6 +42,7 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
+  const [isOneClickOpen, setIsOneClickOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'desc' | 'specs' | 'shipping' | 'reviews'>('desc');
   const [copied, setCopied] = useState(false);
 
@@ -299,7 +302,7 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
 
             {/* Action Bar */}
             <div className="mt-10 pt-6 border-t border-zinc-100">
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={handleAddToCart}
                   className={`flex-1 flex items-center justify-center gap-2 rounded-2xl py-4 text-sm font-bold shadow-xl transition-all active:scale-[0.98] ${
@@ -311,18 +314,35 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                   {isAdded ? (
                     <>
                       <Check className="h-5 w-5" />
-                      <span>Добавлено в корзину!</span>
+                      <span>Додано в кошик!</span>
                     </>
                   ) : (
                     <>
                       <ShoppingBag className="h-5 w-5" />
                       <span>
-                        Добавить в корзину • {formatPrice(Number(currentPrice.amount) * quantity, currentPrice.currencyCode, currency)}
+                        Додати в кошик • {formatPrice(Number(currentPrice.amount) * quantity, currentPrice.currencyCode, currency)}
                       </span>
                     </>
                   )}
                 </button>
+
+                <button
+                  onClick={() => setIsOneClickOpen(true)}
+                  className="flex items-center justify-center gap-2 rounded-2xl border-2 border-amber-500 bg-amber-50/80 px-6 py-4 text-sm font-bold text-amber-900 hover:bg-amber-100 transition-all active:scale-[0.98]"
+                >
+                  <Zap className="h-4 w-4 text-amber-600 fill-amber-500" />
+                  <span>Купити в 1 клік</span>
+                </button>
               </div>
+
+              {/* One Click Modal */}
+              <OneClickModal
+                product={product}
+                variant={selectedVariant}
+                quantity={quantity}
+                isOpen={isOneClickOpen}
+                onClose={() => setIsOneClickOpen(false)}
+              />
 
               {/* Key Guarantees */}
               <div className="mt-6 grid grid-cols-3 gap-4 text-xs text-zinc-600 border-t border-zinc-100 pt-6">
