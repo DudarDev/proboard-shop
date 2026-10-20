@@ -46,6 +46,9 @@ export function Navbar({ onSearchChange, searchQuery = '' }: NavbarProps) {
             <Link href="/about" className="hover:text-zinc-950 transition-colors">
               Про бренд
             </Link>
+            <Link href="/track-order" className="hover:text-zinc-950 transition-colors">
+              Відстеження
+            </Link>
             <Link href="/contact" className="hover:text-zinc-950 transition-colors">
               Контакти & FAQ
             </Link>

@@ -13,9 +13,6 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    allowedDevOrigins: ['story-dam-examination-applies.trycloudflare.com', '*.trycloudflare.com'],
-  },
 };
 
 export default nextConfig;

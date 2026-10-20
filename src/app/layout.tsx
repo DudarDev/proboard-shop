@@ -8,6 +8,8 @@ import { WishlistDrawer } from '@/components/WishlistDrawer';
 import { ProductModal } from '@/components/ProductModal';
 import { StoreSettingsModal } from '@/components/StoreSettingsModal';
 import { MobileNav } from '@/components/MobileNav';
+import { AnnouncementBar } from '@/components/AnnouncementBar';
+import { LiveSalesToasts } from '@/components/LiveSalesToasts';
 
 export const metadata: Metadata = {
   title: 'ATELIER | Headless Shopify Storefront',
@@ -22,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className="scroll-smooth">
       <body className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-zinc-900 selection:text-white flex flex-col justify-between pb-16 sm:pb-0">
+        <AnnouncementBar />
         <ConfigProvider>
           <CartProvider>
             <WishlistProvider>
@@ -31,6 +34,7 @@ export default function RootLayout({
               <ProductModal />
               <StoreSettingsModal />
               <MobileNav />
+              <LiveSalesToasts />
             </WishlistProvider>
           </CartProvider>
         </ConfigProvider>

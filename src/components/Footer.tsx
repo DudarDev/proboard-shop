@@ -84,6 +84,11 @@ export function Footer() {
                   • Гарантія та повернення
                 </Link>
               </li>
+              <li>
+                <Link href="/track-order" className="hover:text-zinc-950 transition-colors">
+                  • Відстеження посилки
+                </Link>
+              </li>
               <li className="pt-2 border-t border-zinc-200">
                 <Link href="/admin" className="font-semibold text-emerald-700 hover:text-emerald-800 transition-colors flex items-center gap-1">
                   <span>⚡ Панель замовлень (Admin)</span>
