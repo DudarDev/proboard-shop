@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ShoppingBag, Settings2, Search, Heart, Ruler, Flame } from 'lucide-react';
+import { ShoppingBag, Settings2, Search, Heart, Ruler, Percent } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { useConfig } from '@/context/ConfigContext';
@@ -12,105 +12,92 @@ interface NavbarProps {
   onSearchChange?: (q: string) => void;
   searchQuery?: string;
   onOpenCalculator?: () => void;
+  onSelectCategory?: (cat: string) => void;
 }
 
-export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator }: NavbarProps) {
+export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator, onSelectCategory }: NavbarProps) {
   const { totalCount, toggleCart } = useCart();
   const { wishlistCount, openWishlist } = useWishlist();
   const { storeDomain, setIsSettingsOpen, currency, setCurrency } = useConfig();
 
+  const handleNavClick = (cat: string) => {
+    if (onSelectCategory) {
+      onSelectCategory(cat);
+      const catalog = document.getElementById('catalog');
+      if (catalog) catalog.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-zinc-200 bg-white/90 backdrop-blur-md transition-all">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40 w-full border-b border-zinc-200 bg-white shadow-sm transition-all">
+      {/* Main Header Bar */}
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 gap-4">
         
-        {/* Brand / Logo */}
+        {/* Brand / Logo (Tactics Proboard Aesthetic) */}
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-zinc-950 text-emerald-400 font-black text-lg tracking-wider shadow-md border border-zinc-800">
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="flex h-10 w-10 items-center justify-center bg-zinc-950 text-white font-black text-xl tracking-tighter group-hover:bg-emerald-600 transition-colors">
               P
-            </span>
+            </div>
             <div className="flex flex-col">
-              <div className="flex items-center gap-1">
-                <span className="font-black text-base tracking-tight text-zinc-950 leading-none">
+              <div className="flex items-center gap-1.5 leading-none">
+                <span className="font-black text-xl tracking-tighter text-zinc-950 uppercase">
                   PROBOARD
                 </span>
-                <span className="text-[10px] font-bold text-white bg-emerald-600 px-1.5 py-0.2 rounded">
-                  SHOP
+                <span className="text-[10px] font-black uppercase tracking-wider text-emerald-600 border border-emerald-600 px-1 py-0.2 rounded-none">
+                  TACTICS
                 </span>
               </div>
-              <span className="text-[9px] font-bold tracking-widest text-zinc-400 uppercase mt-0.5">
-                proboardshop.ua • dropship
+              <span className="text-[9px] font-black tracking-widest text-zinc-400 uppercase mt-0.5">
+                BOARD SHOP • DROPSHIP
               </span>
             </div>
           </Link>
-
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-5 text-xs font-bold text-zinc-600">
-            <Link href="/#catalog" className="hover:text-zinc-950 transition-colors">
-              Каталог
-            </Link>
-            <Link href="/about" className="hover:text-zinc-950 transition-colors">
-              Про Proboard
-            </Link>
-            <Link href="/track-order" className="hover:text-zinc-950 transition-colors">
-              Відстеження
-            </Link>
-            <Link href="/contact" className="hover:text-zinc-950 transition-colors">
-              Доставка & FAQ
-            </Link>
-            {onOpenCalculator && (
-              <button
-                onClick={onOpenCalculator}
-                className="flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/80 transition-all active:scale-95"
-              >
-                <Ruler className="h-3 w-3" />
-                <span>Калькулятор ростовки</span>
-              </button>
-            )}
-          </nav>
-
-          {/* Status Badge */}
-          <button
-            onClick={() => setIsSettingsOpen(true)}
-            className="hidden xl:flex items-center gap-1.5 rounded-full border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 transition-colors"
-            title="Натисніть для налаштування підключення до вашого Shopify магазину"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span>
-              {storeDomain ? storeDomain : 'Shopify Dropship API'}
-            </span>
-            <Settings2 className="h-3 w-3 ml-0.5 opacity-60" />
-          </button>
         </div>
 
-        {/* Search Bar (if search handler provided) */}
+        {/* Search Bar - Tactics Rectangular Styling */}
         {onSearchChange && (
-          <div className="flex-1 max-w-sm mx-4 hidden md:block">
-            <div className="relative">
-              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400" />
+          <div className="flex-1 max-w-md mx-2 hidden md:block">
+            <div className="relative flex items-center">
               <input
                 type="text"
-                placeholder="Пошук спорядження (Nitro, Burton, кріплення, шолом...)"
+                placeholder="SEARCH GEAR, BRANDS, SPECS..."
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
-                className="w-full rounded-full border border-zinc-200 bg-zinc-50/70 pl-10 pr-4 py-1.5 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:bg-white focus:outline-none focus:ring-1 focus:ring-zinc-900 transition-all"
+                className="w-full border border-zinc-300 bg-zinc-50/80 px-3.5 py-2 text-xs font-bold uppercase tracking-wider text-zinc-900 placeholder-zinc-400 focus:border-zinc-950 focus:bg-white focus:outline-none transition-all"
               />
+              <button
+                type="button"
+                className="absolute right-0 top-0 bottom-0 bg-zinc-950 px-3.5 text-white hover:bg-zinc-800 transition-colors flex items-center justify-center"
+                aria-label="Пошук"
+              >
+                <Search className="h-3.5 w-3.5 text-white" />
+              </button>
             </div>
           </div>
         )}
 
-        {/* Actions */}
+        {/* Right Actions: Currency, Wishlist, Calculator, Cart */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* Board Size Calculator Pill */}
+          {onOpenCalculator && (
+            <button
+              onClick={onOpenCalculator}
+              className="hidden lg:flex items-center gap-1.5 text-zinc-800 hover:text-black bg-zinc-100 hover:bg-zinc-200 px-3 py-1.5 text-xs font-black uppercase tracking-wider transition-all"
+              title="Підібрати ростовку сноуборду онлайн"
+            >
+              <Ruler className="h-3.5 w-3.5 text-emerald-600" />
+              <span>SIZE CALCULATOR</span>
+            </button>
+          )}
+
           {/* Currency Selector */}
           <div className="relative inline-flex items-center">
             <select
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
-              className="appearance-none rounded-xl border border-zinc-200 bg-white/90 pl-2.5 pr-6 py-1.5 text-xs font-bold text-zinc-700 hover:border-zinc-300 focus:outline-none cursor-pointer shadow-sm"
-              title="Змінити валюту магазину"
+              className="appearance-none border border-zinc-300 bg-white pl-2.5 pr-6 py-1.5 text-xs font-black uppercase text-zinc-800 hover:border-zinc-400 focus:outline-none cursor-pointer"
+              title="Змінити валюту"
             >
               {Object.keys(CURRENCY_RATES).map((c) => (
                 <option key={c} value={c}>
@@ -121,24 +108,26 @@ export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator }: N
             <span className="pointer-events-none absolute right-2 text-[10px] text-zinc-400">▾</span>
           </div>
 
-          {/* Settings button on mobile */}
+          {/* Admin / Shopify Settings modal */}
           <button
             onClick={() => setIsSettingsOpen(true)}
-            className="flex md:hidden p-2 text-zinc-600 hover:text-zinc-900 rounded-lg hover:bg-zinc-100"
-            aria-label="Налаштування Shopify"
+            className="p-2 text-zinc-600 hover:text-zinc-950 border border-transparent hover:border-zinc-200 transition-colors"
+            title="Shopify Credentials"
+            aria-label="Shopify"
           >
-            <Settings2 className="h-5 w-5" />
+            <Settings2 className="h-4 w-4" />
           </button>
 
           {/* Wishlist Button */}
           <button
             onClick={openWishlist}
-            className="relative flex items-center justify-center h-9 w-9 rounded-full border border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-50 hover:text-rose-500 transition-colors shadow-sm"
+            className="relative flex items-center justify-center h-9 w-9 border border-zinc-200 bg-white text-zinc-700 hover:text-rose-500 hover:border-zinc-300 transition-colors"
             title="Обране"
+            aria-label="Wishlist"
           >
             <Heart className="h-4 w-4" />
             {wishlistCount > 0 && (
-              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-rose-500 text-[10px] font-bold text-white">
+              <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center bg-rose-500 text-[9px] font-black text-white">
                 {wishlistCount}
               </span>
             )}
@@ -147,35 +136,88 @@ export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator }: N
           {/* Cart Trigger */}
           <button
             onClick={toggleCart}
-            className="relative flex items-center gap-2 rounded-full bg-zinc-900 px-3.5 py-1.5 text-xs sm:text-sm font-semibold text-white shadow hover:bg-zinc-800 active:scale-95 transition-all"
+            className="relative flex items-center gap-2 bg-zinc-950 px-4 py-2 text-xs font-black uppercase tracking-wider text-white hover:bg-zinc-800 active:scale-95 transition-all shadow-sm"
           >
-            <ShoppingBag className="h-4 w-4" />
-            <span className="hidden sm:inline">Кошик</span>
-            {totalCount > 0 && (
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[11px] font-bold text-white">
-                {totalCount}
-              </span>
-            )}
+            <ShoppingBag className="h-4 w-4 text-emerald-400" />
+            <span>CART ({totalCount})</span>
           </button>
         </div>
-
       </div>
 
-      {/* Mobile Search */}
-      {onSearchChange && (
-        <div className="md:hidden px-4 pb-3">
-          <div className="relative">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400" />
-            <input
-              type="text"
-              placeholder="Пошук у каталозі..."
-              value={searchQuery}
-              onChange={(e) => onSearchChange(e.target.value)}
-              className="w-full rounded-full border border-zinc-200 bg-zinc-50 pl-10 pr-4 py-1.5 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:bg-white focus:outline-none"
-            />
+      {/* Sub Navigation Bar - Tactics Primary Categories */}
+      <nav className="border-t border-zinc-200 bg-zinc-50/60 overflow-x-auto scrollbar-none">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
+          <div className="flex items-center gap-6 text-[12px] font-black uppercase tracking-wider text-zinc-800">
+            <button
+              onClick={() => handleNavClick('Сноуборди')}
+              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+            >
+              SNOWBOARD
+            </button>
+            <button
+              onClick={() => handleNavClick('Скейтборди')}
+              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+            >
+              SKATE
+            </button>
+            <button
+              onClick={() => handleNavClick('Взуття')}
+              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+            >
+              BOOTS
+            </button>
+            <button
+              onClick={() => handleNavClick('Кріплення')}
+              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+            >
+              BINDINGS
+            </button>
+            <button
+              onClick={() => handleNavClick('Оптика')}
+              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+            >
+              GOGGLES
+            </button>
+            <button
+              onClick={() => handleNavClick('Захист')}
+              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+            >
+              HELMETS
+            </button>
+            <button
+              onClick={() => handleNavClick('Одяг')}
+              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+            >
+              CLOTHING
+            </button>
+            <button
+              onClick={() => handleNavClick('Аксесуари')}
+              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+            >
+              ACCESSORIES
+            </button>
+            <button
+              onClick={() => handleNavClick('all')}
+              className="flex items-center gap-1 text-rose-600 hover:text-rose-700 transition-colors whitespace-nowrap"
+            >
+              <Percent className="h-3 w-3" />
+              <span>SALE UP TO 40%</span>
+            </button>
+          </div>
+
+          <div className="hidden lg:flex items-center gap-4 text-[11px] font-bold text-zinc-500">
+            <Link href="/about" className="hover:text-zinc-950 transition-colors">
+              ПРО НАС
+            </Link>
+            <Link href="/admin" className="hover:text-zinc-950 transition-colors">
+              CRM ДАШБОРД
+            </Link>
+            <Link href="/track-order" className="hover:text-zinc-950 transition-colors">
+              ТРЕКІНГ НОВА ПОШТА
+            </Link>
           </div>
         </div>
-      )}
+      </nav>
     </header>
   );
 }

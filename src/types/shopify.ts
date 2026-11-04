@@ -16,6 +16,7 @@ export interface ShopifyProductVariant {
   title: string;
   availableForSale?: boolean;
   price: ShopifyPrice;
+  compareAtPrice?: ShopifyPrice;
   selectedOptions?: {
     name: string;
     value: string;
@@ -25,10 +26,14 @@ export interface ShopifyProductVariant {
 
 export interface BoardSpecs {
   flex?: string;
+  flexRating?: number; // 1-10
   profile?: string;
+  camberType?: 'camber' | 'rocker' | 'hybrid' | 'flat';
   shape?: string;
   terrain?: string;
   level?: string;
+  gender?: 'men' | 'women' | 'unisex' | 'kids';
+  subCategory?: string;
   origin?: string;
   warranty?: string;
   waistWidth?: string;
@@ -56,6 +61,10 @@ export interface ShopifyProduct {
     minVariantPrice: ShopifyPrice;
     maxVariantPrice: ShopifyPrice;
   };
+  compareAtPrice?: ShopifyPrice;
+  isStaffPick?: boolean;
+  rating?: number;
+  reviewCount?: number;
   tags?: string[];
   productType?: string;
   vendor?: string;

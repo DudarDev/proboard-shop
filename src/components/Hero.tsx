@@ -5,177 +5,116 @@ import { ArrowDown, Ruler, ShieldCheck, Truck, Sparkles, Flame, CheckCircle2 } f
 
 interface HeroProps {
   onOpenCalculator?: () => void;
+  onShopClick?: () => void;
 }
 
-export function Hero({ onOpenCalculator }: HeroProps) {
+export function Hero({ onOpenCalculator, onShopClick }: HeroProps) {
   const scrollToCatalog = () => {
-    const el = document.getElementById('catalog');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (onShopClick) {
+      onShopClick();
+    } else {
+      const el = document.getElementById('catalog');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 text-white border-b border-zinc-800">
-      {/* Background Mountain/Action Glow & Graphic Grid */}
-      <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]" />
-      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+    <div className="w-full bg-white">
+      {/* 1. Tactics Promo Ribbon Banner */}
+      <div className="bg-zinc-100 border-b border-zinc-200 py-2.5 px-4">
+        <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <span className="bg-rose-600 text-white font-black text-[10px] uppercase px-2 py-0.5 tracking-wider">
+              LIMITED DROP
+            </span>
+            <p className="text-xs sm:text-sm font-black tracking-wider uppercase text-zinc-950">
+              PRE-SEASON CLEARANCE • UP TO 40% OFF SNOWBOARD GEAR
+            </p>
+          </div>
+          <button
+            onClick={scrollToCatalog}
+            className="bg-zinc-950 hover:bg-zinc-800 text-white text-[11px] font-black uppercase tracking-widest px-4 py-1.5 transition-all shadow-sm"
+          >
+            SHOP CLEARANCE
+          </button>
+        </div>
+      </div>
 
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Column: Heading & CTAs */}
-          <div className="lg:col-span-7">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/60 px-3.5 py-1.5 text-xs font-bold text-emerald-400 mb-6 backdrop-blur-md">
-              <Flame className="h-3.5 w-3.5 text-emerald-400 fill-emerald-400 animate-pulse" />
-              <span>PROBOARD SHOP • Офіційний дропшипінг бордспорту в Україні</span>
+      {/* 2. Tactics Section Heading */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-3">
+        <h2 className="text-xl sm:text-2xl font-black uppercase tracking-wider text-zinc-950">
+          SNOWBOARD GEAR & EQUIPMENT • СНОУБОРД ШОП 2025/2026
+        </h2>
+      </div>
+
+      {/* 3. Hero Visual Banner (Tactics Action Sports Grit Aesthetic) */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="relative overflow-hidden bg-gradient-to-r from-emerald-900 via-teal-950 to-zinc-950 text-white border border-zinc-800 min-h-[360px] sm:min-h-[440px] flex items-center justify-center p-8 sm:p-12 shadow-md">
+          {/* Grungy Halftone & Snow Background */}
+          <div
+            className="absolute inset-0 opacity-25 bg-cover bg-center mix-blend-overlay filter contrast-125"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1522056615691-da7b810682b5?q=80&w=1600&auto=format&fit=crop')`,
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/60" />
+
+          {/* Center Tactics Hero Callout */}
+          <div className="relative z-10 text-center max-w-3xl flex flex-col items-center">
+            {/* Tag */}
+            <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/40 px-3.5 py-1 mb-4 backdrop-blur-md">
+              <Flame className="h-3.5 w-3.5 text-emerald-400" />
+              <span className="text-[11px] font-black tracking-widest uppercase text-emerald-300">
+                PROBOARD DROPSHIP • ОФІЦІЙНИЙ СКЛАД ЄС
+              </span>
             </div>
 
-            {/* Heading */}
-            <h1 className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl leading-[1.08] text-white">
-              Твій провідник у світ{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
-                сноубордингу
-              </span>{' '}
-              та екстриму
+            {/* Giant Tactics Title */}
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-white leading-none drop-shadow-md">
+              SNOWBOARD SHOP
             </h1>
 
-            {/* Description */}
-            <p className="mt-6 text-base sm:text-lg text-zinc-300 leading-relaxed font-light max-w-2xl">
-              Топові дошки <strong>Nitro, Burton, Capita</strong>, кріплення <strong>Union</strong>, термоформовані черевики <strong>ThirtyTwo</strong> та 20K мембранні анораки. Прямі поставки з офіційних європейських складів по всій Україні без посередників.
+            <p className="mt-4 text-xs sm:text-sm md:text-base text-zinc-300 font-medium max-w-xl leading-relaxed">
+              Оригінальне спорядження <strong>Capita, Lib Tech, Burton, Union, ThirtyTwo, Anon</strong>. Прямі поставки в Україну з європейського складу.
             </p>
 
-            {/* Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <button
                 onClick={scrollToCatalog}
-                className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-6 py-4 text-sm font-extrabold text-zinc-950 shadow-lg shadow-emerald-500/25 hover:bg-emerald-400 active:scale-95 transition-all"
+                className="bg-white hover:bg-zinc-100 text-zinc-950 font-black text-xs sm:text-sm uppercase tracking-widest px-8 py-3.5 shadow-lg active:scale-95 transition-all"
               >
-                <span>Каталог спорядження</span>
-                <ArrowDown className="h-4 w-4" />
+                SHOP NOW
               </button>
 
               {onOpenCalculator && (
                 <button
                   onClick={onOpenCalculator}
-                  className="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-800/80 px-5 py-4 text-sm font-bold text-white hover:bg-zinc-700 hover:border-zinc-600 transition-all active:scale-95 shadow-md"
+                  className="bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs sm:text-sm uppercase tracking-widest px-6 py-3.5 shadow-lg active:scale-95 transition-all flex items-center gap-2"
                 >
-                  <Ruler className="h-4 w-4 text-emerald-400" />
-                  <span>Підібрати ростовку (Калькулятор)</span>
+                  <Ruler className="h-4 w-4" />
+                  <span>CALCULATE BOARD SIZE</span>
                 </button>
               )}
             </div>
 
-            {/* Quick check points */}
-            <div className="mt-8 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-zinc-400">
+            {/* Micro Guarantees */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-bold text-zinc-400 uppercase tracking-wider">
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                <span>100% Оригінал з гарантією 2 роки</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                <span>Накладений платіж без передплати</span>
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+                <span>100% Original Brand Warranty</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                <span>Обмін ростовки за 14 днів</span>
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+                <span>Nova Poshta COD (Накладений)</span>
               </div>
-            </div>
-          </div>
-
-          {/* Right Column: Visual Feature Card */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-3xl border border-zinc-800 bg-gradient-to-b from-zinc-900/90 to-zinc-950/90 p-6 shadow-2xl backdrop-blur-xl">
-              <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
-                <div className="flex items-center gap-2">
-                  <span className="flex h-3 w-3 rounded-full bg-emerald-500 animate-ping" />
-                  <span className="text-xs font-bold text-zinc-300">Live Dropship Status</span>
-                </div>
-                <span className="text-[11px] font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-800/50 px-2.5 py-0.5 rounded-full">
-                  Європейський склад • Відкрито
-                </span>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+                <span>14 Days Size Exchange</span>
               </div>
-
-              <div className="mt-5 space-y-3.5">
-                <div className="flex items-center justify-between p-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 text-xs">
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-xl">🏂</span>
-                    <div>
-                      <div className="font-bold text-white">Сезон сноубордингу 2025/2026</div>
-                      <div className="text-[11px] text-zinc-400">Свіжі колекції в наявності</div>
-                    </div>
-                  </div>
-                  <span className="text-xs font-extrabold text-emerald-400">10+ моделей</span>
-                </div>
-
-                <div className="flex items-center justify-between p-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 text-xs">
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-xl">📦</span>
-                    <div>
-                      <div className="font-bold text-white">Експрес-доставка Нова Пошта</div>
-                      <div className="text-[11px] text-zinc-400">1-3 дні по всій Україні</div>
-                    </div>
-                  </div>
-                  <span className="text-xs font-bold text-zinc-300">Відділення / Поштомат</span>
-                </div>
-
-                <div className="flex items-center justify-between p-3 rounded-xl bg-zinc-800/50 border border-zinc-700/50 text-xs">
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-xl">💳</span>
-                    <div>
-                      <div className="font-bold text-white">Оплата при отриманні (COD)</div>
-                      <div className="text-[11px] text-zinc-400">Перевірте борд перед оплатою</div>
-                    </div>
-                  </div>
-                  <span className="text-xs font-bold text-emerald-400">0% ризику</span>
-                </div>
-              </div>
-
-              {/* Proboard Guarantee Footer */}
-              <div className="mt-5 pt-4 border-t border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-400">
-                <span>proboardshop.ua • dropship</span>
-                <span className="font-mono text-emerald-400">Verified Partner</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Value props banner */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-zinc-800">
-          <div className="flex items-start gap-3.5">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-950/80 text-emerald-400 border border-emerald-800/50">
-              <Truck className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-white">Прямий дропшипінг без націнок</h4>
-              <p className="text-xs text-zinc-400 mt-0.5">Відправка напряму від європейських дистриб'юторів до вашого відділення Нової Пошти.</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3.5">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-950/80 text-emerald-400 border border-emerald-800/50">
-              <ShieldCheck className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-white">Офіційна гарантія 2 роки</h4>
-              <p className="text-xs text-zinc-400 mt-0.5">Кожен борд, кріплення та шолом мають серійний номер і заводську гарантію.</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3.5">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-950/80 text-emerald-400 border border-emerald-800/50">
-              <Ruler className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-white">Точний підбір ростовки</h4>
-              <p className="text-xs text-zinc-400 mt-0.5">Наш онлайн-калькулятор розраховує довжину, ширину Wide та жорсткість під ваші параметри.</p>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
