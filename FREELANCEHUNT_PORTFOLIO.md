@@ -91,17 +91,17 @@
 
 Файли знаходяться у папці вашого проєкту `shopify-store/portfolio/`:
 
-1. **Головна обкладинка роботи (Cover):**
-   `01_proboard_homepage_hero.png` — Головний екран магазину, статус дропшипінг-складу, переваги.
-2. **Картка товару та характеристики:**
-   `02_proboard_snowboard_nitro.png` — Детальна сторінка сноуборду Nitro з бейджами Flex/Camber, вибором ростовки та кнопкою 1-клік.
-3. **Гібридні моделі та відгуки:**
-   `03_proboard_burton_custom.png` — Модель Burton Custom Flying V з бандлом та відгуками райдерів.
-4. **Оптика та аксесуари:**
-   `04_proboard_anon_optics.png` — Магнітні маски Anon M4 Magna-Tech.
-5. **Трекінг посилок:**
-   `05_proboard_track_order.png` — Сторінка відстеження статусу замовлення Нової Пошти.
-6. **Адмін-панель CRM:**
-   `06_proboard_admin_crm.png` — Панель керування замовленнями, виручка, статуси.
-7. **Про бренд та надійність:**
-   `07_proboard_about_brand.png` — Сторінка філософії та принципів дропшипінгу з ЄС.
+1. **Головна обкладинка роботи (Cover Tactics Style):**
+   `01_tactics_homepage_hero.png` — Головний екран у стилі Tactics, стрічка Pre-Season Clearance та монохромна панель світових брендів.
+2. **Мега-каталог категорій (Category Hub Directory):**
+   `07_tactics_category_mega_hub.png` — Професійна 8-колонкова матриця категорій (Snowboards, Boots, Bindings, Goggles, Apparel, Helmets, Accessories).
+3. **Картка товару та характеристики (Capita DOA):**
+   `02_tactics_capita_doa.png` — Детальна сторінка володаря премії Good Wood з бейджами Staff Pick, Flex, Camber та вибором ростовок.
+4. **Легендарні про-моделі (Lib Tech T.Rice Pro):**
+   `03_tactics_libtech_trice.png` — Модель Тревіса Райса з кантами Magne-Traction та прогином C2X.
+5. **Гібридні бестселери (Burton Custom):**
+   `04_tactics_burton_custom.png` — Прогин Flying V, кріплення The Channel, бандли та відгуки райдерів.
+6. **Трекінг доставки для покупців:**
+   `05_tactics_track_order.png` — Інтерактивний 4-кроковий статус доставки Нової Пошти за номером замовлення.
+7. **Адмін-панель CRM (/admin):**
+   `06_tactics_admin_crm.png` — Дашборд замовлень у реальному часі, виручка, середній чек, статус доставки.
