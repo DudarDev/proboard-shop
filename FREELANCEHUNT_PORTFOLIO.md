@@ -27,7 +27,8 @@
 ---
 
 ## 🔗 4. Посилання на роботу
-* **Живий сайт:** `https://shopify-store-nine-nu.vercel.app`
+* **Живий сайт (Vercel Edge):** `https://shopify-store-nine-nu.vercel.app`
+* **Живий продакшн (Oracle Cloud Dedicated VPS + Nginx + PM2):** `https://findarticles-striking-partners-control.trycloudflare.com`
 * **Адмін-панель керування замовленнями:** `https://shopify-store-nine-nu.vercel.app/admin`
 * **Вихідний код на GitHub:** `https://github.com/DudarDev/proboard-shop`
 

@@ -9,7 +9,8 @@
 
 > **Високопродуктивний інтернет-магазин бордспорту та дропшипінгу нового покоління, створений на базі Next.js 14, TypeScript та Shopify Storefront GraphQL API за зразком провідного магазину Proboardshop.**
 
-🔗 **Живе демо (Live Production):** [https://shopify-store-nine-nu.vercel.app](https://shopify-store-nine-nu.vercel.app)  
+🔗 **Живе демо (Vercel Edge):** [https://shopify-store-nine-nu.vercel.app](https://shopify-store-nine-nu.vercel.app)  
+☁️ **Живий сервер (Oracle Cloud Dedicated VPS + Nginx + PM2):** [https://findarticles-striking-partners-control.trycloudflare.com](https://findarticles-striking-partners-control.trycloudflare.com)  
 📊 **Адмін-панель замовлень (CRM):** [https://shopify-store-nine-nu.vercel.app/admin](https://shopify-store-nine-nu.vercel.app/admin)  
 📦 **Трекінг посилок для клієнтів:** [https://shopify-store-nine-nu.vercel.app/track-order](https://shopify-store-nine-nu.vercel.app/track-order)
 
