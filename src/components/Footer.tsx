@@ -12,47 +12,62 @@ export function Footer() {
           
           {/* Brand Col */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-900 text-white font-bold text-xs tracking-wider">
-                S
+            <Link href="/" className="flex items-center gap-2.5">
+              <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-zinc-950 text-emerald-400 font-black text-base tracking-wider border border-zinc-800">
+                P
               </span>
-              <span className="font-extrabold text-base tracking-tight text-zinc-950">
-                ATELIER
-              </span>
+              <div className="flex flex-col">
+                <span className="font-black text-base tracking-tight text-zinc-950">
+                  PROBOARD SHOP
+                </span>
+                <span className="text-[10px] font-bold text-emerald-700 uppercase">
+                  proboardshop.ua • dropship
+                </span>
+              </div>
             </Link>
-            <p className="mt-3 text-xs text-zinc-500 leading-relaxed">
-              Високопродуктивний Headless Storefront для Shopify на базі Next.js 14 App Router, TypeScript та Tailwind CSS.
+            <p className="mt-3 text-xs text-zinc-600 leading-relaxed">
+              Провідний магазин бордспорту та спорядження в Україні: сноуборди Nitro, Burton, Capita, кріплення Union, оптика Anon, шоломи Oakley та одяг Montec.
             </p>
-            <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-emerald-700">
+            <div className="mt-4 flex items-center gap-2 text-xs font-bold text-emerald-700">
               <Sparkles className="h-3.5 w-3.5" />
-              <span>Shopify Storefront API v2024-01</span>
+              <span>Офіційний дропшипінг • ЄС Склад</span>
             </div>
           </div>
 
-          {/* Col 2: Навігація */}
+          {/* Col 2: Спорядження */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-900 mb-3">
-              Магазин
+              Спорядження
             </h4>
             <ul className="space-y-2 text-xs text-zinc-600">
               <li>
                 <Link href="/#catalog" className="hover:text-zinc-950 transition-colors">
-                  • Весь каталог
+                  • Сноуборди Camber & Rocker
                 </Link>
               </li>
               <li>
-                <Link href="/products/minimalist-leather-backpack" className="hover:text-zinc-950 transition-colors">
-                  • Шкіряний рюкзак
+                <Link href="/products/nitro-team-pro-snowboard" className="hover:text-zinc-950 transition-colors">
+                  • Nitro Team Pro Snowboard
                 </Link>
               </li>
               <li>
-                <Link href="/products/oversized-organic-cotton-hoodie" className="hover:text-zinc-950 transition-colors">
-                  • Органічне худі
+                <Link href="/products/burton-custom-flying-v-snowboard" className="hover:text-zinc-950 transition-colors">
+                  • Burton Custom Flying V
                 </Link>
               </li>
               <li>
-                <Link href="/products/wireless-anc-headphones" className="hover:text-zinc-950 transition-colors">
-                  • Бездротові навушники
+                <Link href="/products/union-force-bindings" className="hover:text-zinc-950 transition-colors">
+                  • Кріплення Union Force
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/santa-cruz-classic-dot-skateboard" className="hover:text-zinc-950 transition-colors">
+                  • Скейтборди Santa Cruz
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/anon-m4-toric-mfi-goggles" className="hover:text-zinc-950 transition-colors">
+                  • Магнітна оптика Anon M4
                 </Link>
               </li>
             </ul>
@@ -66,51 +81,57 @@ export function Footer() {
             <ul className="space-y-2 text-xs text-zinc-600">
               <li>
                 <Link href="/about" className="hover:text-zinc-950 transition-colors">
-                  • Про наш бренд
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-zinc-950 transition-colors">
-                  • Часті питання (FAQ)
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-zinc-950 transition-colors">
-                  • Умови доставки та оплати
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-zinc-950 transition-colors">
-                  • Гарантія та повернення
+                  • Про Proboard Shop
                 </Link>
               </li>
               <li>
                 <Link href="/track-order" className="hover:text-zinc-950 transition-colors">
-                  • Відстеження посилки
+                  • Відстеження замовлення
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-zinc-950 transition-colors">
+                  • Доставка Новою Поштою
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-zinc-950 transition-colors">
+                  • Оплата при отриманні (COD)
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-zinc-950 transition-colors">
+                  • Гарантія 2 роки та обмін
                 </Link>
               </li>
               <li className="pt-2 border-t border-zinc-200">
-                <Link href="/admin" className="font-semibold text-emerald-700 hover:text-emerald-800 transition-colors flex items-center gap-1">
-                  <span>⚡ Панель замовлень (Admin)</span>
+                <Link href="/admin" className="font-bold text-emerald-700 hover:text-emerald-800 transition-colors flex items-center gap-1">
+                  <span>⚡ Панель замовлень (CRM Admin)</span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Деплой & Інтеграція */}
+          {/* Col 4: Доставка та Гарантія */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-900 mb-3">
-              Деплой & Інтеграція
+              Дропшипінг Логістика
             </h4>
             <p className="text-xs text-zinc-500 mb-3 leading-relaxed">
-              Готово до підключення будь-якого магазину Shopify та публікації у хмарі.
+              Пряма доставка від офіційних імпортерів без зайвих посередників.
             </p>
-            <div className="rounded-xl bg-white p-3 border border-zinc-200 text-xs text-zinc-600">
-              <span className="font-semibold text-zinc-900">Готово до запуску:</span>
-              <div className="mt-2 flex items-center gap-2">
-                <span className="rounded-md bg-zinc-100 px-2 py-0.5 font-medium text-zinc-700">Vercel</span>
-                <span className="rounded-md bg-zinc-100 px-2 py-0.5 font-medium text-zinc-700">Shopify Oxygen</span>
-                <span className="rounded-md bg-zinc-100 px-2 py-0.5 font-medium text-zinc-700">Netlify</span>
+            <div className="rounded-2xl bg-white p-3.5 border border-zinc-200 text-xs text-zinc-600 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-zinc-900">Нова Пошта:</span>
+                <span className="text-emerald-700 font-bold">1-3 дні</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-zinc-900">Перевірка:</span>
+                <span className="text-zinc-700">Огляд до оплати</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-zinc-900">Гарантія:</span>
+                <span className="text-zinc-700">Заводський талон</span>
               </div>
             </div>
           </div>
@@ -119,11 +140,11 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
-          <p>© 2026 ATELIER Headless Shopify Storefront. Розроблено на Next.js 14.</p>
-          <div className="flex items-center gap-4">
-            <span className="text-zinc-400">Mock.Shop API Integration</span>
+          <p>© 2026 PROBOARD SHOP (proboardshop.ua). Всі права захищено. Створено на Next.js 14.</p>
+          <div className="flex items-center gap-4 font-medium">
+            <span className="text-zinc-500">Live Dropship Architecture</span>
             <span>•</span>
-            <span className="text-emerald-700 font-medium">Ready for Production</span>
+            <span className="text-emerald-700 font-bold">100% Original Board Gear</span>
           </div>
         </div>
       </div>

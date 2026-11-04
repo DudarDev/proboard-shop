@@ -78,7 +78,7 @@ export function ProductCard({ product }: ProductCardProps) {
               ? 'bg-rose-50 text-rose-500'
               : 'bg-white/80 text-zinc-600 hover:bg-white hover:text-rose-500'
           }`}
-          title={isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'}
+          title={isFavorite ? 'Видалити з обраного' : 'Додати в обране'}
         >
           <Heart className={`h-4 w-4 ${isFavorite ? 'fill-rose-500' : ''}`} />
         </button>
@@ -92,7 +92,7 @@ export function ProductCard({ product }: ProductCardProps) {
               openQuickView(product);
             }}
             className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-zinc-800 shadow-md hover:bg-zinc-100 hover:scale-110 active:scale-95 transition-all"
-            title="Быстрый просмотр"
+            title="Швидкий перегляд"
           >
             <Eye className="h-4 w-4" />
           </button>
@@ -101,7 +101,7 @@ export function ProductCard({ product }: ProductCardProps) {
             href={`/products/${product.handle}`}
             onClick={(e) => e.stopPropagation()}
             className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-zinc-800 shadow-md hover:bg-zinc-100 hover:scale-110 active:scale-95 transition-all"
-            title="Страница товара"
+            title="Сторінка товару"
           >
             <ExternalLink className="h-4 w-4" />
           </Link>
@@ -111,7 +111,9 @@ export function ProductCard({ product }: ProductCardProps) {
       {/* Info */}
       <div className="flex flex-1 flex-col pt-3.5">
         <div className="flex items-center justify-between text-xs text-zinc-500 mb-1">
-          <span>{product.productType || 'Товар'}</span>
+          <span className="font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60 text-[10px]">
+            {product.vendor || product.productType || 'Proboard'}
+          </span>
           {hasMultipleVariants && (
             <span className="text-[11px] font-medium text-zinc-400">
               {product.variants?.edges?.length} вар.
@@ -119,33 +121,49 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        <h3 className="text-sm font-semibold text-zinc-900 group-hover:text-emerald-700 transition-colors line-clamp-1">
+        <h3 className="text-sm font-bold text-zinc-900 group-hover:text-emerald-700 transition-colors line-clamp-1">
           {product.title}
         </h3>
 
-        <div className="mt-2 flex items-center justify-between pt-1">
-          <span className="text-base font-bold text-zinc-950">
+        {/* Board specs micro-badges */}
+        {product.specs && (
+          <div className="mt-2 flex flex-wrap items-center gap-1">
+            {product.specs.flex && (
+              <span className="text-[10px] font-bold bg-zinc-100 text-zinc-700 px-1.5 py-0.5 rounded">
+                ⚡ Flex {product.specs.flex.split(' ')[0]}
+              </span>
+            )}
+            {product.specs.profile && (
+              <span className="text-[10px] font-bold bg-zinc-100 text-zinc-700 px-1.5 py-0.5 rounded truncate max-w-[150px]">
+                🎯 {product.specs.profile.split(' ')[0]}
+              </span>
+            )}
+          </div>
+        )}
+
+        <div className="mt-3 flex items-center justify-between pt-1 border-t border-zinc-100">
+          <span className="text-base font-extrabold text-zinc-950">
             {formatPrice(price.amount, price.currencyCode, currency)}
           </span>
 
           <button
             type="button"
             onClick={handleQuickAdd}
-            className={`flex h-9 items-center gap-1.5 rounded-lg px-3 text-xs font-semibold shadow-sm transition-all active:scale-95 ${
+            className={`flex h-9 items-center gap-1.5 rounded-xl px-3 text-xs font-bold shadow-sm transition-all active:scale-95 ${
               isAdded
                 ? 'bg-emerald-600 text-white'
-                : 'bg-zinc-100 text-zinc-900 hover:bg-zinc-900 hover:text-white'
+                : 'bg-zinc-900 text-white hover:bg-zinc-800'
             }`}
           >
             {isAdded ? (
               <>
                 <Check className="h-3.5 w-3.5" />
-                <span>Добавлено</span>
+                <span>Додано</span>
               </>
             ) : (
               <>
                 <ShoppingBag className="h-3.5 w-3.5" />
-                <span>В корзину</span>
+                <span>В кошик</span>
               </>
             )}
           </button>

@@ -1,13 +1,16 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
+import { useConfig } from '@/context/ConfigContext';
 import { formatPrice } from '@/lib/utils';
-import { X, Check, ShoppingBag, Plus, Minus, Truck, ShieldCheck, RefreshCw } from 'lucide-react';
+import { X, Check, ShoppingBag, Plus, Minus, Truck, ShieldCheck, RefreshCw, ExternalLink } from 'lucide-react';
 import { ShopifyProductVariant } from '@/types/shopify';
 
 export function ProductModal() {
   const { quickViewProduct, closeQuickView, addToCart } = useCart();
+  const { currency } = useConfig();
   const [selectedVariant, setSelectedVariant] = useState<ShopifyProductVariant | null>(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -26,7 +29,7 @@ export function ProductModal() {
   if (!quickViewProduct) return null;
 
   const images = quickViewProduct.images?.edges?.map((e) => e.node.url) || [
-    quickViewProduct.featuredImage?.url || 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop',
+    quickViewProduct.featuredImage?.url || 'https://images.unsplash.com/photo-1522056615691-da7b810682b5?q=80&w=800&auto=format&fit=crop',
   ];
 
   const currentPrice = selectedVariant?.price || quickViewProduct.priceRange?.minVariantPrice || {
@@ -70,6 +73,7 @@ export function ProductModal() {
         <button
           onClick={closeQuickView}
           className="absolute top-4 right-4 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 shadow-sm transition-colors"
+          title="Закрити"
         >
           <X className="h-5 w-5" />
         </button>
@@ -91,7 +95,7 @@ export function ProductModal() {
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
                   className={`relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border-2 transition-all ${
-                    activeImageIndex === idx ? 'border-zinc-900 shadow-sm' : 'border-transparent opacity-70 hover:opacity-100'
+                    activeImageIndex === idx ? 'border-zinc-950 shadow-sm' : 'border-transparent opacity-70 hover:opacity-100'
                   }`}
                 >
                   <img src={img} alt="thumbnail" className="h-full w-full object-cover" />
@@ -104,43 +108,70 @@ export function ProductModal() {
         {/* Right: Info & Purchase options */}
         <div className="md:w-1/2 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
           <div>
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-2">
-              <span>{quickViewProduct.vendor || 'Nordic Studio'}</span>
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2">
+              <span className="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/60 font-black">
+                {quickViewProduct.vendor || 'Proboard Official'}
+              </span>
               <span>•</span>
-              <span>{quickViewProduct.productType || 'Каталог'}</span>
+              <span className="text-zinc-500">{quickViewProduct.productType || 'Бордспорт'}</span>
             </div>
 
-            <h2 className="text-2xl font-bold tracking-tight text-zinc-950 sm:text-3xl">
+            <h2 className="text-2xl font-black tracking-tight text-zinc-950 sm:text-3xl">
               {quickViewProduct.title}
             </h2>
 
             <div className="mt-3 flex items-baseline gap-3">
-              <span className="text-2xl font-extrabold text-zinc-900">
-                {formatPrice(currentPrice.amount, currentPrice.currencyCode)}
+              <span className="text-2xl sm:text-3xl font-black text-zinc-950">
+                {formatPrice(currentPrice.amount, currentPrice.currencyCode, currency)}
               </span>
-              <span className="inline-flex items-center rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700">
-                В наличии в магазине
+              <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-bold text-emerald-700 border border-emerald-200/60">
+                В наявності на складі ЄС
               </span>
             </div>
 
-            <p className="mt-4 text-sm text-zinc-600 leading-relaxed">
+            {/* Micro specs */}
+            {quickViewProduct.specs && (
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {quickViewProduct.specs.flex && (
+                  <span className="text-[11px] font-bold bg-zinc-100 text-zinc-800 px-2 py-0.5 rounded">
+                    ⚡ Flex {quickViewProduct.specs.flex.split(' ')[0]}
+                  </span>
+                )}
+                {quickViewProduct.specs.profile && (
+                  <span className="text-[11px] font-bold bg-zinc-100 text-zinc-800 px-2 py-0.5 rounded">
+                    🎯 {quickViewProduct.specs.profile.split(' ')[0]}
+                  </span>
+                )}
+              </div>
+            )}
+
+            <p className="mt-3 text-xs sm:text-sm text-zinc-600 leading-relaxed line-clamp-3">
               {quickViewProduct.description}
             </p>
 
+            <Link
+              href={`/products/${quickViewProduct.handle}`}
+              onClick={closeQuickView}
+              className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-emerald-700 hover:text-emerald-800"
+            >
+              <span>Всі характеристики та відгуки</span>
+              <ExternalLink className="h-3 w-3" />
+            </Link>
+
             {/* Variant selector */}
             {quickViewProduct.variants?.edges && quickViewProduct.variants.edges.length > 1 && (
-              <div className="mt-6">
-                <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 mb-2.5">
-                  Вариант / Размер
+              <div className="mt-5">
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-800 mb-2">
+                  Оберіть ростовку / розмір
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {quickViewProduct.variants.edges.map(({ node }) => (
                     <button
                       key={node.id}
                       onClick={() => setSelectedVariant(node)}
-                      className={`rounded-xl border px-3.5 py-2 text-xs font-semibold transition-all ${
+                      className={`rounded-xl border px-3 py-1.5 text-xs font-bold transition-all ${
                         selectedVariant?.id === node.id
-                          ? 'border-zinc-900 bg-zinc-900 text-white shadow-sm'
+                          ? 'border-zinc-950 bg-zinc-950 text-white shadow-sm'
                           : 'border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300'
                       }`}
                     >
@@ -152,9 +183,9 @@ export function ProductModal() {
             )}
 
             {/* Quantity */}
-            <div className="mt-6 flex items-center gap-4">
-              <span className="text-xs font-semibold uppercase tracking-wider text-zinc-700">
-                Количество
+            <div className="mt-5 flex items-center gap-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-zinc-800">
+                Кількість
               </span>
               <div className="flex items-center rounded-xl border border-zinc-200 bg-zinc-50 p-1">
                 <button
@@ -180,24 +211,26 @@ export function ProductModal() {
           </div>
 
           {/* Action buttons */}
-          <div className="mt-8 pt-6 border-t border-zinc-100">
+          <div className="mt-6 pt-4 border-t border-zinc-100">
             <button
               onClick={handleAddToCart}
-              className={`w-full flex items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-semibold shadow-lg transition-all active:scale-[0.98] ${
+              className={`w-full flex items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold shadow-lg transition-all active:scale-[0.98] ${
                 isAdded
                   ? 'bg-emerald-600 text-white'
-                  : 'bg-zinc-900 text-white hover:bg-zinc-800 hover:shadow-xl'
+                  : 'bg-zinc-950 text-white hover:bg-zinc-800 hover:shadow-xl'
               }`}
             >
               {isAdded ? (
                 <>
                   <Check className="h-4 w-4" />
-                  <span>Добавлено в корзину!</span>
+                  <span>Додано в кошик!</span>
                 </>
               ) : (
                 <>
                   <ShoppingBag className="h-4 w-4" />
-                  <span>Добавить в корзину • {formatPrice(Number(currentPrice.amount) * quantity, currentPrice.currencyCode)}</span>
+                  <span>
+                    Додати в кошик • {formatPrice(Number(currentPrice.amount) * quantity, currentPrice.currencyCode, currency)}
+                  </span>
                 </>
               )}
             </button>
@@ -205,12 +238,12 @@ export function ProductModal() {
             {/* Mini guarantees */}
             <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-zinc-500">
               <div className="flex items-center gap-1.5">
-                <Truck className="h-3.5 w-3.5 text-zinc-400" />
-                <span>Быстрая доставка</span>
+                <Truck className="h-3.5 w-3.5 text-emerald-600" />
+                <span className="font-semibold text-zinc-800">Нова Пошта 1-3 дні</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <RefreshCw className="h-3.5 w-3.5 text-zinc-400" />
-                <span>30 дней на возврат</span>
+                <RefreshCw className="h-3.5 w-3.5 text-emerald-600" />
+                <span className="font-semibold text-zinc-800">14 днів на обмін</span>
               </div>
             </div>
           </div>

@@ -19,12 +19,16 @@ export function AnnouncementBar() {
         <div className="flex-1 flex items-center justify-center gap-2 text-center">
           <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-zinc-300">
-            Сезонне оновлення: <strong>безкоштовна доставка</strong> при замовленні від $150
+            🏂 <strong>Сезон сноубордингу 2025/2026:</strong> безкоштовна доставка спорядження Новою Поштою від 5000 ₴
           </span>
-          <span className="hidden md:inline text-zinc-500">•</span>
-          <span className="hidden md:inline-flex items-center gap-1 text-emerald-400 font-semibold">
+          <span className="hidden md:inline text-zinc-600">•</span>
+          <span className="hidden md:inline text-zinc-300">
+            📦 Оплата при отриманні (COD)
+          </span>
+          <span className="hidden lg:inline text-zinc-600">•</span>
+          <span className="hidden lg:inline-flex items-center gap-1 text-emerald-400 font-bold">
             <Tag className="h-3 w-3" />
-            <span>Промокод: WELCOME10 (-10%)</span>
+            <span>Промокод: RIDER10 (-10%)</span>
           </span>
         </div>
 

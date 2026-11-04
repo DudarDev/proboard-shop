@@ -12,6 +12,7 @@ import { Footer } from '@/components/Footer';
 import { ProductCard } from '@/components/ProductCard';
 import { OneClickModal } from '@/components/OneClickModal';
 import { SizeGuideModal } from '@/components/SizeGuideModal';
+import { BoardSizeCalculatorModal } from '@/components/BoardSizeCalculatorModal';
 import {
   Heart,
   ShoppingBag,
@@ -27,6 +28,9 @@ import {
   Zap,
   Ruler,
   Sparkles,
+  Award,
+  Layers,
+  Compass,
 } from 'lucide-react';
 
 interface Props {
@@ -47,32 +51,33 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
   const [isAdded, setIsAdded] = useState(false);
   const [isOneClickOpen, setIsOneClickOpen] = useState(false);
   const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [bundleAdded, setBundleAdded] = useState(false);
   const [activeTab, setActiveTab] = useState<'desc' | 'specs' | 'shipping' | 'reviews'>('desc');
   const [copied, setCopied] = useState(false);
 
-  // Simulated reviews
+  // Simulated Ukrainian rider reviews
   const [reviews, setReviews] = useState([
     {
       id: 1,
-      author: 'Александр М.',
+      author: 'Ігор С. (Драгобрат / Буковель)',
       rating: 5,
-      date: '2 дня назад',
-      text: 'Качество превзошло все ожидания! Материал плотный, швы идеальные. Доставили за 2 дня в аккуратной коробке.',
+      date: 'Вчора',
+      text: 'Спорядження найвищого рівня! Дошка тримає крижаний схил як по рейках, клацання з кікерів вибухове. Прийшло Новою Поштою за 2 дні в ідеальній упаковці з гарантійним талоном.',
     },
     {
       id: 2,
-      author: 'Елена В.',
+      author: 'Максим Т. (Київ)',
       rating: 5,
-      date: '1 неделю назад',
-      text: 'Очень стильная вещь, сидит превосходно. В жизни выглядит даже лучше, чем на фотографиях на сайте.',
+      date: '3 дні тому',
+      text: 'Брав комплектом. Калькулятор ростовки порахував точно під мої 178 см і 76 кг — дошка лягла в руку ідеально. Дуже зручно, що є оплата при отриманні на пошті!',
     },
     {
       id: 3,
-      author: 'Дмитрий К.',
-      rating: 4,
-      date: '2 недели назад',
-      text: 'Отличный товар, полностью соответствует описанию. Однозначно рекомендую!',
+      author: 'Олена К. (Львів)',
+      rating: 5,
+      date: '1 тиждень тому',
+      text: 'Оригінал 100%! Мембрана і фурнітура перевірені в сильний снігопад і мороз -12°C. Дякую команді Proboard за швидку консультацію в Telegram.',
     },
   ]);
 
@@ -151,22 +156,22 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
           <nav className="flex items-center gap-2 text-xs text-zinc-500">
             <Link href="/" className="hover:text-zinc-900 transition-colors flex items-center gap-1">
               <ArrowLeft className="h-3.5 w-3.5" />
-              <span>Главная</span>
+              <span>Головна</span>
             </Link>
             <span>/</span>
             <Link href="/#catalog" className="hover:text-zinc-900 transition-colors">
-              Каталог
+              Каталог спорядження
             </Link>
             <span>/</span>
-            <span className="text-zinc-900 font-medium truncate max-w-xs">{product.title}</span>
+            <span className="text-zinc-900 font-semibold truncate max-w-xs">{product.title}</span>
           </nav>
 
           <button
             onClick={handleShare}
-            className="flex items-center gap-1.5 rounded-full border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-50 transition-colors"
+            className="flex items-center gap-1.5 rounded-full border border-zinc-200 px-3 py-1 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 transition-colors"
           >
             <Share2 className="h-3.5 w-3.5" />
-            <span>{copied ? 'Ссылка скопирована!' : 'Поделиться'}</span>
+            <span>{copied ? 'Посилання скопійовано!' : 'Поділитися'}</span>
           </button>
         </div>
 
@@ -188,7 +193,7 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                     ? 'bg-rose-50 text-rose-500'
                     : 'bg-white/90 text-zinc-700 hover:bg-white hover:text-rose-500'
                 }`}
-                title={isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'}
+                title={isFavorite ? 'Видалити з обраного' : 'Додати в обране'}
               >
                 <Heart className={`h-5 w-5 ${isFavorite ? 'fill-rose-500' : ''}`} />
               </button>
@@ -217,13 +222,15 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
           {/* Details & Actions Column */}
           <div className="flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-2">
-                <span>{product.vendor || 'Atelier Nordic'}</span>
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2">
+                <span className="bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200/60 font-black">
+                  {product.vendor || 'Proboard Official'}
+                </span>
                 <span>•</span>
-                <span>{product.productType || 'Каталог'}</span>
+                <span className="text-zinc-500">{product.productType || 'Спорядження'}</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-950">
+              <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-zinc-950">
                 {product.title}
               </h1>
 
@@ -234,49 +241,94 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                     <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <span className="text-xs font-bold text-zinc-900">4.9</span>
+                <span className="text-xs font-black text-zinc-900">4.9 / 5.0</span>
                 <span className="text-xs text-zinc-400">•</span>
-                <span className="text-xs text-zinc-500">{reviews.length} отзывов покупателей</span>
+                <span className="text-xs text-zinc-500 font-semibold">{reviews.length} відгуки райдерів</span>
               </div>
 
-              {/* Price */}
+              {/* Price & Stock */}
               <div className="mt-4 flex items-baseline gap-3">
-                <span className="text-3xl font-extrabold text-zinc-950">
+                <span className="text-3xl sm:text-4xl font-black text-zinc-950">
                   {formatPrice(currentPrice.amount, currentPrice.currencyCode, currency)}
                 </span>
-                <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
-                  В наличии на складе
+                <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 border border-emerald-200/60">
+                  В наявності на європейському складі
                 </span>
               </div>
 
-              <p className="mt-6 text-sm text-zinc-600 leading-relaxed font-normal">
+              {/* Board quick specs highlight pillbox */}
+              {product.specs && (
+                <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-2.5 p-4 rounded-2xl bg-zinc-50 border border-zinc-200/80 text-xs">
+                  {product.specs.flex && (
+                    <div>
+                      <span className="text-[10px] text-zinc-400 uppercase font-black block">Жорсткість</span>
+                      <span className="font-bold text-zinc-900">{product.specs.flex.split(' ')[0]}</span>
+                    </div>
+                  )}
+                  {product.specs.profile && (
+                    <div>
+                      <span className="text-[10px] text-zinc-400 uppercase font-black block">Прогин</span>
+                      <span className="font-bold text-zinc-900 truncate block">{product.specs.profile.split(' ')[0]}</span>
+                    </div>
+                  )}
+                  {product.specs.terrain && (
+                    <div>
+                      <span className="text-[10px] text-zinc-400 uppercase font-black block">Стиль</span>
+                      <span className="font-bold text-zinc-900 truncate block">{product.specs.terrain.split('/')[0]}</span>
+                    </div>
+                  )}
+                  {product.specs.level && (
+                    <div className="col-span-2 sm:col-span-3 pt-2 border-t border-zinc-200/60 flex items-center justify-between">
+                      <span className="text-[11px] text-zinc-500 font-semibold">Рівень райдера:</span>
+                      <span className="font-extrabold text-emerald-700 bg-emerald-100/60 px-2 py-0.5 rounded text-[11px]">
+                        {product.specs.level}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <p className="mt-5 text-sm text-zinc-600 leading-relaxed font-normal">
                 {product.description}
               </p>
 
               {/* Variants */}
               {product.variants?.edges && product.variants.edges.length > 1 && (
-                <div className="mt-8">
+                <div className="mt-6">
                   <div className="flex items-center justify-between mb-3">
                     <label className="block text-xs font-bold uppercase tracking-wider text-zinc-800">
-                      Оберіть варіант ({product.variants.edges.length} доступно)
+                      Оберіть ростовку / розмір ({product.variants.edges.length} доступно)
                     </label>
-                    <button
-                      type="button"
-                      onClick={() => setIsSizeGuideOpen(true)}
-                      className="flex items-center gap-1 text-xs font-semibold text-emerald-700 hover:text-emerald-800 underline"
-                    >
-                      <Ruler className="h-3.5 w-3.5" />
-                      <span>Таблиця розмірів</span>
-                    </button>
+
+                    {product.productType === 'Сноуборди' ? (
+                      <button
+                        type="button"
+                        onClick={() => setIsCalculatorOpen(true)}
+                        className="flex items-center gap-1 text-xs font-bold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/80 transition-all active:scale-95"
+                      >
+                        <Ruler className="h-3.5 w-3.5" />
+                        <span>Калькулятор ростовки</span>
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => setIsSizeGuideOpen(true)}
+                        className="flex items-center gap-1 text-xs font-semibold text-emerald-700 hover:text-emerald-800 underline"
+                      >
+                        <Ruler className="h-3.5 w-3.5" />
+                        <span>Таблиця розмірів</span>
+                      </button>
+                    )}
                   </div>
+
                   <div className="flex flex-wrap gap-2.5">
                     {product.variants.edges.map(({ node }) => (
                       <button
                         key={node.id}
                         onClick={() => setSelectedVariant(node)}
-                        className={`rounded-xl border px-4 py-2.5 text-xs font-semibold transition-all ${
+                        className={`rounded-xl border px-4 py-2.5 text-xs font-bold transition-all ${
                           selectedVariant?.id === node.id
-                            ? 'border-zinc-900 bg-zinc-900 text-white shadow-md'
+                            ? 'border-zinc-950 bg-zinc-950 text-white shadow-md'
                             : 'border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 hover:bg-zinc-50'
                         }`}
                       >
@@ -288,9 +340,9 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
               )}
 
               {/* Quantity */}
-              <div className="mt-8 flex items-center gap-4">
+              <div className="mt-6 flex items-center gap-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-zinc-800">
-                  Количество
+                  Кількість
                 </span>
                 <div className="flex items-center rounded-xl border border-zinc-200 bg-zinc-50 p-1">
                   <button
@@ -323,7 +375,7 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                   className={`flex-1 flex items-center justify-center gap-2 rounded-2xl py-4 text-sm font-bold shadow-xl transition-all active:scale-[0.98] ${
                     isAdded
                       ? 'bg-emerald-600 text-white'
-                      : 'bg-zinc-900 text-white hover:bg-zinc-800 hover:shadow-2xl'
+                      : 'bg-zinc-950 text-white hover:bg-zinc-800 hover:shadow-2xl'
                   }`}
                 >
                   {isAdded ? (
@@ -365,22 +417,28 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                 onClose={() => setIsSizeGuideOpen(false)}
               />
 
+              {/* Board Size Calculator Modal */}
+              <BoardSizeCalculatorModal
+                isOpen={isCalculatorOpen}
+                onClose={() => setIsCalculatorOpen(false)}
+              />
+
               {/* Key Guarantees */}
               <div className="mt-6 grid grid-cols-3 gap-4 text-xs text-zinc-600 border-t border-zinc-100 pt-6">
                 <div className="flex flex-col items-center text-center gap-1.5">
                   <Truck className="h-5 w-5 text-emerald-600" />
-                  <span className="font-semibold text-zinc-900">Бесплатная доставка</span>
-                  <span className="text-[11px] text-zinc-400">при заказе от $150</span>
+                  <span className="font-bold text-zinc-900">Безкоштовна доставка</span>
+                  <span className="text-[11px] text-zinc-400">при замовленні від 5000 ₴</span>
                 </div>
                 <div className="flex flex-col items-center text-center gap-1.5">
                   <RefreshCw className="h-5 w-5 text-emerald-600" />
-                  <span className="font-semibold text-zinc-900">30 дней на возврат</span>
-                  <span className="text-[11px] text-zinc-400">без лишних вопросов</span>
+                  <span className="font-bold text-zinc-900">14 днів на обмін</span>
+                  <span className="text-[11px] text-zinc-400">швидка заміна ростовки</span>
                 </div>
                 <div className="flex flex-col items-center text-center gap-1.5">
                   <ShieldCheck className="h-5 w-5 text-emerald-600" />
-                  <span className="font-semibold text-zinc-900">Гарантия 2 года</span>
-                  <span className="text-[11px] text-zinc-400">официальный сервис</span>
+                  <span className="font-bold text-zinc-900">Гарантія 2 роки</span>
+                  <span className="text-[11px] text-zinc-400">офіційний паспорт бренду</span>
                 </div>
               </div>
             </div>
@@ -500,47 +558,47 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
 
         {/* Detailed Tabs Section */}
         <div className="mt-20 border-t border-zinc-200 pt-12">
-          <div className="flex border-b border-zinc-200 gap-8">
+          <div className="flex border-b border-zinc-200 gap-8 overflow-x-auto">
             <button
               onClick={() => setActiveTab('desc')}
-              className={`pb-4 text-sm font-bold transition-all relative ${
+              className={`pb-4 text-sm font-bold transition-all relative whitespace-nowrap ${
                 activeTab === 'desc'
                   ? 'text-zinc-950 border-b-2 border-zinc-950'
                   : 'text-zinc-500 hover:text-zinc-800'
               }`}
             >
-              Подробное описание
+              Опис спорядження
             </button>
             <button
               onClick={() => setActiveTab('specs')}
-              className={`pb-4 text-sm font-bold transition-all relative ${
+              className={`pb-4 text-sm font-bold transition-all relative whitespace-nowrap ${
                 activeTab === 'specs'
                   ? 'text-zinc-950 border-b-2 border-zinc-950'
                   : 'text-zinc-500 hover:text-zinc-800'
               }`}
             >
-              Характеристики
+              Технічні характеристики
             </button>
             <button
               onClick={() => setActiveTab('shipping')}
-              className={`pb-4 text-sm font-bold transition-all relative ${
+              className={`pb-4 text-sm font-bold transition-all relative whitespace-nowrap ${
                 activeTab === 'shipping'
                   ? 'text-zinc-950 border-b-2 border-zinc-950'
                   : 'text-zinc-500 hover:text-zinc-800'
               }`}
             >
-              Доставка и оплата
+              Доставка Новою Поштою & Оплата
             </button>
             <button
               onClick={() => setActiveTab('reviews')}
-              className={`pb-4 text-sm font-bold transition-all relative flex items-center gap-1.5 ${
+              className={`pb-4 text-sm font-bold transition-all relative flex items-center gap-1.5 whitespace-nowrap ${
                 activeTab === 'reviews'
                   ? 'text-zinc-950 border-b-2 border-zinc-950'
                   : 'text-zinc-500 hover:text-zinc-800'
               }`}
             >
-              <span>Отзывы</span>
-              <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600">
+              <span>Відгуки райдерів</span>
+              <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 font-bold">
                 {reviews.length}
               </span>
             </button>
@@ -548,13 +606,19 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
 
           <div className="py-8">
             {activeTab === 'desc' && (
-              <div className="max-w-3xl text-sm text-zinc-600 space-y-4 leading-relaxed">
-                <p>{product.description}</p>
+              <div className="max-w-3xl text-sm text-zinc-700 space-y-4 leading-relaxed">
+                <p className="text-base font-medium text-zinc-900">{product.description}</p>
                 <p>
-                  Каждое изделие проходит строгий трехступенчатый контроль качества перед отправкой.
-                  Мы используем экологичные сертифицированные материалы и поддерживаем принципы
-                  ответственного потребления.
+                  Кожна одиниця спорядження Proboard постачається безпосередньо з центрального європейського логістичного хабу. Це гарантує 100% оригінальність товару, наявність серійного заводського номера та збереження фірмової міжнародної гарантії від виробника.
                 </p>
+                <div className="mt-4 p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                  <h4 className="font-bold text-zinc-900 text-xs uppercase tracking-wider mb-2">Передпродажна підготовка:</h4>
+                  <ul className="list-disc pl-5 text-xs space-y-1.5 text-zinc-600">
+                    <li>Візуальна перевірка геометрії кантів та відсутності розшарувань</li>
+                    <li>Збереження фабричного парафіну швидкого ковзання</li>
+                    <li>Оригінальна коробка та захисні кутики для безпечного транспортування Новою Поштою</li>
+                  </ul>
+                </div>
               </div>
             )}
 
@@ -562,41 +626,95 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
               <div className="max-w-2xl">
                 <dl className="divide-y divide-zinc-100 text-sm">
                   <div className="py-3 flex justify-between">
-                    <dt className="text-zinc-500">Производитель / Бренд</dt>
-                    <dd className="font-semibold text-zinc-900">{product.vendor || 'Nordic Studio'}</dd>
+                    <dt className="text-zinc-500 font-medium">Бренд / Виробник</dt>
+                    <dd className="font-bold text-zinc-950">{product.vendor || 'Proboard Gear'}</dd>
                   </div>
                   <div className="py-3 flex justify-between">
-                    <dt className="text-zinc-500">Категория</dt>
-                    <dd className="font-semibold text-zinc-900">{product.productType || 'Аксессуары'}</dd>
+                    <dt className="text-zinc-500 font-medium">Категорія</dt>
+                    <dd className="font-bold text-zinc-950">{product.productType || 'Бордспорт'}</dd>
                   </div>
-                  <div className="py-3 flex justify-between">
-                    <dt className="text-zinc-500">Артикул (Handle)</dt>
-                    <dd className="font-mono text-xs text-zinc-700">{product.handle}</dd>
-                  </div>
-                  <div className="py-3 flex justify-between">
-                    <dt className="text-zinc-500">Shopify Product ID</dt>
-                    <dd className="font-mono text-xs text-zinc-400">{product.id}</dd>
-                  </div>
-                  <div className="py-3 flex justify-between">
-                    <dt className="text-zinc-500">Теги</dt>
-                    <dd className="text-zinc-700">{product.tags?.join(', ') || 'Стандарт'}</dd>
-                  </div>
+                  {product.specs?.flex && (
+                    <div className="py-3 flex justify-between">
+                      <dt className="text-zinc-500 font-medium">Жорсткість (Flex Index)</dt>
+                      <dd className="font-bold text-emerald-700">{product.specs.flex}</dd>
+                    </div>
+                  )}
+                  {product.specs?.profile && (
+                    <div className="py-3 flex justify-between">
+                      <dt className="text-zinc-500 font-medium">Прогин / Геометрія</dt>
+                      <dd className="font-bold text-zinc-900">{product.specs.profile}</dd>
+                    </div>
+                  )}
+                  {product.specs?.shape && (
+                    <div className="py-3 flex justify-between">
+                      <dt className="text-zinc-500 font-medium">Форма (Shape)</dt>
+                      <dd className="font-bold text-zinc-900">{product.specs.shape}</dd>
+                    </div>
+                  )}
+                  {product.specs?.terrain && (
+                    <div className="py-3 flex justify-between">
+                      <dt className="text-zinc-500 font-medium">Стиль катання (Terrain)</dt>
+                      <dd className="font-bold text-zinc-900">{product.specs.terrain}</dd>
+                    </div>
+                  )}
+                  {product.specs?.level && (
+                    <div className="py-3 flex justify-between">
+                      <dt className="text-zinc-500 font-medium">Рекомендований рівень</dt>
+                      <dd className="font-bold text-emerald-700">{product.specs.level}</dd>
+                    </div>
+                  )}
+                  {product.specs?.waistWidth && (
+                    <div className="py-3 flex justify-between">
+                      <dt className="text-zinc-500 font-medium">Ширина талії</dt>
+                      <dd className="font-mono text-xs text-zinc-800">{product.specs.waistWidth}</dd>
+                    </div>
+                  )}
+                  {product.specs?.origin && (
+                    <div className="py-3 flex justify-between">
+                      <dt className="text-zinc-500 font-medium">Походження / Склад</dt>
+                      <dd className="text-zinc-800 font-semibold">{product.specs.origin}</dd>
+                    </div>
+                  )}
+                  {product.specs?.warranty && (
+                    <div className="py-3 flex justify-between">
+                      <dt className="text-zinc-500 font-medium">Офіційна гарантія</dt>
+                      <dd className="font-bold text-emerald-700">{product.specs.warranty}</dd>
+                    </div>
+                  )}
+                  {product.specs?.features && product.specs.features.length > 0 && (
+                    <div className="py-3">
+                      <dt className="text-zinc-500 font-medium mb-2">Ключові технології:</dt>
+                      <dd className="flex flex-wrap gap-1.5">
+                        {product.specs.features.map((feat, i) => (
+                          <span key={i} className="text-xs font-semibold bg-zinc-100 text-zinc-800 px-2.5 py-1 rounded-lg">
+                            ✓ {feat}
+                          </span>
+                        ))}
+                      </dd>
+                    </div>
+                  )}
                 </dl>
               </div>
             )}
 
             {activeTab === 'shipping' && (
               <div className="max-w-3xl text-sm text-zinc-600 space-y-4 leading-relaxed">
-                <h4 className="font-bold text-zinc-900">Условия доставки</h4>
+                <h4 className="font-bold text-zinc-900 text-base">Доставка Новою Поштою по Україні</h4>
                 <p>
-                  • <strong>Стандартная доставка:</strong> 2-4 рабочих дня курьером или в пункт выдачи. Бесплатно при заказе от $150.
+                  • <strong>Терміни:</strong> 1-3 робочих дні у будь-яке працююче вантажне відділення або поштомат Нової Пошти.
                 </p>
                 <p>
-                  • <strong>Экспресс-доставка:</strong> в день заказа или на следующий день.
+                  • <strong>Безкоштовна доставка:</strong> для замовлень на суму від 5000 грн або $150.
                 </p>
-                <h4 className="font-bold text-zinc-900 pt-2">Способы оплаты</h4>
                 <p>
-                  Оплата картами Visa, Mastercard, МИР, Apple Pay, Google Pay через безопасный защищенный шлюз Shopify Payments.
+                  • <strong>Кур'єрська доставка:</strong> до дверей у Києві, Львові, Дніпрі, Одесі, Харкові та інших містах.
+                </p>
+                <h4 className="font-bold text-zinc-900 text-base pt-2">Способи оплати</h4>
+                <p>
+                  • <strong>Накладений платіж (COD):</strong> Оплата готівкою або карткою при отриманні у відділенні Нової Пошти після огляду посилки. Без передоплати!
+                </p>
+                <p>
+                  • <strong>Онлайн-оплата:</strong> Visa, Mastercard, Apple Pay, Google Pay через захищений еквайринг.
                 </p>
               </div>
             )}
@@ -605,36 +723,36 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
               <div className="max-w-3xl space-y-8">
                 {/* Review Form */}
                 <form onSubmit={handleAddReview} className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 space-y-4">
-                  <h4 className="text-sm font-bold text-zinc-900">Оставить отзыв о товаре</h4>
+                  <h4 className="text-sm font-bold text-zinc-900">Залишити відгук про спорядження</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-zinc-700 mb-1">Ваше имя</label>
+                      <label className="block text-xs font-semibold text-zinc-700 mb-1">Ваше ім'я або нікнейм</label>
                       <input
                         type="text"
-                        placeholder="Например, Михаил"
+                        placeholder="Наприклад, Богдан (Буковель)"
                         value={newReviewAuthor}
                         onChange={(e) => setNewReviewAuthor(e.target.value)}
                         className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-xs text-zinc-900 bg-white focus:border-zinc-900 focus:outline-none"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-zinc-700 mb-1">Оценка</label>
+                      <label className="block text-xs font-semibold text-zinc-700 mb-1">Оцінка</label>
                       <select
                         value={newReviewRating}
                         onChange={(e) => setNewReviewRating(Number(e.target.value))}
                         className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-xs text-zinc-900 bg-white focus:border-zinc-900 focus:outline-none"
                       >
-                        <option value={5}>★★★★★ (5 из 5)</option>
-                        <option value={4}>★★★★☆ (4 из 5)</option>
-                        <option value={3}>★★★☆☆ (3 из 5)</option>
+                        <option value={5}>★★★★★ (5 з 5) — Топ ракета</option>
+                        <option value={4}>★★★★☆ (4 з 5) — Добре спорядження</option>
+                        <option value={3}>★★★☆☆ (3 з 5) — Нормально</option>
                       </select>
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-zinc-700 mb-1">Ваш отзыв</label>
+                    <label className="block text-xs font-semibold text-zinc-700 mb-1">Ваш відгук</label>
                     <textarea
                       rows={3}
-                      placeholder="Поделитесь впечатлениями о качестве, материалах и доставке..."
+                      placeholder="Поділіться враженнями від катання, жорсткості, поведінки на схилі та швидкості доставки..."
                       value={newReviewText}
                       onChange={(e) => setNewReviewText(e.target.value)}
                       className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-xs text-zinc-900 bg-white focus:border-zinc-900 focus:outline-none"
@@ -642,9 +760,9 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                   </div>
                   <button
                     type="submit"
-                    className="rounded-xl bg-zinc-900 px-5 py-2.5 text-xs font-semibold text-white hover:bg-zinc-800 transition-colors"
+                    className="rounded-xl bg-zinc-950 px-5 py-2.5 text-xs font-bold text-white hover:bg-zinc-800 transition-colors"
                   >
-                    {reviewSubmitted ? 'Отзыв опубликован!' : 'Опубликовать отзыв'}
+                    {reviewSubmitted ? 'Відгук опубліковано!' : 'Опублікувати відгук'}
                   </button>
                 </form>
 
@@ -673,8 +791,8 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
         {/* Related Products Section */}
         {relatedProducts.length > 0 && (
           <div className="mt-20 border-t border-zinc-200 pt-16">
-            <h2 className="text-2xl font-bold tracking-tight text-zinc-900 mb-8">
-              Вам также может понравиться
+            <h2 className="text-2xl font-black tracking-tight text-zinc-950 mb-8">
+              Рекомендоване спорядження до комплекту
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedProducts.map((rel) => (

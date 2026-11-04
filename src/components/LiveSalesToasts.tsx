@@ -7,10 +7,12 @@ import { FALLBACK_PRODUCTS } from '@/lib/shopify';
 
 const RECENT_BUYERS = [
   { name: 'Олександр', city: 'Київ', productIdx: 0, time: '2 хв тому' },
-  { name: 'Марія', city: 'Львів', productIdx: 1, time: '5 хв тому' },
-  { name: 'Дмитро', city: 'Одеса', productIdx: 2, time: '8 хв тому' },
-  { name: 'Ірина', city: 'Дніпро', productIdx: 3, time: '12 хв тому' },
-  { name: 'Максим', city: 'Харків', productIdx: 4, time: '17 хв тому' },
+  { name: 'Тарас', city: 'Буковель', productIdx: 1, time: '4 хв тому' },
+  { name: 'Марія', city: 'Львів', productIdx: 2, time: '7 хв тому' },
+  { name: 'Дмитро', city: 'Івано-Франківськ', productIdx: 3, time: '11 хв тому' },
+  { name: 'Максим', city: 'Дніпро', productIdx: 4, time: '15 хв тому' },
+  { name: 'Ярослав', city: 'Одеса', productIdx: 5, time: '19 хв тому' },
+  { name: 'Сергій', city: 'Ужгород', productIdx: 6, time: '23 хв тому' },
 ];
 
 export function LiveSalesToasts() {

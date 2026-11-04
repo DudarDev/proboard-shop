@@ -13,8 +13,8 @@ import { LiveSalesToasts } from '@/components/LiveSalesToasts';
 import { LuckyDiscountModal } from '@/components/LuckyDiscountModal';
 
 export const metadata: Metadata = {
-  title: 'ATELIER | Headless Shopify Storefront',
-  description: 'Современный высокопроизводительный интернет-магазин на Next.js 14 и Shopify Storefront API.',
+  title: 'PROBOARD SHOP • Сноуборди, скейтборди та екстремальне спорядження | proboardshop.ua',
+  description: 'Офіційний магазин та дропшипінг бордспорту в Україні: сноуборди Nitro, Burton, Capita, кріплення Union, черевики ThirtyTwo, шоломи Oakley та оптика Anon. Доставка Новою Поштою, оплата при отриманні (COD).',
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className="scroll-smooth">
+    <html lang="uk" className="scroll-smooth">
       <body className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-zinc-900 selection:text-white flex flex-col justify-between pb-16 sm:pb-0">
         <AnnouncementBar />
         <ConfigProvider>

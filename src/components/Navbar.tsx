@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ShoppingBag, Settings2, Search, Heart } from 'lucide-react';
+import { ShoppingBag, Settings2, Search, Heart, Ruler, Flame } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { useConfig } from '@/context/ConfigContext';
@@ -11,47 +11,62 @@ import { CURRENCY_RATES } from '@/lib/utils';
 interface NavbarProps {
   onSearchChange?: (q: string) => void;
   searchQuery?: string;
+  onOpenCalculator?: () => void;
 }
 
-export function Navbar({ onSearchChange, searchQuery = '' }: NavbarProps) {
+export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator }: NavbarProps) {
   const { totalCount, toggleCart } = useCart();
   const { wishlistCount, openWishlist } = useWishlist();
   const { storeDomain, setIsSettingsOpen, currency, setCurrency } = useConfig();
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-zinc-200 bg-white/80 backdrop-blur-md transition-all">
+    <header className="sticky top-0 z-40 w-full border-b border-zinc-200 bg-white/90 backdrop-blur-md transition-all">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
         {/* Brand / Logo */}
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-900 text-white font-bold text-sm tracking-wider shadow-sm">
-              S
+          <Link href="/" className="flex items-center gap-2.5">
+            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-zinc-950 text-emerald-400 font-black text-lg tracking-wider shadow-md border border-zinc-800">
+              P
             </span>
             <div className="flex flex-col">
-              <span className="font-extrabold text-base tracking-tight text-zinc-900 leading-none">
-                ATELIER
-              </span>
-              <span className="text-[10px] font-semibold tracking-widest text-emerald-600 uppercase mt-0.5">
-                Headless Shopify
+              <div className="flex items-center gap-1">
+                <span className="font-black text-base tracking-tight text-zinc-950 leading-none">
+                  PROBOARD
+                </span>
+                <span className="text-[10px] font-bold text-white bg-emerald-600 px-1.5 py-0.2 rounded">
+                  SHOP
+                </span>
+              </div>
+              <span className="text-[9px] font-bold tracking-widest text-zinc-400 uppercase mt-0.5">
+                proboardshop.ua • dropship
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-5 text-xs font-semibold text-zinc-600">
+          <nav className="hidden lg:flex items-center gap-5 text-xs font-bold text-zinc-600">
             <Link href="/#catalog" className="hover:text-zinc-950 transition-colors">
               Каталог
             </Link>
             <Link href="/about" className="hover:text-zinc-950 transition-colors">
-              Про бренд
+              Про Proboard
             </Link>
             <Link href="/track-order" className="hover:text-zinc-950 transition-colors">
               Відстеження
             </Link>
             <Link href="/contact" className="hover:text-zinc-950 transition-colors">
-              Контакти & FAQ
+              Доставка & FAQ
             </Link>
+            {onOpenCalculator && (
+              <button
+                onClick={onOpenCalculator}
+                className="flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/80 transition-all active:scale-95"
+              >
+                <Ruler className="h-3 w-3" />
+                <span>Калькулятор ростовки</span>
+              </button>
+            )}
           </nav>
 
           {/* Status Badge */}
@@ -65,7 +80,7 @@ export function Navbar({ onSearchChange, searchQuery = '' }: NavbarProps) {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span>
-              {storeDomain ? storeDomain : 'Shopify Mock API'}
+              {storeDomain ? storeDomain : 'Shopify Dropship API'}
             </span>
             <Settings2 className="h-3 w-3 ml-0.5 opacity-60" />
           </button>
@@ -78,7 +93,7 @@ export function Navbar({ onSearchChange, searchQuery = '' }: NavbarProps) {
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400" />
               <input
                 type="text"
-                placeholder="Пошук товарів (рюкзак, худі, годинник...)"
+                placeholder="Пошук спорядження (Nitro, Burton, кріплення, шолом...)"
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
                 className="w-full rounded-full border border-zinc-200 bg-zinc-50/70 pl-10 pr-4 py-1.5 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:bg-white focus:outline-none focus:ring-1 focus:ring-zinc-900 transition-all"

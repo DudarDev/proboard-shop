@@ -23,6 +23,18 @@ export interface ShopifyProductVariant {
   image?: ShopifyImage;
 }
 
+export interface BoardSpecs {
+  flex?: string;
+  profile?: string;
+  shape?: string;
+  terrain?: string;
+  level?: string;
+  origin?: string;
+  warranty?: string;
+  waistWidth?: string;
+  features?: string[];
+}
+
 export interface ShopifyProduct {
   id: string;
   title: string;
@@ -47,6 +59,7 @@ export interface ShopifyProduct {
   tags?: string[];
   productType?: string;
   vendor?: string;
+  specs?: BoardSpecs;
 }
 
 export interface CartItem {

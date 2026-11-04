@@ -8,18 +8,21 @@ import { SlidersHorizontal, ArrowUpDown } from 'lucide-react';
 interface ProductGridProps {
   products: ShopifyProduct[];
   searchQuery: string;
+  onOpenCalculator?: () => void;
 }
 
 const CATEGORIES = [
-  { id: 'all', label: 'Все товары' },
-  { id: 'Рюкзаки', label: 'Рюкзаки' },
-  { id: 'Худи', label: 'Одежда' },
-  { id: 'Наушники', label: 'Аудио' },
-  { id: 'Часы', label: 'Часы' },
-  { id: 'Посуда', label: 'Для дома' },
+  { id: 'all', label: '🏂 Все спорядження' },
+  { id: 'Сноуборди', label: 'Сноуборди' },
+  { id: 'Скейтборди', label: 'Скейтборди' },
+  { id: 'Кріплення', label: 'Кріплення & Взуття' },
+  { id: 'Оптика', label: 'Оптика & Маски' },
+  { id: 'Захист', label: 'Шоломи & Захист' },
+  { id: 'Одяг', label: 'Анораки & Одяг' },
+  { id: 'Аксесуари', label: 'Догляд & Сервіс' },
 ];
 
-export function ProductGrid({ products, searchQuery }: ProductGridProps) {
+export function ProductGrid({ products, searchQuery, onOpenCalculator }: ProductGridProps) {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc'>('featured');
 
@@ -32,7 +35,12 @@ export function ProductGrid({ products, searchQuery }: ProductGridProps) {
           const matchTitle = product.title.toLowerCase().includes(q);
           const matchDesc = product.description.toLowerCase().includes(q);
           const matchTags = product.tags?.some((t) => t.toLowerCase().includes(q));
-          if (!matchTitle && !matchDesc && !matchTags) return false;
+          const matchSpecs = product.specs && (
+            (product.specs.flex && product.specs.flex.toLowerCase().includes(q)) ||
+            (product.specs.profile && product.specs.profile.toLowerCase().includes(q)) ||
+            (product.specs.terrain && product.specs.terrain.toLowerCase().includes(q))
+          );
+          if (!matchTitle && !matchDesc && !matchTags && !matchSpecs) return false;
         }
 
         // Category filter
@@ -59,17 +67,17 @@ export function ProductGrid({ products, searchQuery }: ProductGridProps) {
       {/* Header & Filter Controls */}
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-zinc-200 pb-6 mb-8">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
-            Каталог товаров
+          <h2 className="text-2xl font-black tracking-tight text-zinc-950 sm:text-3xl">
+            Каталог спорядження Proboard
           </h2>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-xs sm:text-sm text-zinc-500 font-medium">
             {filteredProducts.length}{' '}
             {filteredProducts.length === 1
-              ? 'товар'
+              ? 'модель'
               : filteredProducts.length > 1 && filteredProducts.length < 5
-              ? 'товара'
-              : 'товаров'}{' '}
-            {searchQuery && `по запросу «${searchQuery}»`}
+              ? 'моделі'
+              : 'моделей'}{' '}
+            в наявності {searchQuery && `за запитом «${searchQuery}»`} • Офіційний європейський склад
           </p>
         </div>
 
@@ -81,10 +89,10 @@ export function ProductGrid({ products, searchQuery }: ProductGridProps) {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`rounded-full px-3.5 py-1.5 text-xs font-semibold whitespace-nowrap transition-all ${
+                className={`rounded-full px-3.5 py-1.5 text-xs font-bold whitespace-nowrap transition-all ${
                   selectedCategory === cat.id
-                    ? 'bg-zinc-900 text-white shadow-sm'
-                    : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200/80 hover:text-zinc-900'
+                    ? 'bg-zinc-950 text-emerald-400 shadow-sm'
+                    : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200/80 hover:text-zinc-950'
                 }`}
               >
                 {cat.label}
@@ -98,11 +106,11 @@ export function ProductGrid({ products, searchQuery }: ProductGridProps) {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="appearance-none rounded-xl border border-zinc-200 bg-white pl-8 pr-8 py-1.5 text-xs font-semibold text-zinc-700 hover:border-zinc-300 focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 cursor-pointer shadow-sm"
+              className="appearance-none rounded-xl border border-zinc-200 bg-white pl-8 pr-8 py-1.5 text-xs font-bold text-zinc-700 hover:border-zinc-300 focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 cursor-pointer shadow-sm"
             >
-              <option value="featured">Сначала популярные</option>
-              <option value="price-asc">Цена: по возрастанию</option>
-              <option value="price-desc">Цена: по убыванию</option>
+              <option value="featured">Спочатку популярні</option>
+              <option value="price-asc">Ціна: від меншої</option>
+              <option value="price-desc">Ціна: від більшої</option>
             </select>
           </div>
         </div>
@@ -116,19 +124,19 @@ export function ProductGrid({ products, searchQuery }: ProductGridProps) {
           ))}
         </div>
       ) : (
-        <div className="rounded-2xl border border-dashed border-zinc-300 p-12 text-center">
+        <div className="rounded-2xl border border-dashed border-zinc-300 p-12 text-center bg-zinc-50/50">
           <SlidersHorizontal className="mx-auto h-8 w-8 text-zinc-400" />
-          <h3 className="mt-3 text-base font-semibold text-zinc-900">Товары не найдены</h3>
-          <p className="mt-1 text-sm text-zinc-500">
-            Попробуйте изменить поисковый запрос или сбросить фильтры.
+          <h3 className="mt-3 text-base font-bold text-zinc-900">Спорядження не знайдено</h3>
+          <p className="mt-1 text-xs text-zinc-500">
+            Спробуйте змінити пошуковий запит або скинути категорію.
           </p>
           <button
             onClick={() => {
               setSelectedCategory('all');
             }}
-            className="mt-4 rounded-xl bg-zinc-900 px-4 py-2 text-xs font-semibold text-white hover:bg-zinc-800 transition-colors"
+            className="mt-4 rounded-xl bg-zinc-900 px-4 py-2 text-xs font-bold text-white hover:bg-zinc-800 transition-colors"
           >
-            Сбросить категорию
+            Скинути фільтр
           </button>
         </div>
       )}
