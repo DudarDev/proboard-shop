@@ -87,7 +87,7 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
   const images = product.images?.edges?.map((e) => e.node.url) || [
-    product.featuredImage?.url || 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop',
+    product.featuredImage?.url || 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=800&auto=format&fit=crop',
   ];
 
   const currentPrice = selectedVariant?.price || product.priceRange?.minVariantPrice || {

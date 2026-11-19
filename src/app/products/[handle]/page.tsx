@@ -14,11 +14,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = await getProductByHandle(params.handle);
   if (!product) {
     return {
-      title: 'Товар не найден | ATELIER',
+      title: 'Товар не знайдено | PROBOARD SHOP',
     };
   }
   return {
-    title: `${product.title} | ATELIER Storefront`,
+    title: `${product.title} | PROBOARD TACTICS • proboardshop.ua`,
     description: product.description.slice(0, 160),
     openGraph: {
       title: product.title,

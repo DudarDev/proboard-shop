@@ -29,7 +29,7 @@ export function ProductModal() {
   if (!quickViewProduct) return null;
 
   const images = quickViewProduct.images?.edges?.map((e) => e.node.url) || [
-    quickViewProduct.featuredImage?.url || 'https://images.unsplash.com/photo-1522056615691-da7b810682b5?q=80&w=800&auto=format&fit=crop',
+    quickViewProduct.featuredImage?.url || 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=800&auto=format&fit=crop',
   ];
 
   const currentPrice = selectedVariant?.price || quickViewProduct.priceRange?.minVariantPrice || {

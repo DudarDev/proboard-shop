@@ -198,14 +198,14 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     rating: 4.8,
     reviewCount: 156,
     featuredImage: {
-      url: 'https://images.unsplash.com/photo-1522056615691-da7b810682b5?q=80&w=1000&auto=format&fit=crop',
+      url: 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?q=80&w=1000&auto=format&fit=crop',
       altText: 'Burton Custom Flying V Snowboard',
     },
     images: {
       edges: [
         {
           node: {
-            url: 'https://images.unsplash.com/photo-1522056615691-da7b810682b5?q=80&w=1000&auto=format&fit=crop',
+            url: 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?q=80&w=1000&auto=format&fit=crop',
             altText: 'Burton Custom top graphic',
           },
         },
@@ -436,14 +436,14 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     rating: 5.0,
     reviewCount: 88,
     featuredImage: {
-      url: 'https://images.unsplash.com/photo-1522056615691-da7b810682b5?q=80&w=1000&auto=format&fit=crop',
+      url: 'https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=1000&auto=format&fit=crop',
       altText: 'Nitro Team Pro Snowboard',
     },
     images: {
       edges: [
         {
           node: {
-            url: 'https://images.unsplash.com/photo-1522056615691-da7b810682b5?q=80&w=1000&auto=format&fit=crop',
+            url: 'https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=1000&auto=format&fit=crop',
             altText: 'Nitro Team rider',
           },
         },
@@ -1580,15 +1580,16 @@ export async function shopifyFetch<T>({
   const domain = credentials?.domain || process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN;
   const token = credentials?.storefrontToken || process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
-  let endpoint = 'https://mock.shop/api';
+  // Only connect to remote Shopify if custom domain and token are explicitly provided
+  if (!domain || !token) {
+    return null;
+  }
+
+  const endpoint = `https://${domain.replace(/^https?:\/\//, '').replace(/\/$/, '')}/api/2024-01/graphql.json`;
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
+    'X-Shopify-Storefront-Access-Token': token,
   };
-
-  if (domain && token) {
-    endpoint = `https://${domain.replace(/^https?:\/\//, '').replace(/\/$/, '')}/api/2024-01/graphql.json`;
-    headers['X-Shopify-Storefront-Access-Token'] = token;
-  }
 
   try {
     const res = await fetch(endpoint, {

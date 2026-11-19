@@ -24,7 +24,8 @@ export function ProductCard({ product }: ProductCardProps) {
   const firstVariant = product.variants?.edges?.[0]?.node || null;
   const price = product.priceRange?.minVariantPrice || firstVariant?.price || { amount: '0', currencyCode: 'USD' };
   const compareAtPrice = product.compareAtPrice || firstVariant?.compareAtPrice;
-  const imageUrl = product.featuredImage?.url || product.images?.edges?.[0]?.node?.url || 'https://images.unsplash.com/photo-1522056615691-da7b810682b5?q=80&w=800&auto=format&fit=crop';
+  const initialImageUrl = product.featuredImage?.url || product.images?.edges?.[0]?.node?.url || 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=800&auto=format&fit=crop';
+  const [imgSrc, setImgSrc] = useState(initialImageUrl);
   const isFavorite = isInWishlist(product.id);
   const variants = product.variants?.edges || [];
 
@@ -38,7 +39,7 @@ export function ProductCard({ product }: ProductCardProps) {
       title: product.title,
       variantTitle: firstVariant.title,
       price: firstVariant.price,
-      image: imageUrl,
+      image: imgSrc,
       handle: product.handle,
     });
 
@@ -64,8 +65,9 @@ export function ProductCard({ product }: ProductCardProps) {
       {/* Image container */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-zinc-100 flex items-center justify-center">
         <img
-          src={imageUrl}
+          src={imgSrc}
           alt={product.title}
+          onError={() => setImgSrc('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=800&auto=format&fit=crop')}
           className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
         />
