@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useConfig } from '@/context/ConfigContext';
 
 interface TacticsCategoryHubProps {
   onSelectCategory: (category: string, filterQuery?: string) => void;
@@ -12,7 +13,7 @@ interface HubColumn {
   items: { label: string; query: string }[];
 }
 
-const CATEGORY_DIRECTORIES: HubColumn[] = [
+const CATEGORY_DIRECTORIES_EN: HubColumn[] = [
   {
     title: 'SNOWBOARDS',
     categoryKey: 'Сноуборди',
@@ -51,63 +52,137 @@ const CATEGORY_DIRECTORIES: HubColumn[] = [
       { label: "Women's Snowboard Goggles", query: "Goggles" },
       { label: "Kids' Snowboard Goggles", query: "Goggles Kids" },
       { label: 'Replacement Goggle Lenses', query: 'Lens' },
-      { label: 'Goggle Accessories', query: 'Optics' },
     ],
   },
   {
-    title: "MEN'S SNOWBOARD CLOTHING",
+    title: "MEN'S CLOTHING",
     categoryKey: 'Одяг',
     items: [
-      { label: 'Snowboard Jackets', query: 'Jacket' },
+      { label: 'GORE-TEX Jackets', query: 'Jacket' },
       { label: 'Snowboard Pants', query: 'Pants' },
-      { label: 'Tech Apparel & Hoodies', query: 'Anorak' },
+      { label: 'Tech Anoraks & Hoodies', query: 'Anorak' },
       { label: 'Snowboard Gloves & Mitts', query: 'Gloves' },
-      { label: 'Base Layer & Thermal', query: 'Layer' },
-      { label: 'Snowboard Headwear', query: 'Beanie' },
-      { label: 'Snowboard Socks', query: 'Socks' },
     ],
   },
   {
-    title: "WOMEN'S SNOWBOARD CLOTHING",
+    title: "WOMEN'S CLOTHING",
     categoryKey: 'Одяг',
     items: [
       { label: "Women's Snowboard Jackets", query: "Jacket" },
       { label: "Women's Snowboard Pants", query: "Pants" },
       { label: "Women's Tech Hoodies", query: "Hoodie" },
-      { label: "Women's Gloves & Mitts", query: "Gloves" },
-      { label: "Women's Base Layer", query: "Thermal" },
-      { label: "Women's Beanies", query: "Beanie" },
-      { label: "Women's Face Protection", query: "MFI" },
-      { label: "Women's Snowboard Socks", query: "Socks" },
+      { label: "Women's Beanies & Facemasks", query: "MFI" },
     ],
   },
   {
-    title: 'PROTECTIVE SNOWBOARD GEAR',
+    title: 'PROTECTIVE GEAR',
     categoryKey: 'Захист',
     items: [
       { label: 'Snowboard Helmets (MIPS)', query: 'Helmet' },
-      { label: 'Snowboard Body Protection', query: 'Protection' },
-      { label: 'Crash Pants & Pads', query: 'Pads' },
+      { label: 'Crash Pants & Pads', query: 'Protection' },
       { label: 'Back Protectors', query: 'Back' },
+      { label: 'Wrist Guards', query: 'Guards' },
     ],
   },
   {
-    title: 'SNOWBOARDING ACCESSORIES',
+    title: 'ACCESSORIES',
     categoryKey: 'Аксесуари',
     items: [
-      { label: 'Stomp Pads & Traction', query: 'Stomp' },
-      { label: 'Binding Accessories & Discs', query: 'Disc' },
-      { label: 'Boot Accessories & Laces', query: 'BOA' },
-      { label: 'Snowboard Tools & Rachet', query: 'Tool' },
       { label: 'Snowboard Tune and Wax', query: 'Wax' },
-      { label: 'Backcountry Accessories', query: 'RECCO' },
-      { label: 'Splitboard Skins & Crampons', query: 'Splitboard' },
-      { label: 'Stickers & Decals', query: 'Proboard' },
+      { label: 'Stomp Pads & Traction', query: 'Stomp' },
+      { label: 'Snowboard Tools & Hardware', query: 'Tool' },
+      { label: 'P-Tex Repair Sticks', query: 'P-Tex' },
+    ],
+  },
+];
+
+const CATEGORY_DIRECTORIES_UA: HubColumn[] = [
+  {
+    title: 'СНОУБОРДИ',
+    categoryKey: 'Сноуборди',
+    items: [
+      { label: 'Чоловічі сноуборди', query: 'Snowboard' },
+      { label: 'Жіночі сноуборди', query: 'Women' },
+      { label: 'Дитячі сноуборди', query: 'Kids' },
+      { label: 'Сплітборди', query: 'Splitboard' },
+    ],
+  },
+  {
+    title: 'ЧЕРЕВИКИ',
+    categoryKey: 'Взуття',
+    items: [
+      { label: 'Черевики Double BOA', query: 'Boots' },
+      { label: 'Шнурівка з фіксацією', query: 'Vans' },
+      { label: 'Черевики Step On®', query: 'Step On' },
+      { label: 'Термоформовка стопи', query: 'Intuition' },
+    ],
+  },
+  {
+    title: 'КРІПЛЕННЯ',
+    categoryKey: 'Кріплення',
+    items: [
+      { label: 'Класичні кріплення (Union)', query: 'Bindings' },
+      { label: 'Кріплення Step On®', query: 'Step On' },
+      { label: 'Жорсткі фрірайд-бази', query: 'Duraflex' },
+      { label: 'Сплітборд інтерфейс', query: 'Splitboard' },
+    ],
+  },
+  {
+    title: 'ОПТИКА & МАСКИ',
+    categoryKey: 'Оптика',
+    items: [
+      { label: 'Магнітна зміна лінз (MFI)', query: 'Anon' },
+      { label: 'Контрастні лінзи ChromaPop', query: 'Smith' },
+      { label: 'Циліндричні маски', query: 'Squad' },
+      { label: 'Змінні лінзи від сонця/туману', query: 'Lens' },
+    ],
+  },
+  {
+    title: 'ЧОЛОВІЧИЙ ОДЯГ',
+    categoryKey: 'Одяг',
+    items: [
+      { label: 'Куртки GORE-TEX 3-Layer', query: 'Volcom' },
+      { label: 'Мембранні анораки 20K', query: 'Montec' },
+      { label: 'Снігозахисні штани', query: 'Pants' },
+      { label: 'Рукавиці та варежки', query: 'Gloves' },
+    ],
+  },
+  {
+    title: 'ЖІНОЧИЙ ОДЯГ',
+    categoryKey: 'Одяг',
+    items: [
+      { label: 'Жіночі теплі куртки', query: 'Jacket' },
+      { label: 'Штани з мембраною', query: 'Pants' },
+      { label: 'Флісові худі', query: 'Hoodie' },
+      { label: 'Балаклави та шапки', query: 'MFI' },
+    ],
+  },
+  {
+    title: 'ШОЛОМИ & ЗАХИСТ',
+    categoryKey: 'Захист',
+    items: [
+      { label: 'Шоломи із системою MIPS', query: 'Oakley' },
+      { label: 'Захист голови з BOA 360', query: 'Helmet' },
+      { label: 'Захисні шорти та накладки', query: 'Protection' },
+      { label: 'Захист спини та куприка', query: 'Back' },
+    ],
+  },
+  {
+    title: 'АКСЕСУАРИ & СЕРВІС',
+    categoryKey: 'Аксесуари',
+    items: [
+      { label: 'Набори для парафінування', query: 'Dakine' },
+      { label: 'Канторізи 88°/90°', query: 'Канторіз' },
+      { label: 'Stomp-педи для ноги', query: 'Stomp' },
+      { label: 'Палички P-Tex для ремонту', query: 'P-Tex' },
     ],
   },
 ];
 
 export function TacticsCategoryHub({ onSelectCategory }: TacticsCategoryHubProps) {
+  const { language } = useConfig();
+  const categories = language === 'ua' ? CATEGORY_DIRECTORIES_UA : CATEGORY_DIRECTORIES_EN;
+
   const handleClick = (categoryKey: string, query: string) => {
     onSelectCategory(categoryKey, query);
     const catalog = document.getElementById('catalog');
@@ -117,15 +192,15 @@ export function TacticsCategoryHub({ onSelectCategory }: TacticsCategoryHubProps
   };
 
   return (
-    <section className="border-b border-zinc-200 bg-white py-12">
+    <section className="border-b border-zinc-200 bg-white py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Tactics Mega Directory Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-x-6 gap-y-8">
-          {CATEGORY_DIRECTORIES.map((col) => (
+        {/* Mega Directory Grid with 8 Clean Columns */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-x-5 gap-y-7">
+          {categories.map((col) => (
             <div key={col.title} className="flex flex-col">
               <h3
                 onClick={() => handleClick(col.categoryKey, '')}
-                className="text-[12px] font-black uppercase tracking-tight text-zinc-950 hover:text-emerald-600 transition-colors cursor-pointer mb-3 border-b-2 border-zinc-950 pb-1"
+                className="text-[11px] sm:text-xs font-black uppercase tracking-tight text-zinc-950 hover:text-emerald-600 transition-colors cursor-pointer mb-2.5 border-b-2 border-zinc-950 pb-1"
               >
                 {col.title}
               </h3>

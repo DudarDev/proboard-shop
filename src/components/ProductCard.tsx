@@ -7,8 +7,8 @@ import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { useConfig } from '@/context/ConfigContext';
 import { Eye, ShoppingBag, Check, Heart, Star, Zap } from 'lucide-react';
-import Link from 'next/link';
 import { OneClickModal } from '@/components/OneClickModal';
+import { TRANSLATIONS } from '@/lib/translations';
 
 interface ProductCardProps {
   product: ShopifyProduct;
@@ -17,7 +17,8 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const { addToCart, openQuickView } = useCart();
   const { isInWishlist, toggleWishlist } = useWishlist();
-  const { currency } = useConfig();
+  const { currency, language } = useConfig();
+  const t = TRANSLATIONS[language];
   const [isAdded, setIsAdded] = useState(false);
   const [isOneClickOpen, setIsOneClickOpen] = useState(false);
 
@@ -72,19 +73,19 @@ export function ProductCard({ product }: ProductCardProps) {
           loading="lazy"
         />
 
-        {/* Tactics Badges */}
+        {/* Badges */}
         <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
           {product.isStaffPick && (
             <span className="bg-zinc-950 text-white font-black text-[9px] uppercase tracking-wider px-2 py-0.5 shadow-sm">
-              STAFF PICK
+              {t.staffPick}
             </span>
           )}
           {compareAtPrice && (
             <span className="bg-rose-600 text-white font-black text-[9px] uppercase tracking-wider px-2 py-0.5 shadow-sm">
-              SALE
+              {t.sale}
             </span>
           )}
-          {product.tags && product.tags.length > 0 && !product.isStaffPick && (
+          {product.tags && product.tags.length > 0 && !product.isStaffPick && !compareAtPrice && (
             <span className="bg-white/95 text-zinc-900 font-bold text-[9px] uppercase tracking-wider px-2 py-0.5 border border-zinc-300 shadow-sm">
               {product.tags[0]}
             </span>
@@ -117,14 +118,14 @@ export function ProductCard({ product }: ProductCardProps) {
             className="flex items-center gap-1.5 bg-white text-zinc-950 font-black text-[11px] uppercase tracking-wider px-3.5 py-2 shadow-md hover:bg-zinc-100 transition-all"
           >
             <Eye className="h-3.5 w-3.5" />
-            <span>QUICK VIEW</span>
+            <span>{t.quickView}</span>
           </button>
         </div>
       </div>
 
       {/* Content */}
       <div className="mt-3 flex flex-1 flex-col">
-        {/* Brand / Vendor in bold uppercase (Tactics style) */}
+        {/* Brand / Vendor */}
         <div className="text-[11px] font-black uppercase tracking-wider text-zinc-500">
           {product.vendor || 'PROBOARD'}
         </div>
@@ -141,7 +142,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <span className="font-bold ml-1 text-zinc-800">{product.rating || 4.9}</span>
           </div>
           <span>•</span>
-          <span className="text-[10px]">({product.reviewCount || 42} reviews)</span>
+          <span className="text-[10px]">({product.reviewCount || 42} {t.reviewsWord})</span>
         </div>
 
         {/* Technical Specs Chip (Flex, Camber, etc.) */}
@@ -210,12 +211,12 @@ export function ProductCard({ product }: ProductCardProps) {
             {isAdded ? (
               <>
                 <Check className="h-3 w-3" />
-                <span>ADDED</span>
+                <span>{t.addedBtn}</span>
               </>
             ) : (
               <>
                 <ShoppingBag className="h-3 w-3" />
-                <span>ADD</span>
+                <span>{t.addBtn}</span>
               </>
             )}
           </button>
@@ -227,7 +228,7 @@ export function ProductCard({ product }: ProductCardProps) {
             title="Оформити замовлення в 1 клік"
           >
             <Zap className="h-3 w-3 text-emerald-400 fill-emerald-400" />
-            <span>1-CLICK</span>
+            <span>{t.oneClickBtn}</span>
           </button>
         </div>
       </div>

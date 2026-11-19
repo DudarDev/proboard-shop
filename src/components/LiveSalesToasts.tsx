@@ -4,21 +4,32 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ShoppingBag, X, CheckCircle } from 'lucide-react';
 import { FALLBACK_PRODUCTS } from '@/lib/shopify';
+import { useConfig } from '@/context/ConfigContext';
 
-const RECENT_BUYERS = [
+const RECENT_BUYERS_UA = [
   { name: 'Олександр', city: 'Київ', productIdx: 0, time: '2 хв тому' },
   { name: 'Тарас', city: 'Буковель', productIdx: 1, time: '4 хв тому' },
   { name: 'Марія', city: 'Львів', productIdx: 2, time: '7 хв тому' },
   { name: 'Дмитро', city: 'Івано-Франківськ', productIdx: 3, time: '11 хв тому' },
   { name: 'Максим', city: 'Дніпро', productIdx: 4, time: '15 хв тому' },
   { name: 'Ярослав', city: 'Одеса', productIdx: 5, time: '19 хв тому' },
-  { name: 'Сергій', city: 'Ужгород', productIdx: 6, time: '23 хв тому' },
+];
+
+const RECENT_BUYERS_EN = [
+  { name: 'Alex', city: 'Kyiv', productIdx: 0, time: '2 min ago' },
+  { name: 'Taras', city: 'Bukovel', productIdx: 1, time: '4 min ago' },
+  { name: 'Maria', city: 'Lviv', productIdx: 2, time: '7 min ago' },
+  { name: 'Dmitry', city: 'Ivano-Frankivsk', productIdx: 3, time: '11 min ago' },
+  { name: 'Max', city: 'Dnipro', productIdx: 4, time: '15 min ago' },
+  { name: 'Yaroslav', city: 'Odesa', productIdx: 5, time: '19 min ago' },
 ];
 
 export function LiveSalesToasts() {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
+  const { language } = useConfig();
+  const buyers = language === 'ua' ? RECENT_BUYERS_UA : RECENT_BUYERS_EN;
 
   useEffect(() => {
     if (isDismissed) return;
@@ -34,7 +45,7 @@ export function LiveSalesToasts() {
         if (prev) {
           return false;
         } else {
-          setCurrentIdx((curr) => (curr + 1) % RECENT_BUYERS.length);
+          setCurrentIdx((curr) => (curr + 1) % buyers.length);
           return true;
         }
       });
@@ -44,11 +55,11 @@ export function LiveSalesToasts() {
       clearTimeout(initialTimer);
       clearInterval(interval);
     };
-  }, [isDismissed]);
+  }, [isDismissed, buyers.length]);
 
   if (isDismissed || !isVisible) return null;
 
-  const current = RECENT_BUYERS[currentIdx];
+  const current = buyers[currentIdx] || buyers[0];
   const product = FALLBACK_PRODUCTS[current.productIdx] || FALLBACK_PRODUCTS[0];
 
   return (
@@ -82,7 +93,7 @@ export function LiveSalesToasts() {
 
           <span className="inline-flex items-center gap-1 text-[10px] text-zinc-400">
             <CheckCircle className="h-3 w-3 text-emerald-500" />
-            <span>Перевірена покупка</span>
+            <span>{language === 'ua' ? 'Перевірена покупка' : 'Verified Purchase'}</span>
           </span>
         </div>
 

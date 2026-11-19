@@ -21,16 +21,16 @@ export function Footer() {
                   PROBOARD SHOP
                 </span>
                 <span className="text-[10px] font-bold text-emerald-700 uppercase">
-                  proboardshop.ua • dropship
+                  proboardshop.ua • Premium Boardsports
                 </span>
               </div>
             </Link>
             <p className="mt-3 text-xs text-zinc-600 leading-relaxed">
-              Провідний магазин бордспорту та спорядження в Україні: сноуборди Nitro, Burton, Capita, кріплення Union, оптика Anon, шоломи Oakley та одяг Montec.
+              Провідний магазин бордспорту та спорядження в Україні: сноуборди Capita, Lib Tech, Burton, кріплення Union, черевики ThirtyTwo, оптика Anon та одяг Volcom.
             </p>
             <div className="mt-4 flex items-center gap-2 text-xs font-bold text-emerald-700">
               <Sparkles className="h-3.5 w-3.5" />
-              <span>Офіційний дропшипінг • ЄС Склад</span>
+              <span>Офіційні бренди • Склад Європа</span>
             </div>
           </div>
 

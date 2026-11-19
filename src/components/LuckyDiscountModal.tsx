@@ -2,21 +2,25 @@
 
 import React, { useState, useEffect } from 'react';
 import { Gift, X, Sparkles, Check, ArrowRight, Tag } from 'lucide-react';
+import { useConfig } from '@/context/ConfigContext';
+import { TRANSLATIONS } from '@/lib/translations';
 
 export function LuckyDiscountModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [isRevealed, setIsRevealed] = useState(false);
   const [copied, setCopied] = useState(false);
   const [isFloatingDismissed, setIsFloatingDismissed] = useState(false);
+  const { language } = useConfig();
+  const t = TRANSLATIONS[language];
 
   useEffect(() => {
-    // Show modal automatically after 12 seconds for first-time visitors
+    // Show modal automatically after 18 seconds for first-time visitors
     const seen = localStorage.getItem('shopify_lucky_seen');
     if (!seen) {
       const timer = setTimeout(() => {
         setIsOpen(true);
         localStorage.setItem('shopify_lucky_seen', 'true');
-      }, 12000);
+      }, 18000);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -31,16 +35,27 @@ export function LuckyDiscountModal() {
 
   return (
     <>
-      {/* Floating Gift Trigger Badge (bottom-right) */}
+      {/* Floating Gift Trigger Badge (bottom-right, unobtrusive with dismiss button) */}
       {!isFloatingDismissed && (
-        <div className="fixed bottom-20 sm:bottom-6 right-4 z-40">
+        <div className="fixed bottom-3 right-3 z-30 flex items-center gap-1 bg-gradient-to-r from-amber-500 to-rose-500 rounded-full pl-3 pr-1.5 py-1.5 shadow-lg shadow-amber-500/20 transition-all hover:scale-105">
           <button
             onClick={() => setIsOpen(true)}
-            className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-500 to-rose-500 px-4 py-2.5 text-xs font-bold text-white shadow-xl hover:scale-105 active:scale-95 transition-all"
+            className="flex items-center gap-1.5 text-[11px] font-black uppercase text-white tracking-wider"
           >
-            <Gift className="h-4 w-4 animate-bounce" />
-            <span className="hidden sm:inline">Отримати -15%</span>
-            <span className="sm:hidden">-15%</span>
+            <Gift className="h-3.5 w-3.5 animate-bounce" />
+            <span>{t.luckyText}</span>
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsFloatingDismissed(true);
+            }}
+            className="ml-1 text-white/70 hover:text-white p-0.5 rounded-full hover:bg-black/20 transition-colors"
+            title="Закрити віджет"
+            aria-label="Закрити віджет"
+          >
+            <X className="h-3 w-3" />
           </button>
         </div>
       )}

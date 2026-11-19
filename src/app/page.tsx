@@ -20,7 +20,7 @@ export default function HomePage() {
   const [selectedBrand, setSelectedBrand] = useState('');
   const [loading, setLoading] = useState(true);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
-  const { storeDomain, storefrontToken } = useConfig();
+  const { storeDomain, storefrontToken, language } = useConfig();
 
   useEffect(() => {
     let isMounted = true;
@@ -96,7 +96,9 @@ export default function HomePage() {
         {loading ? (
           <div className="flex flex-col items-center justify-center py-24 text-zinc-500">
             <Loader2 className="h-8 w-8 animate-spin text-zinc-950 mb-3" />
-            <p className="text-xs font-black uppercase tracking-wider">Loading Tactics Board Equipment...</p>
+            <p className="text-xs font-black uppercase tracking-wider">
+              {language === 'ua' ? 'Завантаження каталогу Proboard...' : 'Loading Proboard Equipment...'}
+            </p>
           </div>
         ) : (
           <ProductGrid
