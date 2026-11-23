@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { TacticsBrandBar } from '@/components/TacticsBrandBar';
-import { TacticsCategoryHub } from '@/components/TacticsCategoryHub';
+import { BrandBar } from '@/components/BrandBar';
+import { CategoryHub } from '@/components/CategoryHub';
 import { ProductGrid } from '@/components/ProductGrid';
 import { Footer } from '@/components/Footer';
 import { BoardSizeCalculatorModal } from '@/components/BoardSizeCalculatorModal';
@@ -59,7 +59,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Tactics Proboard Navbar */}
+      {/* Main Navbar */}
       <Navbar
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
@@ -71,14 +71,14 @@ export default function HomePage() {
       />
       
       <main className="flex-1">
-        {/* Tactics Hero Banner */}
+        {/* Hero Banner */}
         <Hero
           onOpenCalculator={() => setIsCalculatorOpen(true)}
           onShopClick={handleShopNow}
         />
 
-        {/* Tactics Monochromatic Brand Bar */}
-        <TacticsBrandBar
+        {/* Monochromatic Brand Bar */}
+        <BrandBar
           selectedBrand={selectedBrand}
           onSelectBrand={(brand) => {
             setSelectedBrand(brand);
@@ -87,8 +87,8 @@ export default function HomePage() {
           }}
         />
 
-        {/* Tactics Category Mega-Grid Hub (Exact match to screenshot) */}
-        <TacticsCategoryHub
+        {/* Category Mega-Grid Hub */}
+        <CategoryHub
           onSelectCategory={handleSelectCategoryFromHub}
         />
 

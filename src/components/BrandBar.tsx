@@ -5,10 +5,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useConfig } from '@/context/ConfigContext';
 import { TRANSLATIONS } from '@/lib/translations';
 
-interface TacticsBrandBarProps {
+interface BrandBarProps {
   selectedBrand?: string;
   onSelectBrand: (brand: string) => void;
 }
+
+export type TacticsBrandBarProps = BrandBarProps;
 
 const BRANDS = [
   { name: 'BURTON', id: 'Burton', tag: '🏂' },
@@ -30,7 +32,7 @@ const BRANDS = [
   { name: 'DAKINE', id: 'Dakine', tag: '🎒' },
 ];
 
-export function TacticsBrandBar({ selectedBrand, onSelectBrand }: TacticsBrandBarProps) {
+export function BrandBar({ selectedBrand, onSelectBrand }: BrandBarProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const { language } = useConfig();
   const t = TRANSLATIONS[language];
@@ -108,3 +110,5 @@ export function TacticsBrandBar({ selectedBrand, onSelectBrand }: TacticsBrandBa
     </div>
   );
 }
+
+export const TacticsBrandBar = BrandBar;

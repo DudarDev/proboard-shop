@@ -3,9 +3,11 @@
 import React from 'react';
 import { useConfig } from '@/context/ConfigContext';
 
-interface TacticsCategoryHubProps {
+interface CategoryHubProps {
   onSelectCategory: (category: string, filterQuery?: string) => void;
 }
+
+export type TacticsCategoryHubProps = CategoryHubProps;
 
 interface HubColumn {
   title: string;
@@ -179,7 +181,7 @@ const CATEGORY_DIRECTORIES_UA: HubColumn[] = [
   },
 ];
 
-export function TacticsCategoryHub({ onSelectCategory }: TacticsCategoryHubProps) {
+export function CategoryHub({ onSelectCategory }: CategoryHubProps) {
   const { language } = useConfig();
   const categories = language === 'ua' ? CATEGORY_DIRECTORIES_UA : CATEGORY_DIRECTORIES_EN;
 
@@ -224,3 +226,5 @@ export function TacticsCategoryHub({ onSelectCategory }: TacticsCategoryHubProps
     </section>
   );
 }
+
+export const TacticsCategoryHub = CategoryHub;
