@@ -61,7 +61,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Сноуборди",
       "Lib Tech",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -222,7 +222,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Сноуборди",
       "Burton",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -383,7 +383,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Сноуборди",
       "Gnu",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -556,7 +556,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Сноуборди",
       "SIMS",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -729,7 +729,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Сноуборди",
       "Arbor",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -902,7 +902,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Сноуборди",
       "Jones",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Гібрид / Рокер"
     ],
@@ -1075,7 +1075,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Сноуборди",
       "Ride",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Гібрид / Рокер"
     ],
@@ -1248,7 +1248,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Сноуборди",
       "Salomon",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -1409,7 +1409,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Сноуборди",
       "Gnu",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -1582,7 +1582,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Взуття",
       "Burton",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Гібрид / Рокер"
     ],
@@ -1755,7 +1755,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Взуття",
       "Thirtytwo",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -1928,7 +1928,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Взуття",
       "Vans",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Гібрид / Рокер"
     ],
@@ -2101,7 +2101,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Взуття",
       "Salomon",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Гібрид / Рокер"
     ],
@@ -2274,7 +2274,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Кріплення",
       "Burton",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -2399,7 +2399,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Кріплення",
       "Bent Metal",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Гібрид / Рокер"
     ],
@@ -2530,7 +2530,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Оптика",
       "Smith",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Гібрид / Рокер"
     ],
@@ -2640,7 +2640,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Оптика",
       "Anon",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -2750,7 +2750,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Захист",
       "Smith",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -2860,7 +2860,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Одяг",
       "Volcom",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Гібрид / Рокер"
     ],
@@ -2970,7 +2970,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Скейтборди",
       "Santa Cruz",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -3122,7 +3122,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Скейтборди",
       "Tactics",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Класичний кембер"
     ],
@@ -3136,7 +3136,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
       "level": "Intermediate – Advanced Pro",
       "gender": "unisex",
       "subCategory": "Скейтборди",
-      "origin": "Tactics Authorized Pro Shop",
+      "origin": "Proboard Authorized Pro Shop",
       "warranty": "Офіційна гарантія бренду (1-2 роки)",
       "waistWidth": "N/A",
       "features": [
@@ -3268,7 +3268,7 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
     "tags": [
       "Аксесуари",
       "DAKINE",
-      "Tactics Gear",
+      "Proboard Gear",
       "2026/2027",
       "Гібрид / Рокер"
     ],

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
   return {
-    title: `${product.title} | PROBOARD TACTICS • proboardshop.ua`,
+    title: `${product.title} | PROBOARD STORE • proboardshop.ua`,
     description: product.description.slice(0, 160),
     openGraph: {
       title: product.title,
