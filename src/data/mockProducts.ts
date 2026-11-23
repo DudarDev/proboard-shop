@@ -1,1566 +1,3175 @@
 import { ShopifyProduct, ShopifyCollection } from '@/types/shopify';
 
 export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
-  // 1. Capita DOA
   {
-    id: 'gid://shopify/Product/1',
-    title: 'Capita Defenders of Awesome (DOA) Snowboard',
-    handle: 'capita-doa-snowboard',
-    description: 'Семиразовий володар премії Transworld Good Wood Award та найпопулярніша дошка в лінійці Capita. Створена на австрійській фабриці The Mothership з відновлюваної енергії. Гібридний прогин Resort V1 поєднує вибухове клацання класичного кембера між кріпленнями із плавними контактними зонами на носі й хвості для чистого катання в парку та на трасі.',
-    availableForSale: true,
-    vendor: 'Capita',
-    productType: 'Сноуборди',
-    isStaffPick: true,
-    rating: 4.9,
-    reviewCount: 128,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1565992441121-4367c2967103?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Capita Defenders of Awesome DOA Snowboard',
+    "id": "gid://shopify/Product/1",
+    "title": "Lib Tech Lib Rig Camber Snowboard",
+    "handle": "lib-tech-lib-rig-camber-snowboard",
+    "description": "Lib Tech Lib Rig Camber Snowboard — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Lib Tech з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Lib Tech",
+    "productType": "Сноуборди",
+    "isStaffPick": true,
+    "rating": 4.7,
+    "reviewCount": 35,
+    "featuredImage": {
+      "url": "/products/lib-tech-lib-rig-camber-snowboard.jpg",
+      "altText": "Lib Tech Lib Rig Camber Snowboard"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1565992441121-4367c2967103?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Capita DOA board profile',
-          },
+          "node": {
+            "url": "/products/lib-tech-lib-rig-camber-snowboard.jpg",
+            "altText": "Lib Tech Lib Rig Camber Snowboard"
+          }
         },
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1522056615691-da7b810682b5?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Rider on Capita DOA',
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/g698/o/lib-tech-lib-rig-camber-snowboard.jpg",
+            "altText": "Lib Tech Lib Rig Camber Snowboard alternate view"
+          }
+        }
+      ]
     },
-    priceRange: {
-      minVariantPrice: { amount: '499.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '519.00', currencyCode: 'USD' },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "461.99",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "461.99",
+        "currencyCode": "USD"
+      }
     },
-    compareAtPrice: { amount: '560.00', currencyCode: 'USD' },
-    tags: ['Сноуборди', 'Staff Pick', 'Resort V1', 'Good Wood Winner', 'Park & All-Mountain'],
-    specs: {
-      flex: '5.5/10 (Ідеальний збалансований фрістайл)',
-      flexRating: 5.5,
-      profile: 'Resort V1 Camber (Zero Camber + Rocker Tips)',
-      camberType: 'hybrid',
-      shape: 'True Twin (Повна симетрія)',
-      terrain: 'Resort / Park / All-Mountain',
-      level: 'Intermediate – Advanced',
-      gender: 'men',
-      subCategory: "Men's Snowboards",
-      origin: 'The Mothership, Австрія',
-      warranty: '2 роки офіційної гарантії',
-      waistWidth: '248 мм (152), 250 мм (154), 252 мм (156), 260 мм (157W)',
-      features: ['Dual Blaster Ashpop Core', 'Fortress Aramid Bound Sidewalls', 'Quantum Drive Sintered Base', 'Holysheet Fiberglass'],
+    "compareAtPrice": {
+      "amount": "577",
+      "currencyCode": "USD"
     },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/101',
-            title: '152 см',
-            availableForSale: true,
-            price: { amount: '499.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/102',
-            title: '154 см',
-            availableForSale: true,
-            price: { amount: '499.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/103',
-            title: '156 см',
-            availableForSale: true,
-            price: { amount: '499.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/104',
-            title: '157 см WIDE (Взуття 44+ EU)',
-            availableForSale: true,
-            price: { amount: '519.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/105',
-            title: '160 см (Вага 75-95 кг)',
-            availableForSale: true,
-            price: { amount: '519.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+    "tags": [
+      "Сноуборди",
+      "Lib Tech",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "7/10",
+      "flexRating": 7,
+      "profile": "C3 Camber (Aggressive All-Mountain)",
+      "camberType": "camber",
+      "shape": "Directional",
+      "terrain": "All-Mountain / Freeride",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Сноуборди",
+      "origin": "Lib Tech Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "250 – 256 мм",
+      "features": [
+        "Преміальні матеріали Lib Tech",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
     },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/101",
+            "title": "154",
+            "availableForSale": true,
+            "price": {
+              "amount": "461.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "577",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "154"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/102",
+            "title": "156",
+            "availableForSale": true,
+            "price": {
+              "amount": "461.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "577",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "156"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/103",
+            "title": "158",
+            "availableForSale": true,
+            "price": {
+              "amount": "461.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "577",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "158"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/104",
+            "title": "160W",
+            "availableForSale": true,
+            "price": {
+              "amount": "461.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "577",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "160W"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 2. Lib Tech T.Rice Pro HP
   {
-    id: 'gid://shopify/Product/2',
-    title: 'Lib Tech T.Rice Pro HP C2X Snowboard',
-    handle: 'lib-tech-trice-pro-snowboard',
-    description: 'Фірмова зброя легенди фрірайду Тревіса Райса (Travis Rice). Створена вручну в США (Mervin Made) з нульовими шкідливими викидами. Оснащена хвилястими кантами Magne-Traction (7 зубців «ножа для хліба»), які вгризаються в кригу там, де інші дошки зісковзують. Прогин C2X дає міць кембера на швидкості та невтомну плавучість у глибокому снігу.',
-    availableForSale: true,
-    vendor: 'Lib Tech',
-    productType: 'Сноуборди',
-    isStaffPick: true,
-    rating: 5.0,
-    reviewCount: 94,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Lib Tech T.Rice Pro Snowboard',
+    "id": "gid://shopify/Product/2",
+    "title": "Burton Family Tree Sketch Artist Camber Snowboard",
+    "handle": "burton-family-tree-sketch-artist-camber-snowboard",
+    "description": "Burton Family Tree Sketch Artist Camber Snowboard — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Burton з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Burton",
+    "productType": "Сноуборди",
+    "isStaffPick": true,
+    "rating": 4.8,
+    "reviewCount": 46,
+    "featuredImage": {
+      "url": "/products/burton-family-tree-sketch-artist-camber-snowboard.jpg",
+      "altText": "Burton Family Tree Sketch Artist Camber Snowboard"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Lib Tech T.Rice base view',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '599.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '629.00', currencyCode: 'USD' },
-    },
-    compareAtPrice: { amount: '670.00', currencyCode: 'USD' },
-    tags: ['Сноуборди', 'Magne-Traction', 'C2X', 'Mervin Made', 'All-Mountain & Freeride'],
-    specs: {
-      flex: '7/10 (Потужний заряджений All-Mountain)',
-      flexRating: 7,
-      profile: 'C2X (Aggressive Rocker/Camber Hybrid)',
-      camberType: 'hybrid',
-      shape: 'Blunt Freeride / True Twin Contour',
-      terrain: 'Big Mountain / Powder / Hardpack',
-      level: 'Advanced – Expert',
-      gender: 'men',
-      subCategory: "Men's Snowboards",
-      origin: 'Mervin Manufacturing, штат Вашингтон, США',
-      warranty: '1 рік Mervin Made гарантія',
-      waistWidth: '253 мм (155), 255 мм (157), 263 мм (157W)',
-      features: ['Magne-Traction 7-Point Serrated Edges', 'Horsepower (HP) Construction (60% Aspen / 40% Paulownia)', 'Eco-Sublimated Bio Beans Top', 'Sintered Knife Cut Base'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/201',
-            title: '155 см (Вага 55-75 кг)',
-            availableForSale: true,
-            price: { amount: '599.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/burton-family-tree-sketch-artist-camber-snowboard.jpg",
+            "altText": "Burton Family Tree Sketch Artist Camber Snowboard"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/202',
-            title: '157 см (Вага 65-85 кг)',
-            availableForSale: true,
-            price: { amount: '599.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/203',
-            title: '157 см WIDE (Для ноги 44+ EU)',
-            availableForSale: true,
-            price: { amount: '629.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/204',
-            title: '161 см (Вага 75-100 кг)',
-            availableForSale: true,
-            price: { amount: '629.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/gfjq/o/burton-family-tree-sketch-artist-camber-snowboard.jpg",
+            "altText": "Burton Family Tree Sketch Artist Camber Snowboard alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "510.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "510.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "639",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Сноуборди",
+      "Burton",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "6/10",
+      "flexRating": 6,
+      "profile": "Directional Camber (Carving & Powder)",
+      "camberType": "camber",
+      "shape": "Directional Freeride",
+      "terrain": "All-Mountain / Deep Snow",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Сноуборди",
+      "origin": "Burton Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "250 – 256 мм",
+      "features": [
+        "Преміальні матеріали Burton",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/201",
+            "title": "154",
+            "availableForSale": true,
+            "price": {
+              "amount": "510.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "639",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "154"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/202",
+            "title": "156",
+            "availableForSale": true,
+            "price": {
+              "amount": "510.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "639",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "156"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/203",
+            "title": "158",
+            "availableForSale": true,
+            "price": {
+              "amount": "510.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "639",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "158"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/204",
+            "title": "160W",
+            "availableForSale": true,
+            "price": {
+              "amount": "510.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "639",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "160W"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 3. Burton Custom Flying V
   {
-    id: 'gid://shopify/Product/3',
-    title: 'Burton Custom Flying V Hybrid Snowboard',
-    handle: 'burton-custom-flying-v-snowboard',
-    description: 'Найвідоміша дошка в історії сноубордингу з 1996 року. Гібридний профіль Flying V поєднує центральний рокер для серферської легкості у свіжому пухляку та кемберні зони під кріпленнями для чіпкості під час агресивного карвінгу. Канал The Channel забезпечує мікрорегулювання стійки з точністю до міліметра.',
-    availableForSale: true,
-    vendor: 'Burton',
-    productType: 'Сноуборди',
-    isStaffPick: false,
-    rating: 4.8,
-    reviewCount: 156,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Burton Custom Flying V Snowboard',
+    "id": "gid://shopify/Product/3",
+    "title": "Gnu Airblaster SNARF Camber Snowboard",
+    "handle": "gnu-airblaster-snarf-camber-snowboard",
+    "description": "Gnu Airblaster SNARF Camber Snowboard — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Gnu з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Gnu",
+    "productType": "Сноуборди",
+    "isStaffPick": true,
+    "rating": 4.9,
+    "reviewCount": 57,
+    "featuredImage": {
+      "url": "/products/gnu-airblaster-snarf-camber-snowboard.jpg",
+      "altText": "Gnu Airblaster SNARF Camber Snowboard"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Burton Custom top graphic',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '549.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '579.00', currencyCode: 'USD' },
-    },
-    compareAtPrice: { amount: '630.00', currencyCode: 'USD' },
-    tags: ['Сноуборди', 'Flying V', 'Легенда', 'The Channel', 'All-Mountain'],
-    specs: {
-      flex: '6/10 (Універсальна середня жорсткість)',
-      flexRating: 6,
-      profile: 'Flying V (Rocker/Camber Hybrid)',
-      camberType: 'hybrid',
-      shape: 'Directional Shape (Зміщений центр ваги)',
-      terrain: 'All-Mountain / Powder / Groomers',
-      level: 'Intermediate – Advanced',
-      gender: 'men',
-      subCategory: "Men's Snowboards",
-      origin: 'Австрія (Оригінал Burton Europe)',
-      warranty: '3 роки фірмової гарантії WMS',
-      waistWidth: '250 мм (154), 254 мм (158), 262 мм (158W)',
-      features: ['Super Fly II 700G Core', '45° Carbon Highlights', 'WFO Sintered Base', 'The Channel Mounting System', 'Frostbite Edges'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/301',
-            title: '154 см',
-            availableForSale: true,
-            price: { amount: '549.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/gnu-airblaster-snarf-camber-snowboard.jpg",
+            "altText": "Gnu Airblaster SNARF Camber Snowboard"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/302',
-            title: '156 см',
-            availableForSale: true,
-            price: { amount: '549.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/303',
-            title: '158 см',
-            availableForSale: true,
-            price: { amount: '549.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/304',
-            title: '158 см WIDE (Для взуття 44+ EU)',
-            availableForSale: true,
-            price: { amount: '579.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/ggdo/o/gnu-airblaster-snarf-c3-snowboard.jpg",
+            "altText": "Gnu Airblaster SNARF Camber Snowboard alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "440.99",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "440.99",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "551",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Сноуборди",
+      "Gnu",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "6.5/10",
+      "flexRating": 6.5,
+      "profile": "C3 Camber (Dominant Pop & Edge Hold)",
+      "camberType": "camber",
+      "shape": "Directional Twin",
+      "terrain": "All-Mountain Freestyle",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Сноуборди",
+      "origin": "Gnu Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "250 – 256 мм",
+      "features": [
+        "Преміальні матеріали Gnu",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/301",
+            "title": "154",
+            "availableForSale": true,
+            "price": {
+              "amount": "440.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "551",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "154"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/302",
+            "title": "156",
+            "availableForSale": true,
+            "price": {
+              "amount": "440.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "551",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "156"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/303",
+            "title": "158",
+            "availableForSale": true,
+            "price": {
+              "amount": "440.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "551",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "158"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/304",
+            "title": "160W",
+            "availableForSale": true,
+            "price": {
+              "amount": "440.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "551",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "160W"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 4. Salomon Assassin All-Mountain
   {
-    id: 'gid://shopify/Product/4',
-    title: 'Salomon Assassin All-Mountain Snowboard',
-    handle: 'salomon-assassin-snowboard',
-    description: 'Універсальний кілер будь-яких гірських схилів. Об’єднує прогресивну геометрію для парку та фрірайду. Профіль Rock Out Camber плоский між кріпленнями для стійкості, з кембером біля ніг для чуйності та рокером на кінцях для легкого спливання у пухляку. Сердечник з бамбуковими стержнями ABC Wrapper.',
-    availableForSale: true,
-    vendor: 'Salomon',
-    productType: 'Сноуборди',
-    isStaffPick: false,
-    rating: 4.8,
-    reviewCount: 71,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1547447134-cd3f5c716030?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Salomon Assassin Snowboard',
+    "id": "gid://shopify/Product/4",
+    "title": "SIMS UAP Snowboard",
+    "handle": "sims-uap-snowboard",
+    "description": "SIMS UAP Snowboard — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника SIMS з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "SIMS",
+    "productType": "Сноуборди",
+    "isStaffPick": true,
+    "rating": 5,
+    "reviewCount": 68,
+    "featuredImage": {
+      "url": "/products/sims-uap-snowboard.jpg",
+      "altText": "SIMS UAP Snowboard"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1547447134-cd3f5c716030?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Salomon Assassin board graphic',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '519.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '539.00', currencyCode: 'USD' },
-    },
-    compareAtPrice: { amount: '580.00', currencyCode: 'USD' },
-    tags: ['Сноуборди', 'Rock Out Camber', 'All-Mountain', 'Popster Eco Booster'],
-    specs: {
-      flex: '6/10 (Чуйний універсал)',
-      flexRating: 6,
-      profile: 'Rock Out Camber (Flat-Camber-Rocker)',
-      camberType: 'hybrid',
-      shape: 'Directional Twin',
-      terrain: 'All-Mountain / Powder / Park',
-      level: 'Intermediate – Advanced',
-      gender: 'men',
-      subCategory: "Men's Snowboards",
-      origin: 'Франція / Склад ЄС',
-      warranty: '2 роки офіційної гарантії Salomon',
-      waistWidth: '251 мм (153), 253 мм (156), 263 мм (158W)',
-      features: ['Ghost Green Core', 'Popster Eco Booster', 'Quadralizer Sidecut', 'Sintered EG Base'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/401',
-            title: '153 см',
-            availableForSale: true,
-            price: { amount: '519.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/sims-uap-snowboard.jpg",
+            "altText": "SIMS UAP Snowboard"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/402',
-            title: '156 см',
-            availableForSale: true,
-            price: { amount: '519.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "https://www.tactics.com/a/gedc/o/sims-uap-snowboard.jpg",
+            "altText": "SIMS UAP Snowboard alternate view"
+          }
+        }
+      ]
+    },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "433.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "433.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "542",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Сноуборди",
+      "SIMS",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "5/10",
+      "flexRating": 5,
+      "profile": "Traditional Camber",
+      "camberType": "camber",
+      "shape": "True Twin",
+      "terrain": "Park & Street",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Сноуборди",
+      "origin": "SIMS Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "250 – 256 мм",
+      "features": [
+        "Преміальні матеріали SIMS",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/401",
+            "title": "154",
+            "availableForSale": true,
+            "price": {
+              "amount": "433.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "542",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "154"
+              }
+            ]
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/403',
-            title: '158 см WIDE (Взуття 44+ EU)',
-            availableForSale: true,
-            price: { amount: '539.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "id": "gid://shopify/ProductVariant/402",
+            "title": "156",
+            "availableForSale": true,
+            "price": {
+              "amount": "433.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "542",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "156"
+              }
+            ]
+          }
         },
-      ],
-    },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/403",
+            "title": "158",
+            "availableForSale": true,
+            "price": {
+              "amount": "433.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "542",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "158"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/404",
+            "title": "160W",
+            "availableForSale": true,
+            "price": {
+              "amount": "433.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "542",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "160W"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 5. GNU Riders Choice Asym C2X
   {
-    id: 'gid://shopify/Product/5',
-    title: 'GNU Riders Choice Asym C2X Snowboard',
-    handle: 'gnu-riders-choice-asym-snowboard',
-    description: 'Дошка, створена самими райдерами для райдерів. Асиметрична геометрія враховує різну механіку переднього та заднього кантів: задній кант має глибший боковий виріз і м’якший сердечник, що робить повороти з п’яти такими ж легкими, як і з носка. Канти Magne-Traction гарантують надійне зчеплення.',
-    availableForSale: true,
-    vendor: 'GNU',
-    productType: 'Сноуборди',
-    isStaffPick: true,
-    rating: 4.9,
-    reviewCount: 63,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1000&auto=format&fit=crop',
-      altText: 'GNU Riders Choice Snowboard',
+    "id": "gid://shopify/Product/5",
+    "title": "Arbor Jared Elston El Camino Snowboard",
+    "handle": "arbor-jared-elston-el-camino-snowboard",
+    "description": "Arbor Jared Elston El Camino Snowboard — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Arbor з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Arbor",
+    "productType": "Сноуборди",
+    "isStaffPick": false,
+    "rating": 4.7,
+    "reviewCount": 79,
+    "featuredImage": {
+      "url": "/products/arbor-jared-elston-el-camino-snowboard.jpg",
+      "altText": "Arbor Jared Elston El Camino Snowboard"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1000&auto=format&fit=crop',
-            altText: 'GNU Asym sidecut detail',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '579.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '599.00', currencyCode: 'USD' },
-    },
-    tags: ['Сноуборди', 'Asymmetry', 'Magne-Traction', 'Mervin Made', 'Freestyle'],
-    specs: {
-      flex: '6/10 (Грайлива середня жорсткість)',
-      flexRating: 6,
-      profile: 'C2X (Xtreme Camber/Rocker Hybrid)',
-      camberType: 'hybrid',
-      shape: 'Asym Twin Freestyle',
-      terrain: 'Park / Resort / All-Mountain',
-      level: 'Intermediate – Advanced',
-      gender: 'men',
-      subCategory: "Men's Snowboards",
-      origin: 'США (Mervin Made)',
-      warranty: '1 рік офіційної гарантії',
-      waistWidth: '252 мм (154.5), 255 мм (157.5), 265 мм (158W)',
-      features: ['Asymmetric Level 2 (Core, Sidecut, Contact)', 'G Lite 3 FSC Certified Wood Core', 'Magne-Traction Edge Control', 'Eco-Sublimated Bio Beans Top'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/501',
-            title: '154.5 см',
-            availableForSale: true,
-            price: { amount: '579.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/arbor-jared-elston-el-camino-snowboard.jpg",
+            "altText": "Arbor Jared Elston El Camino Snowboard"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/502',
-            title: '157.5 см',
-            availableForSale: true,
-            price: { amount: '579.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "https://www.tactics.com/a/g7gi/o/arbor-jared-elston-el-camino-snowboard.jpg",
+            "altText": "Arbor Jared Elston El Camino Snowboard alternate view"
+          }
+        }
+      ]
+    },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "440.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "440.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "551",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Сноуборди",
+      "Arbor",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "7.5/10",
+      "flexRating": 7.5,
+      "profile": "Camber System with Grip Tech",
+      "camberType": "camber",
+      "shape": "Directional Twin",
+      "terrain": "Big Mountain / Freestyle",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Сноуборди",
+      "origin": "Arbor Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "250 – 256 мм",
+      "features": [
+        "Преміальні матеріали Arbor",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/501",
+            "title": "154",
+            "availableForSale": true,
+            "price": {
+              "amount": "440.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "551",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "154"
+              }
+            ]
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/503',
-            title: '158 см WIDE (Для ноги 44+ EU)',
-            availableForSale: true,
-            price: { amount: '599.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "id": "gid://shopify/ProductVariant/502",
+            "title": "156",
+            "availableForSale": true,
+            "price": {
+              "amount": "440.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "551",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "156"
+              }
+            ]
+          }
         },
-      ],
-    },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/503",
+            "title": "158",
+            "availableForSale": true,
+            "price": {
+              "amount": "440.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "551",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "158"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/504",
+            "title": "160W",
+            "availableForSale": true,
+            "price": {
+              "amount": "440.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "551",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "160W"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 6. Nitro Team Pro Marcus Kleveland
   {
-    id: 'gid://shopify/Product/6',
-    title: 'Nitro Team Pro Marcus Kleveland Camber Snowboard',
-    handle: 'nitro-team-pro-snowboard',
-    description: 'Заряджена версія бестселера Nitro Team, на якій катається вундеркінд Маркус Клевеланд. Профіль Trüe Camber, карбонові підсилювачі Diamond Bands та надшвидкісна спечена база Speed Formula II Sintered Base забезпечують неймовірну висоту на трамплінах та залізне тримання на крижаному вельветі.',
-    availableForSale: true,
-    vendor: 'Nitro',
-    productType: 'Сноуборди',
-    isStaffPick: true,
-    rating: 5.0,
-    reviewCount: 88,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Nitro Team Pro Snowboard',
+    "id": "gid://shopify/Product/6",
+    "title": "Jones Mind Expander Splitboard",
+    "handle": "jones-mind-expander-splitboard",
+    "description": "Jones Mind Expander Splitboard — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Jones з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Jones",
+    "productType": "Сноуборди",
+    "isStaffPick": false,
+    "rating": 4.8,
+    "reviewCount": 90,
+    "featuredImage": {
+      "url": "/products/jones-mind-expander-splitboard.jpg",
+      "altText": "Jones Mind Expander Splitboard"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Nitro Team rider',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '499.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '529.00', currencyCode: 'USD' },
-    },
-    tags: ['Сноуборди', 'Trüe Camber', 'Pro Series', 'Marcus Kleveland', 'Carving'],
-    specs: {
-      flex: '8/10 (Жорсткий, вибуховий контроль)',
-      flexRating: 8,
-      profile: 'Trüe Camber (Класичний кембер високого навантаження)',
-      camberType: 'camber',
-      shape: 'Directional Twin',
-      terrain: 'All-Mountain / Big Air / Carving',
-      level: 'Advanced – Pro',
-      gender: 'men',
-      subCategory: "Men's Snowboards",
-      origin: 'Австрія (Оригінал, склад Європа)',
-      warranty: '2 роки офіційної гарантії Nitro',
-      waistWidth: '250 мм (155), 252 мм (157), 264 мм (159W)',
-      features: ['Powerlite Core', 'Diamond Band Carbon Upgrades', 'Sintered Speed Formula II Base', 'Reflex Core Profile'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/601',
-            title: '155 см (Вага 55-75 кг)',
-            availableForSale: true,
-            price: { amount: '499.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/jones-mind-expander-splitboard.jpg",
+            "altText": "Jones Mind Expander Splitboard"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/602',
-            title: '157 см (Вага 65-85 кг)',
-            availableForSale: true,
-            price: { amount: '499.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "https://www.tactics.com/a/fapy/o/jones-mind-expander-splitboard.jpg",
+            "altText": "Jones Mind Expander Splitboard alternate view"
+          }
+        }
+      ]
+    },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "685.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "685.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "857",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Сноуборди",
+      "Jones",
+      "Tactics Gear",
+      "2026/2027",
+      "Гібрид / Рокер"
+    ],
+    "specs": {
+      "flex": "6/10",
+      "flexRating": 6,
+      "profile": "Surf Rocker (Maximum Float)",
+      "camberType": "hybrid",
+      "shape": "Directional Surf",
+      "terrain": "Backcountry Powder",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Сноуборди",
+      "origin": "Jones Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "250 – 256 мм",
+      "features": [
+        "Преміальні матеріали Jones",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/601",
+            "title": "154",
+            "availableForSale": true,
+            "price": {
+              "amount": "685.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "857",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "154"
+              }
+            ]
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/603',
-            title: '159 см WIDE (Для ноги 44+ EU)',
-            availableForSale: true,
-            price: { amount: '529.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "id": "gid://shopify/ProductVariant/602",
+            "title": "156",
+            "availableForSale": true,
+            "price": {
+              "amount": "685.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "857",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "156"
+              }
+            ]
+          }
         },
-      ],
-    },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/603",
+            "title": "158",
+            "availableForSale": true,
+            "price": {
+              "amount": "685.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "857",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "158"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/604",
+            "title": "160W",
+            "availableForSale": true,
+            "price": {
+              "amount": "685.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "857",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "160W"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 7. Jones Mountain Twin
   {
-    id: 'gid://shopify/Product/7',
-    title: 'Jones Mountain Twin All-Mountain Snowboard',
-    handle: 'jones-mountain-twin-snowboard',
-    description: 'Еталон всесезонного фрірайду та беккантрі від легендарного Джеремі Джонса. Профіль CamRock із 3D Contour Base 2.0 (ложкаподібні підняті канти на носі та хвості) практично виключає випадкові «зловлення канта» та забезпечує неперевершену плавучість у глибокому снігу.',
-    availableForSale: true,
-    vendor: 'Jones',
-    productType: 'Сноуборди',
-    isStaffPick: true,
-    rating: 4.9,
-    reviewCount: 110,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Jones Mountain Twin Snowboard',
+    "id": "gid://shopify/Product/7",
+    "title": "Ride Deep Fake Snowboard",
+    "handle": "ride-deep-fake-snowboard",
+    "description": "Ride Deep Fake Snowboard — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Ride з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Ride",
+    "productType": "Сноуборди",
+    "isStaffPick": false,
+    "rating": 4.9,
+    "reviewCount": 101,
+    "featuredImage": {
+      "url": "/products/ride-deep-fake-snowboard.jpg",
+      "altText": "Ride Deep Fake Snowboard"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Jones 3D Contour Base',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '529.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '559.00', currencyCode: 'USD' },
-    },
-    tags: ['Сноуборди', '3D Contour', 'CamRock', 'Jeremy Jones', 'Freeride & Powder'],
-    specs: {
-      flex: '7/10 (Впевнений, стабільний контроль)',
-      flexRating: 7,
-      profile: 'CamRock (Camber underfoot, Rocker at tip/tail)',
-      camberType: 'hybrid',
-      shape: 'Directional Twin',
-      terrain: 'All-Mountain / Powder / Freestyle',
-      level: 'Intermediate – Expert',
-      gender: 'men',
-      subCategory: "Men's Snowboards",
-      origin: 'ОАЕ / Дубай (Nidecker Group Factory, розроблено в Каліфорнії)',
-      warranty: '2+1 рік гарантії Jones WMS',
-      waistWidth: '252 мм (154), 256 мм (157), 260 мм (159W)',
-      features: ['3D Contour Base 2.0', 'Traction Tech 3.0 Edges', 'Control Split Core', 'Sintered 8000 Base', 'Bio Resin Eco Topsheet'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/701',
-            title: '154 см',
-            availableForSale: true,
-            price: { amount: '529.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/ride-deep-fake-snowboard.jpg",
+            "altText": "Ride Deep Fake Snowboard"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/702',
-            title: '157 см',
-            availableForSale: true,
-            price: { amount: '529.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "https://www.tactics.com/a/f6ri/o/ride-deep-fake-snowboard.jpg",
+            "altText": "Ride Deep Fake Snowboard alternate view"
+          }
+        }
+      ]
+    },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "487.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "487.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "610",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Сноуборди",
+      "Ride",
+      "Tactics Gear",
+      "2026/2027",
+      "Гібрид / Рокер"
+    ],
+    "specs": {
+      "flex": "8/10",
+      "flexRating": 8,
+      "profile": "Directional Hybrid Camber",
+      "camberType": "hybrid",
+      "shape": "Tapered Directional",
+      "terrain": "All-Mountain Steeps",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Сноуборди",
+      "origin": "Ride Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "250 – 256 мм",
+      "features": [
+        "Преміальні матеріали Ride",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/701",
+            "title": "154",
+            "availableForSale": true,
+            "price": {
+              "amount": "487.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "610",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "154"
+              }
+            ]
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/703',
-            title: '159 см WIDE (Взуття 44+ EU)',
-            availableForSale: true,
-            price: { amount: '559.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "id": "gid://shopify/ProductVariant/702",
+            "title": "156",
+            "availableForSale": true,
+            "price": {
+              "amount": "487.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "610",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "156"
+              }
+            ]
+          }
         },
-      ],
-    },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/703",
+            "title": "158",
+            "availableForSale": true,
+            "price": {
+              "amount": "487.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "610",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "158"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/704",
+            "title": "160W",
+            "availableForSale": true,
+            "price": {
+              "amount": "487.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "610",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "160W"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 8. Bataleon Evil Twin 3BT
   {
-    id: 'gid://shopify/Product/8',
-    title: 'Bataleon Evil Twin 3BT Park Snowboard',
-    handle: 'bataleon-evil-twin-snowboard',
-    description: 'Легендарна паркова машина з запатентованою технологією Triple Base Technology (3BT) та SideKick. Центральна плоска база тримає стабільність, а підняті бічні крила на носі та хвості дають надзвичайно плавний вхід у трюки без ризику зачепитися за рейли чи сніг.',
-    availableForSale: true,
-    vendor: 'Bataleon',
-    productType: 'Сноуборди',
-    isStaffPick: false,
-    rating: 4.8,
-    reviewCount: 52,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1565992441121-4367c2967103?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Bataleon Evil Twin Snowboard',
+    "id": "gid://shopify/Product/8",
+    "title": "Salomon Jetstream Snowboard",
+    "handle": "salomon-jetstream-snowboard",
+    "description": "Salomon Jetstream Snowboard — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Salomon з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Salomon",
+    "productType": "Сноуборди",
+    "isStaffPick": false,
+    "rating": 5,
+    "reviewCount": 112,
+    "featuredImage": {
+      "url": "/products/salomon-jetstream-snowboard.jpg",
+      "altText": "Salomon Jetstream Snowboard"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1565992441121-4367c2967103?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Bataleon 3BT detail',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '489.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '509.00', currencyCode: 'USD' },
-    },
-    tags: ['Сноуборди', '3BT', 'Twin 3BT', 'SideKick', 'Park & Jib'],
-    specs: {
-      flex: '5/10 (Грайливий джиб & парк)',
-      flexRating: 5,
-      profile: 'Medium Camber + Twin 3BT + SideKick',
-      camberType: 'camber',
-      shape: 'True Twin (Симетрична форма)',
-      terrain: 'Park / Jib / Resort Freestyle',
-      level: 'All Levels',
-      gender: 'men',
-      subCategory: "Men's Snowboards",
-      origin: 'Австрія (Склад ЄС)',
-      warranty: '2 роки офіційної гарантії Bataleon',
-      waistWidth: '250 мм (154), 253 мм (157), 263 мм (156W)',
-      features: ['Twin 3BT (Triple Base Technology)', 'SideKick Tips', 'Ultra Light Wood Core', 'C.S.T. SuperTubes Carbon Rods', 'Hyper Glide S Base'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/801',
-            title: '154 см',
-            availableForSale: true,
-            price: { amount: '489.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/salomon-jetstream-snowboard.jpg",
+            "altText": "Salomon Jetstream Snowboard"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/802',
-            title: '157 см',
-            availableForSale: true,
-            price: { amount: '489.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "https://www.tactics.com/a/g7eg/o/salomon-jetstream-snowboard.jpg",
+            "altText": "Salomon Jetstream Snowboard alternate view"
+          }
+        }
+      ]
+    },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "454.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "454.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "569",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Сноуборди",
+      "Salomon",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "6/10",
+      "flexRating": 6,
+      "profile": "Quad Camber (Speed & Precision)",
+      "camberType": "camber",
+      "shape": "Directional Twin",
+      "terrain": "Resort Carving & Park",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Сноуборди",
+      "origin": "Salomon Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "250 – 256 мм",
+      "features": [
+        "Преміальні матеріали Salomon",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/801",
+            "title": "154",
+            "availableForSale": true,
+            "price": {
+              "amount": "454.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "569",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "154"
+              }
+            ]
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/803',
-            title: '156 см WIDE (Для ноги 44+ EU)',
-            availableForSale: true,
-            price: { amount: '509.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "id": "gid://shopify/ProductVariant/802",
+            "title": "156",
+            "availableForSale": true,
+            "price": {
+              "amount": "454.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "569",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "156"
+              }
+            ]
+          }
         },
-      ],
-    },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/803",
+            "title": "158",
+            "availableForSale": true,
+            "price": {
+              "amount": "454.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "569",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "158"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/804",
+            "title": "160W",
+            "availableForSale": true,
+            "price": {
+              "amount": "454.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "569",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "160W"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 9. ThirtyTwo TM-2 Double BOA Boots
   {
-    id: 'gid://shopify/Product/9',
-    title: 'ThirtyTwo TM-2 Double BOA Snowboard Boots',
-    handle: 'thirtytwo-tm2-double-boa-boots',
-    description: 'Улюблена модель про-райдерів команди ThirtyTwo (Scotty Stevens, Chris Grenier). Двозонна система шнурівки Dual BOA з міцним тросом TX3 дозволяє за 3 секунди відрегулювати щільність фіксації стопи та гомілки. Термоформований внутрішник Performance Fit з піни Intuition запікається за формою вашої стопи.',
-    availableForSale: true,
-    vendor: 'ThirtyTwo',
-    productType: 'Взуття',
-    isStaffPick: true,
-    rating: 4.9,
-    reviewCount: 142,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop',
-      altText: 'ThirtyTwo TM-2 Double BOA Boots',
+    "id": "gid://shopify/Product/9",
+    "title": "Gnu Gremlin C3 Snowboard",
+    "handle": "gnu-gremlin-c3-snowboard",
+    "description": "Gnu Gremlin C3 Snowboard — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Gnu з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Gnu",
+    "productType": "Сноуборди",
+    "isStaffPick": false,
+    "rating": 4.7,
+    "reviewCount": 123,
+    "featuredImage": {
+      "url": "/products/gnu-gremlin-c3-snowboard.jpg",
+      "altText": "Gnu Gremlin C3 Snowboard"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop',
-            altText: 'BOA dial close-up',
-          },
+          "node": {
+            "url": "/products/gnu-gremlin-c3-snowboard.jpg",
+            "altText": "Gnu Gremlin C3 Snowboard"
+          }
         },
-      ],
+        {
+          "node": {
+            "url": "https://www.tactics.com/a/g63h/o/gnu-gremlin-c3-snowboard.jpg",
+            "altText": "Gnu Gremlin C3 Snowboard alternate view"
+          }
+        }
+      ]
     },
-    priceRange: {
-      minVariantPrice: { amount: '369.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '369.00', currencyCode: 'USD' },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "405.99",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "405.99",
+        "currencyCode": "USD"
+      }
     },
-    compareAtPrice: { amount: '410.00', currencyCode: 'USD' },
-    tags: ['Взуття', 'Double BOA', 'Staff Pick', 'Intuition Foam', 'All-Mountain'],
-    specs: {
-      flex: '7/10 (Точний спортивний флекс)',
-      flexRating: 7,
-      profile: 'Dual BOA Focus Fit System w/ TX3 Lace',
-      shape: '1:1 Lasting Ergonomic Shell',
-      terrain: 'All-Mountain / Park / Freeride',
-      level: 'Intermediate – Pro',
-      gender: 'men',
-      subCategory: "Men's Snowboard Boots",
-      origin: 'Нідерланди / Склад ЄС',
-      warranty: '2 роки гарантії',
-      features: ['Intuition Performance Foam Liner', 'Performance Rubber Outsole with STI Evolution Foam', 'Storm Shield All-Weather Protection', 'Overmold TPU Armor'],
+    "compareAtPrice": {
+      "amount": "507",
+      "currencyCode": "USD"
     },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/901',
-            title: '41 EU (8.5 US / 26.5 см)',
-            availableForSale: true,
-            price: { amount: '369.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/902',
-            title: '42 EU (9.0 US / 27.0 см)',
-            availableForSale: true,
-            price: { amount: '369.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/903',
-            title: '43 EU (10.0 US / 28.0 см)',
-            availableForSale: true,
-            price: { amount: '369.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/904',
-            title: '44 EU (10.5 US / 28.5 см)',
-            availableForSale: true,
-            price: { amount: '369.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/905',
-            title: '45 EU (11.5 US / 29.5 см)',
-            availableForSale: true,
-            price: { amount: '369.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+    "tags": [
+      "Сноуборди",
+      "Gnu",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "7/10",
+      "flexRating": 7,
+      "profile": "C3 Camber + Magne-Traction",
+      "camberType": "camber",
+      "shape": "Directional Tapered",
+      "terrain": "All-Terrain Predator",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Сноуборди",
+      "origin": "Gnu Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "250 – 256 мм",
+      "features": [
+        "Преміальні матеріали Gnu",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
     },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/901",
+            "title": "154",
+            "availableForSale": true,
+            "price": {
+              "amount": "405.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "507",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "154"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/902",
+            "title": "156",
+            "availableForSale": true,
+            "price": {
+              "amount": "405.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "507",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "156"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/903",
+            "title": "158",
+            "availableForSale": true,
+            "price": {
+              "amount": "405.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "507",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "158"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/904",
+            "title": "160W",
+            "availableForSale": true,
+            "price": {
+              "amount": "405.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "507",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "160W"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 10. Vans Hi-Standard Pro
   {
-    id: 'gid://shopify/Product/10',
-    title: 'Vans Hi-Standard Pro Snowboard Boots',
-    handle: 'vans-hi-standard-pro-boots',
-    description: 'Класична естетика кедів Vans у поєднанні з передовими технологіями для сноуборду. Традиційна шнурівка з додатковим силовим ременем PowerCuff Strap для точного налаштування підтримки хайбека. Термоформований внутрішник V2 UltraCush з натуральною вовною Smartwool зберігає ноги сухими й теплими.',
-    availableForSale: true,
-    vendor: 'Vans',
-    productType: 'Взуття',
-    isStaffPick: false,
-    rating: 4.8,
-    reviewCount: 95,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Vans Hi-Standard Pro Snowboard Boots',
+    "id": "gid://shopify/Product/10",
+    "title": "Burton Women's Waverange Step On Snowboard Boots - gray cloud",
+    "handle": "burton-step-on-snowboard-boots",
+    "description": "Burton Women's Waverange Step On Snowboard Boots - gray cloud — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Burton з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Burton",
+    "productType": "Взуття",
+    "isStaffPick": true,
+    "rating": 4.8,
+    "reviewCount": 44,
+    "featuredImage": {
+      "url": "/products/burton-step-on-snowboard-boots.jpg",
+      "altText": "Burton Women's Waverange Step On Snowboard Boots - gray cloud"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Vans waffle sole detail',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '289.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '289.00', currencyCode: 'USD' },
-    },
-    tags: ['Взуття', 'Vans', 'Lace Boots', 'Smartwool', 'Freestyle & Park'],
-    specs: {
-      flex: '5-6/10 (Гнучкий скейт-стиль)',
-      flexRating: 5.5,
-      profile: 'Traditional Lace w/ PowerCuff Strap',
-      shape: 'PleasureCuff Ergonomic Comfort',
-      terrain: 'Park / Street / All-Mountain',
-      level: 'All Levels',
-      gender: 'men',
-      subCategory: "Men's Snowboard Boots",
-      origin: 'США / Vans Europe',
-      warranty: '2 роки офіційної гарантії Vans',
-      features: ['V2 UltraCush Smartwool Liner', 'V2 Waffle Pro Rubber Outsole', 'V2 POPCUSH Footbed', 'PowerCuff Ankle Strap'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1001',
-            title: '41 EU (8.5 US / 26.5 см)',
-            availableForSale: true,
-            price: { amount: '289.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/burton-step-on-snowboard-boots.jpg",
+            "altText": "Burton Women's Waverange Step On Snowboard Boots - gray cloud"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1002',
-            title: '42 EU (9.0 US / 27.0 см)',
-            availableForSale: true,
-            price: { amount: '289.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1003',
-            title: '43 EU (10.0 US / 28.0 см)',
-            availableForSale: true,
-            price: { amount: '289.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1004',
-            title: '44 EU (10.5 US / 28.5 см)',
-            availableForSale: true,
-            price: { amount: '289.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/gg3q/o/burton-womens-waverange-step-on-snowboard-boots-gray-cloud.jpg",
+            "altText": "Burton Women's Waverange Step On Snowboard Boots - gray cloud alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "227.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "227.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "285",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Взуття",
+      "Burton",
+      "Tactics Gear",
+      "2026/2027",
+      "Гібрид / Рокер"
+    ],
+    "specs": {
+      "flex": "6/10",
+      "flexRating": 6,
+      "profile": "Step On Compatible",
+      "camberType": "hybrid",
+      "shape": "Ergonomic",
+      "terrain": "All-Mountain Comfort",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Взуття",
+      "origin": "Burton Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Burton",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1001",
+            "title": "41 EU (8.5 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "227.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "285",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "41 EU (8.5 US)"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1002",
+            "title": "42 EU (9 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "227.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "285",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "42 EU (9 US)"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1003",
+            "title": "43 EU (10 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "227.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "285",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "43 EU (10 US)"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1004",
+            "title": "44 EU (11 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "227.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "285",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "44 EU (11 US)"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 11. Burton Photon Step On Boots
   {
-    id: 'gid://shopify/Product/11',
-    title: 'Burton Photon Step On Snowboard Boots',
-    handle: 'burton-photon-step-on-boots',
-    description: 'Революційна система Step On: забудьте про сидіння на холодному снігу для застібання ременів! Просто встаньте у кріплення Step On — три точки зчеплення (дві на носку, одна на п’яті) клацнуть і зафіксують ногу за 1 секунду. Двозонний BOA Coiler та підошва Vibram Traction Lug.',
-    availableForSale: true,
-    vendor: 'Burton',
-    productType: 'Взуття',
-    isStaffPick: true,
-    rating: 5.0,
-    reviewCount: 167,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Burton Photon Step On Boots',
+    "id": "gid://shopify/Product/11",
+    "title": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print",
+    "handle": "thirtytwo-lashed-snowboard-boots",
+    "description": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Thirtytwo з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Thirtytwo",
+    "productType": "Взуття",
+    "isStaffPick": false,
+    "rating": 4.9,
+    "reviewCount": 55,
+    "featuredImage": {
+      "url": "/products/thirtytwo-lashed-snowboard-boots.jpg",
+      "altText": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Burton Step On connection cleats',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '459.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '459.00', currencyCode: 'USD' },
-    },
-    compareAtPrice: { amount: '510.00', currencyCode: 'USD' },
-    tags: ['Взуття', 'Step On', 'BOA', 'Vibram', 'Швидке встібання'],
-    specs: {
-      flex: '7/10 (Жорсткий та чутливий)',
-      flexRating: 7,
-      profile: 'Step On Connection System + Sequence BOA',
-      shape: 'Total Comfort Construction',
-      terrain: 'All-Mountain / Freeride',
-      level: 'Advanced – Expert',
-      gender: 'men',
-      subCategory: "Men's Snowboard Boots",
-      origin: 'Burton Europe, Австрія',
-      warranty: '3 роки офіційної гарантії Burton',
-      features: ['Step On Backstay & Toe Cleats', 'Vibram Traction Lug Outsole with EcoStep Rubber', 'Imprint 3 Heat-Moldable Liner', 'Sleeping Bag Reflective Foil'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1101',
-            title: '42 EU (9.0 US / 27.0 см)',
-            availableForSale: true,
-            price: { amount: '459.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/thirtytwo-lashed-snowboard-boots.jpg",
+            "altText": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1102',
-            title: '43 EU (10.0 US / 28.0 см)',
-            availableForSale: true,
-            price: { amount: '459.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "https://www.tactics.com/a/gh5k/o/thirtytwo-lashed-snowboard-boots-corduroy-black-print.jpg",
+            "altText": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print alternate view"
+          }
+        }
+      ]
+    },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "209.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "209.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "262",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Взуття",
+      "Thirtytwo",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "6/10",
+      "flexRating": 6,
+      "profile": "Team Fit Dual BOA",
+      "camberType": "camber",
+      "shape": "Articulated Cuff",
+      "terrain": "Freestyle / All-Mountain",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Взуття",
+      "origin": "Thirtytwo Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Thirtytwo",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1101",
+            "title": "41 EU (8.5 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "209.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "262",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "41 EU (8.5 US)"
+              }
+            ]
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1103',
-            title: '44 EU (10.5 US / 28.5 см)',
-            availableForSale: true,
-            price: { amount: '459.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "id": "gid://shopify/ProductVariant/1102",
+            "title": "42 EU (9 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "209.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "262",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "42 EU (9 US)"
+              }
+            ]
+          }
         },
-      ],
-    },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1103",
+            "title": "43 EU (10 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "209.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "262",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "43 EU (10 US)"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1104",
+            "title": "44 EU (11 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "209.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "262",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "44 EU (11 US)"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 12. Union Force Classic Bindings
   {
-    id: 'gid://shopify/Product/12',
-    title: 'Union Force Classic Snowboard Bindings',
-    handle: 'union-force-bindings',
-    description: 'Еталон надійності серед сноубордичних кріплень у всьому світі. База Stage 4 Duraflex ST витримує екстремальні морози та навантаження, стрепи Exoframe 4.0 забезпечують миттєву передачу зусилля на кант без передавлювання стопи, а магнієві баклі працюють бездоганно роками.',
-    availableForSale: true,
-    vendor: 'Union',
-    productType: 'Кріплення',
-    isStaffPick: true,
-    rating: 4.9,
-    reviewCount: 215,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1547447134-cd3f5c716030?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Union Force Snowboard Bindings',
+    "id": "gid://shopify/Product/12",
+    "title": "Vans Invado Pro Snowboard Boots - mushroom",
+    "handle": "vans-invado-pro-snowboard-boots",
+    "description": "Vans Invado Pro Snowboard Boots - mushroom — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Vans з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Vans",
+    "productType": "Взуття",
+    "isStaffPick": false,
+    "rating": 5,
+    "reviewCount": 66,
+    "featuredImage": {
+      "url": "/products/vans-invado-pro-snowboard-boots.jpg",
+      "altText": "Vans Invado Pro Snowboard Boots - mushroom"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1547447134-cd3f5c716030?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Union Force ratchet detail',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '249.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '249.00', currencyCode: 'USD' },
-    },
-    tags: ['Кріплення', 'Duraflex ST', 'Staff Pick', 'Довічна гарантія', 'All-Mountain'],
-    specs: {
-      flex: '7/10 (Середньо-жорсткі для будь-яких умов)',
-      flexRating: 7,
-      profile: 'Stage 4 Duraflex ST Baseplate',
-      shape: 'Team Highback w/ Forward Lean Adjuster',
-      terrain: 'All-Mountain / Freeride / Park',
-      level: 'All Levels',
-      gender: 'men',
-      subCategory: "Men's Snowboard Bindings",
-      origin: 'Італія (Union Binding Co)',
-      warranty: 'Довічна гарантія на базу та п’яткову дугу',
-      features: ['Multi-Density Thermoformed EVA Bushings', 'Extruded 3D Aluminum Heelcup', 'Magnesium Ratchets S1', 'Exoframe 4.0 Ankle Strap'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1201',
-            title: 'M (Розмір 40-43 EU / Black)',
-            availableForSale: true,
-            price: { amount: '249.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/vans-invado-pro-snowboard-boots.jpg",
+            "altText": "Vans Invado Pro Snowboard Boots - mushroom"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1202',
-            title: 'L (Розмір 43.5-47 EU / Black)',
-            availableForSale: true,
-            price: { amount: '249.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "https://www.tactics.com/a/gg7b/o/vans-invado-pro-snowboard-boots-mushroom.jpg",
+            "altText": "Vans Invado Pro Snowboard Boots - mushroom alternate view"
+          }
+        }
+      ]
+    },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "188.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "188.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "236",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Взуття",
+      "Vans",
+      "Tactics Gear",
+      "2026/2027",
+      "Гібрид / Рокер"
+    ],
+    "specs": {
+      "flex": "5-7/10",
+      "flexRating": 6,
+      "profile": "Hybrid BOA + Traditional Lace",
+      "camberType": "hybrid",
+      "shape": "V2 Waffle Pro",
+      "terrain": "Park & Resort",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Взуття",
+      "origin": "Vans Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Vans",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1201",
+            "title": "41 EU (8.5 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "188.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "236",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "41 EU (8.5 US)"
+              }
+            ]
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1203',
-            title: 'M (Розмір 40-43 EU / Ice White)',
-            availableForSale: true,
-            price: { amount: '249.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "id": "gid://shopify/ProductVariant/1202",
+            "title": "42 EU (9 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "188.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "236",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "42 EU (9 US)"
+              }
+            ]
+          }
         },
-      ],
-    },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1203",
+            "title": "43 EU (10 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "188.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "236",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "43 EU (10 US)"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1204",
+            "title": "44 EU (11 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "188.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "236",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "44 EU (11 US)"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 13. Burton Step On Genesis Re:Flex Bindings
   {
-    id: 'gid://shopify/Product/13',
-    title: 'Burton Step On Genesis Re:Flex Bindings',
-    handle: 'burton-step-on-genesis-bindings',
-    description: 'Поєднання неперевершеного комфорту хайбека Kickback Hammock із блискавичною швидкістю системи Step On. Двокомпонентний хайбек огортає черевик та миттєво реагує на найменший нахил райдера, повністю усуваючи втому ніг під час довгих спусків.',
-    availableForSale: true,
-    vendor: 'Burton',
-    productType: 'Кріплення',
-    isStaffPick: true,
-    rating: 4.9,
-    reviewCount: 78,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1547447134-cd3f5c716030?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Burton Step On Genesis Bindings',
+    "id": "gid://shopify/Product/13",
+    "title": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk",
+    "handle": "salomon-launch-boa-snowboard-boots",
+    "description": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Salomon з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Salomon",
+    "productType": "Взуття",
+    "isStaffPick": false,
+    "rating": 4.7,
+    "reviewCount": 77,
+    "featuredImage": {
+      "url": "/products/salomon-launch-boa-snowboard-boots.jpg",
+      "altText": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1547447134-cd3f5c716030?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Kickback hammock highback',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '389.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '389.00', currencyCode: 'USD' },
-    },
-    compareAtPrice: { amount: '430.00', currencyCode: 'USD' },
-    tags: ['Кріплення', 'Step On', 'Genesis', 'Re:Flex', 'Kickback Hammock'],
-    specs: {
-      flex: '6-7/10 (Чуйний преміальний комфорт)',
-      flexRating: 6.5,
-      profile: 'Step On Re:Flex Disc (Сумісні з The Channel та 4x4)',
-      shape: 'Kickback Hammock Highback',
-      terrain: 'All-Mountain / Groomers / Powder',
-      level: 'Intermediate – Expert',
-      gender: 'men',
-      subCategory: "Men's Snowboard Bindings",
-      origin: 'Burton Europe, Австрія',
-      warranty: 'Довічна гарантія на основу бази Burton',
-      features: ['Step On Cleat Hooks Connection', 'Kickback Hammock Suspension', 'Re:Flex FullBED Cushioning with B3 Gel', 'Nylon Composite Blended Baseplate'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1301',
-            title: 'M (Для взуття 41.5-43.5 EU / Black)',
-            availableForSale: true,
-            price: { amount: '389.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/salomon-launch-boa-snowboard-boots.jpg",
+            "altText": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1302',
-            title: 'L (Для взуття 44-46 EU / Black)',
-            availableForSale: true,
-            price: { amount: '389.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/gbyl/o/salomon-launch-boa-sj-boa-snowboard-boots-almond-milk.jpg",
+            "altText": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "227.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "227.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "285",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Взуття",
+      "Salomon",
+      "Tactics Gear",
+      "2026/2027",
+      "Гібрид / Рокер"
+    ],
+    "specs": {
+      "flex": "5/10",
+      "flexRating": 5,
+      "profile": "Fit To Ride SJ Boa",
+      "camberType": "hybrid",
+      "shape": "Compact Footprint",
+      "terrain": "Freestyle Progression",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Взуття",
+      "origin": "Salomon Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Salomon",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1301",
+            "title": "41 EU (8.5 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "227.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "285",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "41 EU (8.5 US)"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1302",
+            "title": "42 EU (9 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "227.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "285",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "42 EU (9 US)"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1303",
+            "title": "43 EU (10 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "227.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "285",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "43 EU (10 US)"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1304",
+            "title": "44 EU (11 US)",
+            "availableForSale": true,
+            "price": {
+              "amount": "227.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "285",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "44 EU (11 US)"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 14. Anon M4 Toric MFI Magnetic Goggles
   {
-    id: 'gid://shopify/Product/14',
-    title: 'Anon M4 Toric MFI Quick-Swap Magnetic Goggles',
-    handle: 'anon-m4-toric-mfi-goggles',
-    description: 'Технологічний шедевр для максимального огляду в горах. Система надшвидкої магнітної зміни лінз Magna-Tech (9 потужних неодимових магнітів). У комплекті друга змінна лінза для похмурої погоди Perceive Cloudy Pink та фірмова магнітна маска для обличчя MFI Facemask.',
-    availableForSale: true,
-    vendor: 'Anon',
-    productType: 'Оптика',
-    isStaffPick: true,
-    rating: 5.0,
-    reviewCount: 184,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Anon M4 Magnetic Goggles',
+    "id": "gid://shopify/Product/14",
+    "title": "Burton Step On Cartel X EST Snowboard Bindings - black",
+    "handle": "burton-step-on-cartel-x-bindings",
+    "description": "Burton Step On Cartel X EST Snowboard Bindings - black — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Burton з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Burton",
+    "productType": "Кріплення",
+    "isStaffPick": true,
+    "rating": 4.8,
+    "reviewCount": 88,
+    "featuredImage": {
+      "url": "/products/burton-step-on-cartel-x-bindings.jpg",
+      "altText": "Burton Step On Cartel X EST Snowboard Bindings - black"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Anon M4 lens reflection',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '299.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '299.00', currencyCode: 'USD' },
-    },
-    compareAtPrice: { amount: '340.00', currencyCode: 'USD' },
-    tags: ['Оптика', 'Magna-Tech', 'Staff Pick', 'MFI Included', 'Toric Lens'],
-    specs: {
-      flex: 'Легка оправа з міцного поліуретану TPU',
-      flexRating: 0,
-      profile: 'Toric Lens (Повторює природну кривизну людського ока)',
-      shape: 'OTG (Over The Glasses Сумісні з оптичними окулярами)',
-      terrain: 'Будь-яка погода / Сонце / Туман / Паудер',
-      level: 'Pro Rider Choice',
-      gender: 'unisex',
-      subCategory: "Snowboard Goggles",
-      origin: 'Burton Anon, Австрія',
-      warranty: '2 роки офіційної гарантії',
-      features: ['Magna-Tech 9-Point Magnetic Quick Change', 'Perceive High-Contrast Color Enhancement', 'Integral Clarity Technology Anti-Fog', 'MFI Magnetic Facemask Included + Bonus Low-Light Lens'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1401',
-            title: 'Black Frame / Perceive Sunny Onyx + Bonus Amber',
-            availableForSale: true,
-            price: { amount: '299.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/burton-step-on-cartel-x-bindings.jpg",
+            "altText": "Burton Step On Cartel X EST Snowboard Bindings - black"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1402',
-            title: 'Navy Frame / Perceive Variable Blue + Bonus Pink',
-            availableForSale: true,
-            price: { amount: '299.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/ghrq/o/burton-step-on-cartel-x-snowboard-bindings-black.jpg",
+            "altText": "Burton Step On Cartel X EST Snowboard Bindings - black alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "209.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "209.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "262",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Кріплення",
+      "Burton",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "8/10",
+      "flexRating": 8,
+      "profile": "Step On System",
+      "camberType": "camber",
+      "shape": "FullBED Cushioning",
+      "terrain": "Aggressive All-Mountain",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Кріплення",
+      "origin": "Burton Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Burton",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1401",
+            "title": "M (EU 40-43)",
+            "availableForSale": true,
+            "price": {
+              "amount": "209.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "262",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "M (EU 40-43)"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1402",
+            "title": "L (EU 43-46)",
+            "availableForSale": true,
+            "price": {
+              "amount": "209.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "262",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "L (EU 43-46)"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 15. Smith Squad XL ChromaPop Goggles
   {
-    id: 'gid://shopify/Product/15',
-    title: 'Smith Squad XL ChromaPop Cylindrical Goggles',
-    handle: 'smith-squad-xl-goggles',
-    description: 'Найбільша циліндрична маска в лінійці Smith із надзвичайно широким кутом периферичного огляду. Оснащена фірмовими лінзами ChromaPop, які фільтрують перехресні світлові хвилі для створення надчіткого контрасту рельєфу снігу. В комплекті 2 оригінальні лінзи (для сонця та похмурої погоди).',
-    availableForSale: true,
-    vendor: 'Smith',
-    productType: 'Оптика',
-    isStaffPick: false,
-    rating: 4.8,
-    reviewCount: 92,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Smith Squad XL Goggles',
+    "id": "gid://shopify/Product/15",
+    "title": "Bent Metal Lightning Supermatic Snowboard Bindings - white",
+    "handle": "bent-metal-logic-snowboard-bindings",
+    "description": "Bent Metal Lightning Supermatic Snowboard Bindings - white — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Bent Metal з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Bent Metal",
+    "productType": "Кріплення",
+    "isStaffPick": false,
+    "rating": 4.9,
+    "reviewCount": 99,
+    "featuredImage": {
+      "url": "/products/bent-metal-logic-snowboard-bindings.jpg",
+      "altText": "Bent Metal Lightning Supermatic Snowboard Bindings - white"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1517404215738-15263e9f9178?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Smith ChromaPop lens view',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '159.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '159.00', currencyCode: 'USD' },
-    },
-    tags: ['Оптика', 'ChromaPop', 'XL Field of View', '2 Lenses Included', 'Smith'],
-    specs: {
-      flex: 'Responsive Fit frame design',
-      flexRating: 0,
-      profile: 'Cylindrical Carbonic-x Lens',
-      shape: 'XL Semi-Rimless Design',
-      terrain: 'Bright Sun / Overcast / Storm',
-      level: 'All Levels',
-      gender: 'unisex',
-      subCategory: "Snowboard Goggles",
-      origin: 'США / Smith Optics Europe',
-      warranty: 'Довічна гарантія Smith Optics',
-      features: ['ChromaPop Sun & Storm Lenses Included', 'Fog-X Anti-Fog Inner Lens', '3-Layer DriWix Face Foam', 'Ultra-Wide Silicone Backed Strap'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1501',
-            title: 'Black / ChromaPop Sun Green Mirror + Storm Rose Flash',
-            availableForSale: true,
-            price: { amount: '159.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/bent-metal-logic-snowboard-bindings.jpg",
+            "altText": "Bent Metal Lightning Supermatic Snowboard Bindings - white"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1502',
-            title: 'Slate / ChromaPop Everyday Red Mirror + Storm Yellow',
-            availableForSale: true,
-            price: { amount: '159.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/gaqy/o/bent-metal-lightning-supermatic-snowboard-bindings-white.jpg",
+            "altText": "Bent Metal Lightning Supermatic Snowboard Bindings - white alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "479.99",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "479.99",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "600",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Кріплення",
+      "Bent Metal",
+      "Tactics Gear",
+      "2026/2027",
+      "Гібрид / Рокер"
+    ],
+    "specs": {
+      "flex": "4/10",
+      "flexRating": 4,
+      "profile": "Flex Control Drive Plate",
+      "camberType": "hybrid",
+      "shape": "Urethane Highback",
+      "terrain": "Freestyle Jibbing",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Кріплення",
+      "origin": "Bent Metal Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Bent Metal",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1501",
+            "title": "M (EU 40-43)",
+            "availableForSale": true,
+            "price": {
+              "amount": "479.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "600",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "M (EU 40-43)"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1502",
+            "title": "L (EU 43-46)",
+            "availableForSale": true,
+            "price": {
+              "amount": "479.99",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "600",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "L (EU 43-46)"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 16. Oakley MOD3 MIPS Helmet
   {
-    id: 'gid://shopify/Product/16',
-    title: 'Oakley MOD3 MIPS Action Sports Helmet',
-    handle: 'oakley-mod3-mips-helmet',
-    description: 'Передовий захисний шолом для гірськолижного екстриму. Оснащений системою захисту мозку MIPS (Multi-directional Impact Protection System), яка нейтралізує косі та обертальні удари під час падінь на швидкості. Посадка регулюється коліщатком BOA 360 Fit System, а магнітна застібка Fidlock зручно клацає навіть у товстих рукавицях.',
-    availableForSale: true,
-    vendor: 'Oakley',
-    productType: 'Захист',
-    isStaffPick: true,
-    rating: 4.9,
-    reviewCount: 118,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Oakley MOD3 MIPS Helmet',
+    "id": "gid://shopify/Product/16",
+    "title": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens",
+    "handle": "smith-squad-s-goggles",
+    "description": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Smith з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Smith",
+    "productType": "Оптика",
+    "isStaffPick": false,
+    "rating": 5,
+    "reviewCount": 110,
+    "featuredImage": {
+      "url": "/products/smith-squad-s-goggles.jpg",
+      "altText": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Oakley helmet profile view',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '169.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '169.00', currencyCode: 'USD' },
-    },
-    tags: ['Захист', 'MIPS', 'BOA 360', 'Fidlock', 'ASTM F2040'],
-    specs: {
-      flex: 'In-Mold Lightweight PC Shell + EPS Foam',
-      flexRating: 0,
-      profile: 'Modular Brim System (MBS)',
-      shape: 'Ergonomic Round & Oval Fit',
-      terrain: 'Snowboard / Ski / Downhill',
-      level: 'All Levels',
-      gender: 'unisex',
-      subCategory: "Protective Snowboard Gear",
-      origin: 'Oakley Europe (Італія)',
-      warranty: 'Сертифікація ASTM F2040 та CE EN1077',
-      features: ['MIPS Brain Protection System', 'BOA 360 Fit System Micro-Adjustment', 'Fidlock Magnetic Buckle', 'Removable Liner & Goggle Brim Vent'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1601',
-            title: 'S (51-55 см / Matte Black)',
-            availableForSale: true,
-            price: { amount: '169.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/smith-squad-s-goggles.jpg",
+            "altText": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1602',
-            title: 'M (55-59 см / Matte Black)',
-            availableForSale: true,
-            price: { amount: '169.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1603',
-            title: 'L (59-63 см / Matte Black)',
-            availableForSale: true,
-            price: { amount: '169.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1604',
-            title: 'M (55-59 см / Factory White)',
-            availableForSale: true,
-            price: { amount: '169.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/g9nk/o/smith-squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens.jpg",
+            "altText": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "135",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "135",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "169",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Оптика",
+      "Smith",
+      "Tactics Gear",
+      "2026/2027",
+      "Гібрид / Рокер"
+    ],
+    "specs": {
+      "flex": "Responsive",
+      "flexRating": 5,
+      "profile": "ChromaPop Cylindrical",
+      "camberType": "hybrid",
+      "shape": "Medium/Large Fit",
+      "terrain": "All Conditions",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Оптика",
+      "origin": "Smith Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Smith",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1601",
+            "title": "One Size (Універсальний)",
+            "availableForSale": true,
+            "price": {
+              "amount": "135",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "169",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "One Size (Універсальний)"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 17. Volcom Guide GORE-TEX 3-Layer Jacket
   {
-    id: 'gid://shopify/Product/17',
-    title: 'Volcom Guide GORE-TEX 3-Layer Snow Jacket',
-    handle: 'volcom-guide-goretex-jacket',
-    description: 'Розроблена разом з гірськими гідами Baldface Lodge у Канаді. 3-шарова мембрана GORE-TEX тримає найсуворіші хуртовини та шторми сухими на 100%. Інтегрована система Zip Tech® дозволяє пристебнути куртку до будь-яких штанів Volcom, утворюючи герметичний комбінезон без шансів потрапляння снігу. Вбудована лавинна система RECCO®.',
-    availableForSale: true,
-    vendor: 'Volcom',
-    productType: 'Одяг',
-    isStaffPick: true,
-    rating: 5.0,
-    reviewCount: 64,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Volcom Guide GORE-TEX Jacket',
+    "id": "gid://shopify/Product/17",
+    "title": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens",
+    "handle": "anon-m5-toric-goggles",
+    "description": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Anon з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Anon",
+    "productType": "Оптика",
+    "isStaffPick": false,
+    "rating": 4.7,
+    "reviewCount": 121,
+    "featuredImage": {
+      "url": "/products/anon-m5-toric-goggles.jpg",
+      "altText": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=1000&auto=format&fit=crop',
-            altText: 'GORE-TEX fabric test in snow',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '599.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '599.00', currencyCode: 'USD' },
-    },
-    compareAtPrice: { amount: '680.00', currencyCode: 'USD' },
-    tags: ['Одяг', 'GORE-TEX 3-Layer', 'Staff Pick', 'Zip Tech', 'RECCO'],
-    specs: {
-      flex: '3-Layer Ripstop Shell',
-      flexRating: 0,
-      profile: 'GORE-TEX Guaranteed to Keep You Dry® (28,000mm)',
-      shape: 'Standard Guide Fit',
-      terrain: 'Backcountry / Heli-Skiing / Severe Storms',
-      level: 'All Riders',
-      gender: 'men',
-      subCategory: "Men's Snowboard Clothing",
-      origin: 'США / Volcom Europe',
-      warranty: 'Довічна гарантія GORE-TEX на сухість',
-      features: ['GORE-TEX 3-Layer with Tricot Backer', 'Fully Taped Seams', 'Zip Tech® Jacket-to-Pant Interface', 'RECCO® Advanced Rescue Reflector', 'YKK® AquaGuard® Water Repellent Zippers'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1701',
-            title: 'M / Resin Gold',
-            availableForSale: true,
-            price: { amount: '599.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/anon-m5-toric-goggles.jpg",
+            "altText": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1702',
-            title: 'L / Dark Charcoal',
-            availableForSale: true,
-            price: { amount: '599.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1703',
-            title: 'XL / Dark Charcoal',
-            availableForSale: true,
-            price: { amount: '599.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/ggic/o/anon-m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst.jpg",
+            "altText": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "188.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "188.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "236",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Оптика",
+      "Anon",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "Toric Lens",
+      "flexRating": 6,
+      "profile": "Magna-Tech Quick Change",
+      "camberType": "camber",
+      "shape": "Toric Curvature",
+      "terrain": "Bright Sun & Low Light",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Оптика",
+      "origin": "Anon Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Anon",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1701",
+            "title": "One Size (Універсальний)",
+            "availableForSale": true,
+            "price": {
+              "amount": "188.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "236",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "One Size (Універсальний)"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 18. Montec Doom 20K Waterproof Anorak
   {
-    id: 'gid://shopify/Product/18',
-    title: 'Montec Doom 20K Waterproof Snow Anorak',
-    handle: 'montec-doom-20k-snow-anorak',
-    description: 'Флагманський сноубордичний анорак із мембраною Shield-TEC 20,000mm/20,000g. Повністю проклеєні шви, водовідштовхувальне покриття Teflon EcoElite DWR, снігозахисна спідниця, бічна блискавка для легкого одягання, вентиляція під пахвами та тепла підкладка.',
-    availableForSale: true,
-    vendor: 'Montec',
-    productType: 'Одяг',
-    isStaffPick: false,
-    rating: 4.9,
-    reviewCount: 147,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Montec Doom Snow Anorak',
+    "id": "gid://shopify/Product/18",
+    "title": "Smith Scout MIPS Snowboard Helmet - matte white",
+    "handle": "smith-scout-mips-snowboard-helmet",
+    "description": "Smith Scout MIPS Snowboard Helmet - matte white — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Smith з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Smith",
+    "productType": "Захист",
+    "isStaffPick": false,
+    "rating": 4.8,
+    "reviewCount": 42,
+    "featuredImage": {
+      "url": "/products/smith-scout-mips-snowboard-helmet.jpg",
+      "altText": "Smith Scout MIPS Snowboard Helmet - matte white"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Anorak details',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '239.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '239.00', currencyCode: 'USD' },
-    },
-    tags: ['Одяг', '20K Мембрана', 'Анорак', 'Водозахист', 'Топ стиль'],
-    specs: {
-      flex: '2-Way Stretch Membrane',
-      flexRating: 0,
-      profile: '20,000 mm Водонепроникність / 20,000 g Дихання',
-      shape: 'Relaxed Anorak Fit',
-      terrain: 'Powder / Resort / Snowstorm',
-      level: 'All Riders',
-      gender: 'unisex',
-      subCategory: "Men's Snowboard Clothing",
-      origin: 'Швеція / Montecwear ЄС',
-      warranty: '2 роки офіційної гарантії',
-      features: ['20K/20K Shield-TEC Мембрана', 'Вологозахищені блискавки YKK Aquaguard', 'Кишеня для скіпасу на рукаві', 'Анатомічний капюшон під шолом'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1801',
-            title: 'S / All Black',
-            availableForSale: true,
-            price: { amount: '239.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/smith-scout-mips-snowboard-helmet.jpg",
+            "altText": "Smith Scout MIPS Snowboard Helmet - matte white"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1802',
-            title: 'M / Black & Olive Green',
-            availableForSale: true,
-            price: { amount: '239.00', currencyCode: 'USD' },
-          },
-        },
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1803',
-            title: 'L / Arctic Camo',
-            availableForSale: true,
-            price: { amount: '239.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/emgr/o/smith-scout-mips-snowboard-helmet-matte-white.jpg",
+            "altText": "Smith Scout MIPS Snowboard Helmet - matte white alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "120",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "120",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "150",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Захист",
+      "Smith",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "Impact Shell",
+      "flexRating": 8,
+      "profile": "MIPS Brain Protection",
+      "camberType": "camber",
+      "shape": "Low Profile",
+      "terrain": "All-Mountain Safety",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Захист",
+      "origin": "Smith Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Smith",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1801",
+            "title": "One Size (Універсальний)",
+            "availableForSale": true,
+            "price": {
+              "amount": "120",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "150",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "One Size (Універсальний)"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 19. Santa Cruz Classic Dot 8.0" Skateboard
   {
-    id: 'gid://shopify/Product/19',
-    title: 'Santa Cruz Classic Dot Complete Skateboard 8.0"',
-    handle: 'santa-cruz-classic-dot-skateboard',
-    description: 'Оригінальний зібраний компліт від культового каліфорнійського бренду Santa Cruz. 7 шарів 100% північноамериканського клена з епоксидним склеюванням. Траки Bullet 130mm, колеса OJ Wheels 52mm 95a та швидкісні підшипники ABEC-5.',
-    availableForSale: true,
-    vendor: 'Santa Cruz',
-    productType: 'Скейтборди',
-    isStaffPick: true,
-    rating: 4.9,
-    reviewCount: 89,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Santa Cruz Classic Dot Complete Skateboard',
+    "id": "gid://shopify/Product/19",
+    "title": "Volcom Rain GORE-TEX Bib Overall Pants - black",
+    "handle": "volcom-rain-gore-tex-bib-pants",
+    "description": "Volcom Rain GORE-TEX Bib Overall Pants - black — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Volcom з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Volcom",
+    "productType": "Одяг",
+    "isStaffPick": false,
+    "rating": 4.9,
+    "reviewCount": 53,
+    "featuredImage": {
+      "url": "/products/volcom-rain-gore-tex-bib-pants.jpg",
+      "altText": "Volcom Rain GORE-TEX Bib Overall Pants - black"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Santa Cruz deck graphic',
-          },
-        },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '119.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '129.00', currencyCode: 'USD' },
-    },
-    tags: ['Скейтборди', '7-ply Maple', 'Staff Pick', 'Стріт & Парк', 'Компліт'],
-    specs: {
-      flex: '9/10 (Жорстка дека для вибухового клацання)',
-      flexRating: 9,
-      profile: 'Medium Concave',
-      shape: 'Popsicle Deck 8.0" x 31.6"',
-      terrain: 'Street / Skatepark / Bowl',
-      level: 'Beginner – Pro',
-      gender: 'unisex',
-      subCategory: 'Skateboards',
-      origin: 'США / Каліфорнія (Склад ЄС)',
-      warranty: '100% оригінальний компліт Santa Cruz',
-      features: ['7-Ply North American Maple', 'Bullet 130mm Lightweight Trucks', 'OJ 52mm 95a Urethane Wheels', 'High Speed ABEC-5 Bearings'],
-    },
-    variants: {
-      edges: [
-        {
-          node: {
-            id: 'gid://shopify/ProductVariant/1901',
-            title: '8.0" x 31.6" (Універсал стріт/парк)',
-            availableForSale: true,
-            price: { amount: '119.00', currencyCode: 'USD' },
-          },
+          "node": {
+            "url": "/products/volcom-rain-gore-tex-bib-pants.jpg",
+            "altText": "Volcom Rain GORE-TEX Bib Overall Pants - black"
+          }
         },
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/1902',
-            title: '8.25" x 31.8" (Для великого взуття та рампи)',
-            availableForSale: true,
-            price: { amount: '129.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/geql/o/volcom-rain-gore-tex-bib-overall-pants-black.jpg",
+            "altText": "Volcom Rain GORE-TEX Bib Overall Pants - black alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "314.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "314.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "394",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Одяг",
+      "Volcom",
+      "Tactics Gear",
+      "2026/2027",
+      "Гібрид / Рокер"
+    ],
+    "specs": {
+      "flex": "Relaxed Fit",
+      "flexRating": 5,
+      "profile": "GORE-TEX 2-Layer Waterproof",
+      "camberType": "hybrid",
+      "shape": "Bib Overalls",
+      "terrain": "Deep Powder & Storm",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Одяг",
+      "origin": "Volcom Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Volcom",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/1901",
+            "title": "One Size (Універсальний)",
+            "availableForSale": true,
+            "price": {
+              "amount": "314.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "394",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "One Size (Універсальний)"
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
-
-  // 20. Dakine Deluxe Snowboard Tune & Wax Kit
   {
-    id: 'gid://shopify/Product/20',
-    title: 'Dakine Deluxe Snowboard Tuning & Waxing Kit',
-    handle: 'dakine-deluxe-tune-kit',
-    description: 'Професійний набір для повного сервісу сноубордів та гірських лиж від культового бренду Dakine. Включає регульовану праску для парафіну (110-240V), всепогодний парафін Nitrous All-Temp, канторіз для заточки під кутом 88°/90°, металевий та пластиковий скребки, латунну й нейлонову щітки, палички P-Tex для ремонту подряпин бази та компактний кейс.',
-    availableForSale: true,
-    vendor: 'Dakine',
-    productType: 'Аксесуари',
-    isStaffPick: true,
-    rating: 4.9,
-    reviewCount: 76,
-    featuredImage: {
-      url: 'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1000&auto=format&fit=crop',
-      altText: 'Dakine Deluxe Tune Kit',
+    "id": "gid://shopify/Product/20",
+    "title": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck",
+    "handle": "santa-cruz-stranger-things-deck",
+    "description": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Santa Cruz з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Santa Cruz",
+    "productType": "Скейтборди",
+    "isStaffPick": false,
+    "rating": 5,
+    "reviewCount": 64,
+    "featuredImage": {
+      "url": "/products/santa-cruz-stranger-things-deck.jpg",
+      "altText": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck"
     },
-    images: {
-      edges: [
+    "images": {
+      "edges": [
         {
-          node: {
-            url: 'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1000&auto=format&fit=crop',
-            altText: 'Tuning iron and wax accessories',
-          },
+          "node": {
+            "url": "/products/santa-cruz-stranger-things-deck.jpg",
+            "altText": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck"
+          }
         },
-      ],
-    },
-    priceRange: {
-      minVariantPrice: { amount: '89.00', currencyCode: 'USD' },
-      maxVariantPrice: { amount: '89.00', currencyCode: 'USD' },
-    },
-    compareAtPrice: { amount: '105.00', currencyCode: 'USD' },
-    tags: ['Аксесуари', 'Догляд за бордом', 'Парафін', 'Канторіз', 'P-Tex Ремонт'],
-    specs: {
-      flex: 'Професійний інструмент для майстерні',
-      flexRating: 0,
-      profile: 'Complete Snowboard Tuning Case',
-      shape: 'Захисний чохол на блискавці',
-      terrain: 'Resort & Home Service',
-      level: 'Для всіх райдерів',
-      gender: 'unisex',
-      subCategory: 'Snowboarding Accessories',
-      origin: 'США / Dakine Europe',
-      warranty: 'Офіційна гарантія Dakine 2 роки',
-      features: ['Adjustable Temperature Wax Iron', 'Edge Tuning Tool (88° and 90°)', 'Nitrous All-Temp Wax (110g)', 'Clear & Black P-Tex Sticks', 'Brass & Horsehair Buffing Brushes'],
-    },
-    variants: {
-      edges: [
         {
-          node: {
-            id: 'gid://shopify/ProductVariant/2001',
-            title: 'Deluxe Tuning Edition (Повний набір)',
-            availableForSale: true,
-            price: { amount: '89.00', currencyCode: 'USD' },
-          },
-        },
-      ],
+          "node": {
+            "url": "https://www.tactics.com/a/gfua/o/santa-cruz-stranger-things-hellfire-club-flames-90-skateboard-deck.jpg",
+            "altText": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck alternate view"
+          }
+        }
+      ]
     },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "99.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "99.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "125",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Скейтборди",
+      "Santa Cruz",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "7-Ply Maple",
+      "flexRating": 7,
+      "profile": "Medium Concave",
+      "camberType": "camber",
+      "shape": "Shaped 9.0\" Deck",
+      "terrain": "Street / Transition",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Скейтборди",
+      "origin": "Santa Cruz Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Santa Cruz",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/2001",
+            "title": "8.0\"",
+            "availableForSale": true,
+            "price": {
+              "amount": "99.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "125",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "8.0\""
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/2002",
+            "title": "8.25\"",
+            "availableForSale": true,
+            "price": {
+              "amount": "99.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "125",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "8.25\""
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/2003",
+            "title": "8.5\"",
+            "availableForSale": true,
+            "price": {
+              "amount": "99.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "125",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "8.5\""
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
+  {
+    "id": "gid://shopify/Product/21",
+    "title": "Tactics Oval Logo Skateboard Deck - blue",
+    "handle": "tactics-oval-logo-skateboard-deck",
+    "description": "Tactics Oval Logo Skateboard Deck - blue — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника Tactics з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "Tactics",
+    "productType": "Скейтборди",
+    "isStaffPick": false,
+    "rating": 4.7,
+    "reviewCount": 75,
+    "featuredImage": {
+      "url": "/products/tactics-oval-logo-skateboard-deck.jpg",
+      "altText": "Tactics Oval Logo Skateboard Deck - blue"
+    },
+    "images": {
+      "edges": [
+        {
+          "node": {
+            "url": "/products/tactics-oval-logo-skateboard-deck.jpg",
+            "altText": "Tactics Oval Logo Skateboard Deck - blue"
+          }
+        },
+        {
+          "node": {
+            "url": "https://www.tactics.com/a/ems4/o/tactics-oval-logo-skateboard-deck-blue.jpg",
+            "altText": "Tactics Oval Logo Skateboard Deck - blue alternate view"
+          }
+        }
+      ]
+    },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "49.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "49.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "62",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Скейтборди",
+      "Tactics",
+      "Tactics Gear",
+      "2026/2027",
+      "Класичний кембер"
+    ],
+    "specs": {
+      "flex": "Hard Rock Maple",
+      "flexRating": 6.5,
+      "profile": "Standard Popsicle",
+      "camberType": "camber",
+      "shape": "8.25\" Width",
+      "terrain": "Street / Park Skate",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Скейтборди",
+      "origin": "Tactics Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали Tactics",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/2101",
+            "title": "8.0\"",
+            "availableForSale": true,
+            "price": {
+              "amount": "49.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "62",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "8.0\""
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/2102",
+            "title": "8.25\"",
+            "availableForSale": true,
+            "price": {
+              "amount": "49.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "62",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "8.25\""
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/2103",
+            "title": "8.5\"",
+            "availableForSale": true,
+            "price": {
+              "amount": "49.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "62",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "8.5\""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "gid://shopify/Product/22",
+    "title": "DAKINE Goggle Stash Case - mulled basil",
+    "handle": "dakine-goggle-stash-case",
+    "description": "DAKINE Goggle Stash Case - mulled basil — 100% оригінальне спорядження від офіційного дистриб'ютора. Перевірено про-райдерами та відібрано з каталогу Tactics Boardshop. Поставляється в фірмовому пакуванні виробника DAKINE з повною офіційною гарантією.",
+    "availableForSale": true,
+    "vendor": "DAKINE",
+    "productType": "Аксесуари",
+    "isStaffPick": false,
+    "rating": 4.8,
+    "reviewCount": 86,
+    "featuredImage": {
+      "url": "/products/dakine-goggle-stash-case.jpg",
+      "altText": "DAKINE Goggle Stash Case - mulled basil"
+    },
+    "images": {
+      "edges": [
+        {
+          "node": {
+            "url": "/products/dakine-goggle-stash-case.jpg",
+            "altText": "DAKINE Goggle Stash Case - mulled basil"
+          }
+        },
+        {
+          "node": {
+            "url": "https://www.tactics.com/a/gh39/o/dakine-goggle-stash-case-mulled-basil.jpg",
+            "altText": "DAKINE Goggle Stash Case - mulled basil alternate view"
+          }
+        }
+      ]
+    },
+    "priceRange": {
+      "minVariantPrice": {
+        "amount": "17.95",
+        "currencyCode": "USD"
+      },
+      "maxVariantPrice": {
+        "amount": "17.95",
+        "currencyCode": "USD"
+      }
+    },
+    "compareAtPrice": {
+      "amount": "22",
+      "currencyCode": "USD"
+    },
+    "tags": [
+      "Аксесуари",
+      "DAKINE",
+      "Tactics Gear",
+      "2026/2027",
+      "Гібрид / Рокер"
+    ],
+    "specs": {
+      "flex": "Padded Protection",
+      "flexRating": 5,
+      "profile": "Fleece Lined",
+      "camberType": "hybrid",
+      "shape": "Molded Case",
+      "terrain": "Travel & Gear Care",
+      "level": "Intermediate – Advanced Pro",
+      "gender": "unisex",
+      "subCategory": "Аксесуари",
+      "origin": "DAKINE Authorized Pro Shop",
+      "warranty": "Офіційна гарантія бренду (1-2 роки)",
+      "waistWidth": "N/A",
+      "features": [
+        "Преміальні матеріали DAKINE",
+        "Висока зносостійкість при інтенсивному катанні",
+        "Оригінальний серійний номер та заводське пакування",
+        "Швидка доставка по Україні Новою Поштою (1-3 дні)"
+      ]
+    },
+    "variants": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/ProductVariant/2201",
+            "title": "One Size (Універсальний)",
+            "availableForSale": true,
+            "price": {
+              "amount": "17.95",
+              "currencyCode": "USD"
+            },
+            "compareAtPrice": {
+              "amount": "22",
+              "currencyCode": "USD"
+            },
+            "selectedOptions": [
+              {
+                "name": "Розмір / Опція",
+                "value": "One Size (Універсальний)"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
 ];
 
-export const FALLBACK_BRANDS = [
-  'Burton',
-  'Capita',
-  'Lib Tech',
-  'Union',
-  'ThirtyTwo',
-  'Salomon',
-  'GNU',
-  'Nitro',
-  'Jones',
-  'Bataleon',
-  'Anon',
-  'Smith',
-  'Oakley',
-  'Volcom',
-  'Montec',
-  'Vans',
-  'Santa Cruz',
-  'Dakine',
+export const FALLBACK_BRANDS: string[] = [
+  "Lib Tech",
+  "Burton",
+  "Gnu",
+  "SIMS",
+  "Arbor",
+  "Jones",
+  "Ride",
+  "Salomon",
+  "Thirtytwo",
+  "Vans",
+  "Bent Metal",
+  "Smith",
+  "Anon",
+  "Volcom",
+  "Santa Cruz",
+  "Tactics",
+  "DAKINE"
 ];
 
 export const TACTICS_BRANDS = FALLBACK_BRANDS;
 
 export const FALLBACK_COLLECTIONS: ShopifyCollection[] = [
-  { id: 'all', title: 'Все спорядження', handle: 'all' },
-  { id: 'Сноуборди', title: 'Сноуборди', handle: 'snowboards' },
-  { id: 'Взуття', title: 'Черевики (Boots)', handle: 'boots' },
-  { id: 'Кріплення', title: 'Кріплення (Bindings)', handle: 'bindings' },
-  { id: 'Оптика', title: 'Оптика & Маски', handle: 'optics' },
-  { id: 'Захист', title: 'Шоломи & Захист', handle: 'helmets' },
-  { id: 'Одяг', title: 'Куртки & Одяг', handle: 'apparel' },
-  { id: 'Скейтборди', title: 'Скейтборди', handle: 'skate' },
-  { id: 'Аксесуари', title: 'Догляд & Сервіс', handle: 'accessories' },
+  {
+    "id": "all",
+    "title": "Все спорядження",
+    "handle": "all"
+  },
+  {
+    "id": "Сноуборди",
+    "title": "Сноуборди",
+    "handle": "snowboards"
+  },
+  {
+    "id": "Взуття",
+    "title": "Черевики (Boots)",
+    "handle": "boots"
+  },
+  {
+    "id": "Кріплення",
+    "title": "Кріплення (Bindings)",
+    "handle": "bindings"
+  },
+  {
+    "id": "Оптика",
+    "title": "Оптика & Маски",
+    "handle": "optics"
+  },
+  {
+    "id": "Захист",
+    "title": "Шоломи & Захист",
+    "handle": "helmets"
+  },
+  {
+    "id": "Одяг",
+    "title": "Куртки & Одяг",
+    "handle": "apparel"
+  },
+  {
+    "id": "Скейтборди",
+    "title": "Скейтборди",
+    "handle": "skate"
+  },
+  {
+    "id": "Аксесуари",
+    "title": "Догляд & Сервіс",
+    "handle": "accessories"
+  }
 ];
