@@ -21,13 +21,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/lib-tech-lib-rig-camber-snowboard.jpg",
-            "altText": "Lib Tech Lib Rig Camber Snowboard"
+            "altText": "Lib Tech Lib Rig Camber Snowboard - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/g698/1b/lib-tech-lib-rig-camber-snowboard.jpg",
-            "altText": "Lib Tech Lib Rig Camber Snowboard alternate view"
+            "url": "/products/lib-tech-lib-rig-camber-snowboard-tech-lib-rig-camber-snowboard.jpg",
+            "altText": "Lib Tech Lib Rig Camber Snowboard - tech-lib-rig-camber-snowboard"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/lib-tech-lib-rig-camber-snowboard-tech-lib-rig-camber-snowboard-angle.jpg",
+            "altText": "Lib Tech Lib Rig Camber Snowboard - tech-lib-rig-camber-snowboard-angle"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/lib-tech-lib-rig-camber-snowboard-tech-lib-rig-camber-snowboard-lifestyle-1.jpg",
+            "altText": "Lib Tech Lib Rig Camber Snowboard - tech-lib-rig-camber-snowboard-lifestyle-1"
           }
         }
       ]
@@ -182,13 +194,13 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/burton-family-tree-sketch-artist-camber-snowboard.jpg",
-            "altText": "Burton Family Tree Sketch Artist Camber Snowboard"
+            "altText": "Burton Family Tree Sketch Artist Camber Snowboard - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/gfjq/1b/burton-family-tree-sketch-artist-camber-snowboard.jpg",
-            "altText": "Burton Family Tree Sketch Artist Camber Snowboard alternate view"
+            "url": "/products/burton-family-tree-sketch-artist-camber-snowboard-family-tree-sketch-artist-camber-snowboard.jpg",
+            "altText": "Burton Family Tree Sketch Artist Camber Snowboard - family-tree-sketch-artist-camber-snowboard"
           }
         }
       ]
@@ -343,13 +355,13 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/gnu-airblaster-snarf-camber-snowboard.jpg",
-            "altText": "Gnu Airblaster SNARF Camber Snowboard"
+            "altText": "Gnu Airblaster SNARF Camber Snowboard - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/ggdo/1b/gnu-airblaster-snarf-c3-snowboard.jpg",
-            "altText": "Gnu Airblaster SNARF Camber Snowboard alternate view"
+            "url": "/products/gnu-airblaster-snarf-camber-snowboard-airblaster-snarf-c3-snowboard.jpg",
+            "altText": "Gnu Airblaster SNARF Camber Snowboard - airblaster-snarf-c3-snowboard"
           }
         }
       ]
@@ -504,13 +516,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/sims-uap-snowboard.jpg",
-            "altText": "SIMS UAP Snowboard"
+            "altText": "SIMS UAP Snowboard - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/gedc/1b/sims-uap-snowboard.jpg",
-            "altText": "SIMS UAP Snowboard alternate view"
+            "url": "/products/sims-uap-snowboard-uap-snowboard.jpg",
+            "altText": "SIMS UAP Snowboard - uap-snowboard"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/sims-uap-snowboard-uap-snowboard-detail-1.jpg",
+            "altText": "SIMS UAP Snowboard - uap-snowboard-detail-1"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/sims-uap-snowboard-uap-snowboard-detail-2.jpg",
+            "altText": "SIMS UAP Snowboard - uap-snowboard-detail-2"
           }
         }
       ]
@@ -665,13 +689,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/arbor-jared-elston-el-camino-snowboard.jpg",
-            "altText": "Arbor Jared Elston El Camino Snowboard"
+            "altText": "Arbor Jared Elston El Camino Snowboard - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/g7gi/1b/arbor-jared-elston-el-camino-snowboard.jpg",
-            "altText": "Arbor Jared Elston El Camino Snowboard alternate view"
+            "url": "/products/arbor-jared-elston-el-camino-snowboard-jared-elston-el-camino-snowboard.jpg",
+            "altText": "Arbor Jared Elston El Camino Snowboard - jared-elston-el-camino-snowboard"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/arbor-jared-elston-el-camino-snowboard-jared-elston-el-camino-snowboard-alternate-1.jpg",
+            "altText": "Arbor Jared Elston El Camino Snowboard - jared-elston-el-camino-snowboard-alternate-1"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/arbor-jared-elston-el-camino-snowboard-jared-elston-el-camino-snowboard-alternate-2.jpg",
+            "altText": "Arbor Jared Elston El Camino Snowboard - jared-elston-el-camino-snowboard-alternate-2"
           }
         }
       ]
@@ -826,13 +862,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/jones-mind-expander-splitboard.jpg",
-            "altText": "Jones Mind Expander Splitboard"
+            "altText": "Jones Mind Expander Splitboard - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/fapy/1b/jones-mind-expander-splitboard.jpg",
-            "altText": "Jones Mind Expander Splitboard alternate view"
+            "url": "/products/jones-mind-expander-splitboard-mind-expander-splitboard.jpg",
+            "altText": "Jones Mind Expander Splitboard - mind-expander-splitboard"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/jones-mind-expander-splitboard-mind-expander-splitboard-angle.jpg",
+            "altText": "Jones Mind Expander Splitboard - mind-expander-splitboard-angle"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/jones-mind-expander-splitboard-mind-expander-splitboard-detail.jpg",
+            "altText": "Jones Mind Expander Splitboard - mind-expander-splitboard-detail"
           }
         }
       ]
@@ -987,13 +1035,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/ride-deep-fake-snowboard.jpg",
-            "altText": "Ride Deep Fake Snowboard"
+            "altText": "Ride Deep Fake Snowboard - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/f6ri/1b/ride-deep-fake-snowboard.jpg",
-            "altText": "Ride Deep Fake Snowboard alternate view"
+            "url": "/products/ride-deep-fake-snowboard-deep-fake-snowboard.jpg",
+            "altText": "Ride Deep Fake Snowboard - deep-fake-snowboard"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/ride-deep-fake-snowboard-deep-fake-snowboard-angle.jpg",
+            "altText": "Ride Deep Fake Snowboard - deep-fake-snowboard-angle"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/ride-deep-fake-snowboard-deep-fake-snowboard-detail.jpg",
+            "altText": "Ride Deep Fake Snowboard - deep-fake-snowboard-detail"
           }
         }
       ]
@@ -1148,13 +1208,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/salomon-jetstream-snowboard.jpg",
-            "altText": "Salomon Jetstream Snowboard"
+            "altText": "Salomon Jetstream Snowboard - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/g7eg/1b/salomon-jetstream-snowboard.jpg",
-            "altText": "Salomon Jetstream Snowboard alternate view"
+            "url": "/products/salomon-jetstream-snowboard-jetstream-snowboard.jpg",
+            "altText": "Salomon Jetstream Snowboard - jetstream-snowboard"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/salomon-jetstream-snowboard-jetstream-snowboard-alternate-1.jpg",
+            "altText": "Salomon Jetstream Snowboard - jetstream-snowboard-alternate-1"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/salomon-jetstream-snowboard-jetstream-snowboard-alternate-2.jpg",
+            "altText": "Salomon Jetstream Snowboard - jetstream-snowboard-alternate-2"
           }
         }
       ]
@@ -1309,13 +1381,13 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/gnu-gremlin-c3-snowboard.jpg",
-            "altText": "Gnu Gremlin C3 Snowboard"
+            "altText": "Gnu Gremlin C3 Snowboard - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/g63h/1b/gnu-gremlin-c3-snowboard.jpg",
-            "altText": "Gnu Gremlin C3 Snowboard alternate view"
+            "url": "/products/gnu-gremlin-c3-snowboard-gremlin-c3-snowboard.jpg",
+            "altText": "Gnu Gremlin C3 Snowboard - gremlin-c3-snowboard"
           }
         }
       ]
@@ -1470,13 +1542,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/burton-step-on-snowboard-boots.jpg",
-            "altText": "Burton Women's Waverange Step On Snowboard Boots - gray cloud"
+            "altText": "Burton Women's Waverange Step On Snowboard Boots - gray cloud - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/gg3q/1b/burton-womens-waverange-step-on-snowboard-boots-gray-cloud.jpg",
-            "altText": "Burton Women's Waverange Step On Snowboard Boots - gray cloud alternate view"
+            "url": "/products/burton-step-on-snowboard-boots-womens-waverange-step-on-snowboard-boots-gray-cloud.jpg",
+            "altText": "Burton Women's Waverange Step On Snowboard Boots - gray cloud - womens-waverange-step-on-snowboard-boots-gray-cloud"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/burton-step-on-snowboard-boots-womens-waverange-step-on-snowboard-boots-gray-cloud-liner.jpg",
+            "altText": "Burton Women's Waverange Step On Snowboard Boots - gray cloud - womens-waverange-step-on-snowboard-boots-gray-cloud-liner"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/burton-step-on-snowboard-boots-womens-waverange-step-on-snowboard-boots-gray-cloud-sole.jpg",
+            "altText": "Burton Women's Waverange Step On Snowboard Boots - gray cloud - womens-waverange-step-on-snowboard-boots-gray-cloud-sole"
           }
         }
       ]
@@ -1631,13 +1715,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/thirtytwo-lashed-snowboard-boots.jpg",
-            "altText": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print"
+            "altText": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/gh5k/1b/thirtytwo-lashed-snowboard-boots-corduroy-black-print.jpg",
-            "altText": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print alternate view"
+            "url": "/products/thirtytwo-lashed-snowboard-boots-lashed-snowboard-boots-corduroy-black-print.jpg",
+            "altText": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print - lashed-snowboard-boots-corduroy-black-print"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/thirtytwo-lashed-snowboard-boots-lashed-snowboard-boots-corduroy-black-print-sole.jpg",
+            "altText": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print - lashed-snowboard-boots-corduroy-black-print-sole"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/thirtytwo-lashed-snowboard-boots-lashed-snowboard-boots-corduroy-black-print-top.jpg",
+            "altText": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print - lashed-snowboard-boots-corduroy-black-print-top"
           }
         }
       ]
@@ -1792,13 +1888,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/vans-invado-pro-snowboard-boots.jpg",
-            "altText": "Vans Invado Pro Snowboard Boots - mushroom"
+            "altText": "Vans Invado Pro Snowboard Boots - mushroom - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/gg7b/1b/vans-invado-pro-snowboard-boots-mushroom.jpg",
-            "altText": "Vans Invado Pro Snowboard Boots - mushroom alternate view"
+            "url": "/products/vans-invado-pro-snowboard-boots-invado-pro-snowboard-boots-mushroom.jpg",
+            "altText": "Vans Invado Pro Snowboard Boots - mushroom - invado-pro-snowboard-boots-mushroom"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/vans-invado-pro-snowboard-boots-invado-pro-snowboard-boots-mushroom-sole.jpg",
+            "altText": "Vans Invado Pro Snowboard Boots - mushroom - invado-pro-snowboard-boots-mushroom-sole"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/vans-invado-pro-snowboard-boots-invado-pro-snowboard-boots-mushroom-top.jpg",
+            "altText": "Vans Invado Pro Snowboard Boots - mushroom - invado-pro-snowboard-boots-mushroom-top"
           }
         }
       ]
@@ -1953,13 +2061,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/salomon-launch-boa-snowboard-boots.jpg",
-            "altText": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk"
+            "altText": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/gbyl/1b/salomon-launch-boa-sj-boa-snowboard-boots-almond-milk.jpg",
-            "altText": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk alternate view"
+            "url": "/products/salomon-launch-boa-snowboard-boots-launch-boa-sj-boa-snowboard-boots-almond-milk.jpg",
+            "altText": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk - launch-boa-sj-boa-snowboard-boots-almond-milk"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/salomon-launch-boa-snowboard-boots-launch-boa-sj-boa-snowboard-boots-almond-milk-liner.jpg",
+            "altText": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk - launch-boa-sj-boa-snowboard-boots-almond-milk-liner"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/salomon-launch-boa-snowboard-boots-launch-boa-sj-boa-snowboard-boots-almond-milk-sole.jpg",
+            "altText": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk - launch-boa-sj-boa-snowboard-boots-almond-milk-sole"
           }
         }
       ]
@@ -2114,13 +2234,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/burton-step-on-cartel-x-bindings.jpg",
-            "altText": "Burton Step On Cartel X EST Snowboard Bindings - black"
+            "altText": "Burton Step On Cartel X EST Snowboard Bindings - black - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/ghrq/1b/burton-step-on-cartel-x-snowboard-bindings-black.jpg",
-            "altText": "Burton Step On Cartel X EST Snowboard Bindings - black alternate view"
+            "url": "/products/burton-step-on-cartel-x-bindings-step-on-cartel-x-snowboard-bindings-black.jpg",
+            "altText": "Burton Step On Cartel X EST Snowboard Bindings - black - step-on-cartel-x-snowboard-bindings-black"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/burton-step-on-cartel-x-bindings-step-on-cartel-x-snowboard-bindings-black-reverse.jpg",
+            "altText": "Burton Step On Cartel X EST Snowboard Bindings - black - step-on-cartel-x-snowboard-bindings-black-reverse"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/burton-step-on-cartel-x-bindings-step-on-cartel-x-snowboard-bindings-black-top.jpg",
+            "altText": "Burton Step On Cartel X EST Snowboard Bindings - black - step-on-cartel-x-snowboard-bindings-black-top"
           }
         }
       ]
@@ -2233,13 +2365,19 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/bent-metal-logic-snowboard-bindings.jpg",
-            "altText": "Bent Metal Lightning Supermatic Snowboard Bindings - white"
+            "altText": "Bent Metal Lightning Supermatic Snowboard Bindings - white - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/gaqy/1b/bent-metal-lightning-supermatic-snowboard-bindings-white.jpg",
-            "altText": "Bent Metal Lightning Supermatic Snowboard Bindings - white alternate view"
+            "url": "/products/bent-metal-logic-snowboard-bindings-metal-lightning-supermatic-snowboard-bindings-white.jpg",
+            "altText": "Bent Metal Lightning Supermatic Snowboard Bindings - white - metal-lightning-supermatic-snowboard-bindings-white"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/bent-metal-logic-snowboard-bindings-metal-lightning-supermatic-snowboard-bindings-white-reverse.jpg",
+            "altText": "Bent Metal Lightning Supermatic Snowboard Bindings - white - metal-lightning-supermatic-snowboard-bindings-white-reverse"
           }
         }
       ]
@@ -2352,13 +2490,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/smith-squad-s-goggles.jpg",
-            "altText": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens"
+            "altText": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/g9nk/1b/smith-squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens.jpg",
-            "altText": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens alternate view"
+            "url": "/products/smith-squad-s-goggles-squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens.jpg",
+            "altText": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens - squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/smith-squad-s-goggles-squad-s-goggles-chalk-rose-split-everyday-gold-mirror-clear-lens.jpg",
+            "altText": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens - squad-s-goggles-chalk-rose-split-everyday-gold-mirror-clear-lens"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/smith-squad-s-goggles-squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens.jpg",
+            "altText": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens - squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens"
           }
         }
       ]
@@ -2450,13 +2600,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/anon-m5-toric-goggles.jpg",
-            "altText": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens"
+            "altText": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/ggic/1b/anon-m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst.jpg",
-            "altText": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens alternate view"
+            "url": "/products/anon-m5-toric-goggles-m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst.jpg",
+            "altText": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens - m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/anon-m5-toric-goggles-m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy.jpg",
+            "altText": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens - m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/anon-m5-toric-goggles-m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst.jpg",
+            "altText": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens - m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst"
           }
         }
       ]
@@ -2548,13 +2710,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/smith-scout-mips-snowboard-helmet.jpg",
-            "altText": "Smith Scout MIPS Snowboard Helmet - matte white"
+            "altText": "Smith Scout MIPS Snowboard Helmet - matte white - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/emgr/1b/smith-scout-mips-snowboard-helmet-matte-white.jpg",
-            "altText": "Smith Scout MIPS Snowboard Helmet - matte white alternate view"
+            "url": "/products/smith-scout-mips-snowboard-helmet-scout-mips-snowboard-helmet-matte-white.jpg",
+            "altText": "Smith Scout MIPS Snowboard Helmet - matte white - scout-mips-snowboard-helmet-matte-white"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/smith-scout-mips-snowboard-helmet-scout-mips-snowboard-helmet-matte-white-inside.jpg",
+            "altText": "Smith Scout MIPS Snowboard Helmet - matte white - scout-mips-snowboard-helmet-matte-white-inside"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/smith-scout-mips-snowboard-helmet-scout-mips-snowboard-helmet-matte-white-reverse.jpg",
+            "altText": "Smith Scout MIPS Snowboard Helmet - matte white - scout-mips-snowboard-helmet-matte-white-reverse"
           }
         }
       ]
@@ -2646,13 +2820,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/volcom-rain-gore-tex-bib-pants.jpg",
-            "altText": "Volcom Rain GORE-TEX Bib Overall Pants - black"
+            "altText": "Volcom Rain GORE-TEX Bib Overall Pants - black - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/geql/1b/volcom-rain-gore-tex-bib-overall-pants-black.jpg",
-            "altText": "Volcom Rain GORE-TEX Bib Overall Pants - black alternate view"
+            "url": "/products/volcom-rain-gore-tex-bib-pants-rain-gore-tex-bib-overall-pants-black.jpg",
+            "altText": "Volcom Rain GORE-TEX Bib Overall Pants - black - rain-gore-tex-bib-overall-pants-black"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/volcom-rain-gore-tex-bib-pants-rain-gore-tex-bib-overall-pants-black-cuff.jpg",
+            "altText": "Volcom Rain GORE-TEX Bib Overall Pants - black - rain-gore-tex-bib-overall-pants-black-cuff"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/volcom-rain-gore-tex-bib-pants-rain-gore-tex-bib-overall-pants-black-detail.jpg",
+            "altText": "Volcom Rain GORE-TEX Bib Overall Pants - black - rain-gore-tex-bib-overall-pants-black-detail"
           }
         }
       ]
@@ -2744,13 +2930,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/santa-cruz-stranger-things-deck.jpg",
-            "altText": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck"
+            "altText": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/gfua/1b/santa-cruz-stranger-things-hellfire-club-flames-90-skateboard-deck.jpg",
-            "altText": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck alternate view"
+            "url": "/products/santa-cruz-stranger-things-deck-cruz-stranger-things-hellfire-club-flames-90-skateboard-deck.jpg",
+            "altText": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck - cruz-stranger-things-hellfire-club-flames-90-skateboard-deck"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/santa-cruz-stranger-things-deck-cruz-stranger-things-hellfire-club-flames-90-skateboard-deck.jpg",
+            "altText": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck - cruz-stranger-things-hellfire-club-flames-90-skateboard-deck"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/santa-cruz-stranger-things-deck-cruz-stranger-things-hellfire-club-flames-90-skateboard-deck-top.jpg",
+            "altText": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck - cruz-stranger-things-hellfire-club-flames-90-skateboard-deck-top"
           }
         }
       ]
@@ -2884,13 +3082,25 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/tactics-oval-logo-skateboard-deck.jpg",
-            "altText": "Tactics Oval Logo Skateboard Deck - blue"
+            "altText": "Tactics Oval Logo Skateboard Deck - blue - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/ems4/1b/tactics-oval-logo-skateboard-deck-blue.jpg",
-            "altText": "Tactics Oval Logo Skateboard Deck - blue alternate view"
+            "url": "/products/tactics-oval-logo-skateboard-deck-oval-logo-skateboard-deck-blue.jpg",
+            "altText": "Tactics Oval Logo Skateboard Deck - blue - oval-logo-skateboard-deck-blue"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/tactics-oval-logo-skateboard-deck-oval-logo-skateboard-deck-angle.jpg",
+            "altText": "Tactics Oval Logo Skateboard Deck - blue - oval-logo-skateboard-deck-angle"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/tactics-oval-logo-skateboard-deck-oval-logo-skateboard-deck-side.jpg",
+            "altText": "Tactics Oval Logo Skateboard Deck - blue - oval-logo-skateboard-deck-side"
           }
         }
       ]
@@ -3024,13 +3234,19 @@ export const FALLBACK_PRODUCTS: ShopifyProduct[] = [
         {
           "node": {
             "url": "/products/dakine-goggle-stash-case.jpg",
-            "altText": "DAKINE Goggle Stash Case - mulled basil"
+            "altText": "DAKINE Goggle Stash Case - mulled basil - Main View"
           }
         },
         {
           "node": {
-            "url": "https://www.tactics.com/a/gh39/1b/dakine-goggle-stash-case-mulled-basil.jpg",
-            "altText": "DAKINE Goggle Stash Case - mulled basil alternate view"
+            "url": "/products/dakine-goggle-stash-case-goggle-stash-case-mulled-basil.jpg",
+            "altText": "DAKINE Goggle Stash Case - mulled basil - goggle-stash-case-mulled-basil"
+          }
+        },
+        {
+          "node": {
+            "url": "/products/dakine-goggle-stash-case-goggle-stash-case-mulled-basil-reverse.jpg",
+            "altText": "DAKINE Goggle Stash Case - mulled basil - goggle-stash-case-mulled-basil-reverse"
           }
         }
       ]

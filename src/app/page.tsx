@@ -112,6 +112,42 @@ export default function HomePage() {
           />
         )}
 
+        {/* Dual Promo Banners from Tactics */}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div
+              onClick={() => {
+                setSelectedCategory('Сноуборди');
+                const el = document.getElementById('catalog');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="relative aspect-[16/7] overflow-hidden border border-zinc-900 bg-zinc-950 cursor-pointer group shadow-sm hover:shadow-md transition-all"
+            >
+              <img
+                src="/banners/snow-on-sale.jpg"
+                alt="Snow On Sale"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/15 group-hover:bg-transparent transition-colors" />
+            </div>
+            <div
+              onClick={() => {
+                setSelectedCategory('');
+                const el = document.getElementById('catalog');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="relative aspect-[16/7] overflow-hidden border border-zinc-900 bg-zinc-950 cursor-pointer group shadow-sm hover:shadow-md transition-all"
+            >
+              <img
+                src="/banners/promo-sale.jpg"
+                alt="Deals & Clearance"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/15 group-hover:bg-transparent transition-colors" />
+            </div>
+          </div>
+        </div>
+
         {/* Board Size Calculator Modal */}
         <BoardSizeCalculatorModal
           isOpen={isCalculatorOpen}

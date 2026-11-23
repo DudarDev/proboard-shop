@@ -56,16 +56,16 @@ export function Hero({ onOpenCalculator, onShopClick }: HeroProps) {
       {/* 3. Hero Visual Banner */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-6">
         <div className="relative overflow-hidden border border-zinc-900 bg-zinc-950 text-white min-h-[380px] sm:min-h-[460px] flex items-center justify-center p-6 sm:p-12 shadow-lg">
-          {/* Alpine Snowboarder Background with High Contrast and Tint */}
+          {/* Authentic Snowboard Shop Hero Background from Tactics */}
           <div
-            className="absolute inset-0 bg-cover bg-center filter contrast-125 saturate-110"
+            className="absolute inset-0 bg-cover bg-center filter contrast-110"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=1800&auto=format&fit=crop')`,
+              backgroundImage: `url('/banners/snowboard-shop-hero.jpg')`,
             }}
           />
-          {/* Contrast & Halftone Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/60" />
-          <div className="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:20px_20px] opacity-15" />
+          {/* Contrast & Vignette Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/50" />
+          <div className="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:20px_20px] opacity-10" />
 
           {/* Centered Hero Callout Box */}
           <div className="relative z-10 text-center max-w-3xl flex flex-col items-center">

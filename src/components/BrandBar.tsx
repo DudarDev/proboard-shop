@@ -12,24 +12,28 @@ interface BrandBarProps {
 
 export type TacticsBrandBarProps = BrandBarProps;
 
-const BRANDS = [
-  { name: 'BURTON', id: 'Burton', tag: '🏂' },
-  { name: 'CAPITA', id: 'Capita', tag: '⚡' },
-  { name: 'LIB TECH', id: 'Lib Tech', tag: '🌊' },
-  { name: 'UNION', id: 'Union', tag: '🛡️' },
-  { name: 'THIRTYTWO', id: 'ThirtyTwo', tag: '32' },
-  { name: 'VANS', id: 'Vans', tag: '🛹' },
-  { name: 'SALOMON', id: 'Salomon', tag: '🏔️' },
-  { name: 'GNU', id: 'GNU', tag: '🌀' },
-  { name: 'NITRO', id: 'Nitro', tag: '🔥' },
-  { name: 'JONES', id: 'Jones', tag: '🌲' },
-  { name: 'BATALEON', id: 'Bataleon', tag: '3BT' },
-  { name: 'ANON', id: 'Anon', tag: '🥽' },
-  { name: 'SMITH', id: 'Smith', tag: '👓' },
-  { name: 'OAKLEY', id: 'Oakley', tag: '🎯' },
-  { name: 'VOLCOM', id: 'Volcom', tag: '💎' },
-  { name: 'SANTA CRUZ', id: 'Santa Cruz', tag: '🔴' },
-  { name: 'DAKINE', id: 'Dakine', tag: '🎒' },
+interface BrandItem {
+  name: string;
+  id: string;
+  logo?: string;
+}
+
+const BRANDS: BrandItem[] = [
+  { name: 'BURTON', id: 'Burton', logo: '/brands/burton.svg' },
+  { name: 'LIB TECH', id: 'Lib Tech', logo: '/brands/libtech.svg' },
+  { name: 'VOLCOM', id: 'Volcom', logo: '/brands/volcom.svg' },
+  { name: 'VANS', id: 'Vans', logo: '/brands/vans.svg' },
+  { name: 'GNU', id: 'GNU', logo: '/brands/gnu.svg' },
+  { name: 'SALOMON', id: 'Salomon', logo: '/brands/salomon.svg' },
+  { name: 'RIDE', id: 'Ride', logo: '/brands/ride.svg' },
+  { name: 'THIRTYTWO', id: 'ThirtyTwo', logo: '/brands/thirtytwo.svg' },
+  { name: 'SMITH', id: 'Smith', logo: '/brands/smith.svg' },
+  { name: 'ANON', id: 'Anon', logo: '/brands/anon.svg' },
+  { name: 'DAKINE', id: 'Dakine', logo: '/brands/dakine.svg' },
+  { name: 'K2', id: 'K2', logo: '/brands/k2.svg' },
+  { name: 'AIRBLASTER', id: 'Airblaster', logo: '/brands/airblaster.svg' },
+  { name: 'CRAB GRAB', id: 'Crab Grab', logo: '/brands/crabgrab.svg' },
+  { name: 'HOWL', id: 'Howl', logo: '/brands/howl.svg' },
 ];
 
 export function BrandBar({ selectedBrand, onSelectBrand }: BrandBarProps) {
@@ -81,13 +85,21 @@ export function BrandBar({ selectedBrand, onSelectBrand }: BrandBarProps) {
               <button
                 key={brand.id}
                 onClick={() => onSelectBrand(isSelected ? '' : brand.id)}
-                className={`flex items-center gap-1.5 text-xs font-black uppercase tracking-widest px-3 py-1.5 transition-all whitespace-nowrap border shrink-0 ${
+                className={`flex items-center gap-2 text-xs font-black uppercase tracking-widest px-3 py-1.5 transition-all whitespace-nowrap border shrink-0 ${
                   isSelected
                     ? 'bg-zinc-950 text-white border-zinc-950 shadow-sm'
                     : 'bg-white text-zinc-700 border-zinc-200/80 hover:border-zinc-400 hover:bg-zinc-50 hover:text-zinc-950'
                 }`}
               >
-                <span className="text-[10px] opacity-70">{brand.tag}</span>
+                {brand.logo && (
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className={`h-3.5 max-w-[45px] w-auto object-contain transition-all ${
+                      isSelected ? 'brightness-0 invert' : 'opacity-80'
+                    }`}
+                  />
+                )}
                 <span>{brand.name}</span>
               </button>
             );

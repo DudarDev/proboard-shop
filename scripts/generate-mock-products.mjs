@@ -1,6 +1,9 @@
 import fs from 'fs';
 
-const curated = JSON.parse(fs.readFileSync('scripts/tactics-curated-final.json', 'utf8'));
+const sourceFile = fs.existsSync('scripts/tactics-curated-galleries.json') 
+  ? 'scripts/tactics-curated-galleries.json' 
+  : 'scripts/tactics-curated-final.json';
+const curated = JSON.parse(fs.readFileSync(sourceFile, 'utf8'));
 
 const products = curated.map((item, idx) => {
   const idNum = idx + 1;
@@ -46,20 +49,27 @@ const products = curated.map((item, idx) => {
       altText: item.title,
     },
     images: {
-      edges: [
-        {
-          node: {
-            url: item.localImage,
-            altText: item.title,
-          },
-        },
-        {
-          node: {
-            url: item.tacticsImage.replace('/o/', '/1b/'),
-            altText: `${item.title} alternate view`,
-          },
-        },
-      ],
+      edges: (item.gallery && item.gallery.length > 0)
+        ? item.gallery.map((g, gIdx) => ({
+            node: {
+              url: g.url,
+              altText: g.alt || `${item.title} - View ${gIdx + 1}`,
+            },
+          }))
+        : [
+            {
+              node: {
+                url: item.localImage,
+                altText: item.title,
+              },
+            },
+            {
+              node: {
+                url: item.tacticsImage.replace('/o/', '/1b/'),
+                altText: `${item.title} alternate view`,
+              },
+            },
+          ],
     },
     priceRange: {
       minVariantPrice: { amount: String(item.price), currencyCode: 'USD' },

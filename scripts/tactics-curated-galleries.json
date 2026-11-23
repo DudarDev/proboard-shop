@@ -1,0 +1,762 @@
+[
+  {
+    "handle": "lib-tech-lib-rig-camber-snowboard",
+    "search": "Lib Rig Camber",
+    "type": "Сноуборди",
+    "flex": "7/10",
+    "flexNum": 7,
+    "profile": "C3 Camber (Aggressive All-Mountain)",
+    "camberType": "camber",
+    "shape": "Directional",
+    "terrain": "All-Mountain / Freeride",
+    "title": "Lib Tech Lib Rig Camber Snowboard",
+    "vendor": "Lib Tech",
+    "price": 461.99,
+    "compareAtPrice": 577,
+    "localImage": "/products/lib-tech-lib-rig-camber-snowboard.jpg",
+    "tacticsImage": "https://www.tactics.com/a/g698/o/lib-tech-lib-rig-camber-snowboard.jpg",
+    "description": "Lib Tech Lib Rig Camber Snowboard — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Lib Tech та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/lib-tech-lib-rig-camber-snowboard.jpg",
+        "alt": "Lib Tech Lib Rig Camber Snowboard - Main View"
+      },
+      {
+        "url": "/products/lib-tech-lib-rig-camber-snowboard-tech-lib-rig-camber-snowboard.jpg",
+        "alt": "Lib Tech Lib Rig Camber Snowboard - tech-lib-rig-camber-snowboard"
+      },
+      {
+        "url": "/products/lib-tech-lib-rig-camber-snowboard-tech-lib-rig-camber-snowboard-angle.jpg",
+        "alt": "Lib Tech Lib Rig Camber Snowboard - tech-lib-rig-camber-snowboard-angle"
+      },
+      {
+        "url": "/products/lib-tech-lib-rig-camber-snowboard-tech-lib-rig-camber-snowboard-lifestyle-1.jpg",
+        "alt": "Lib Tech Lib Rig Camber Snowboard - tech-lib-rig-camber-snowboard-lifestyle-1"
+      }
+    ]
+  },
+  {
+    "handle": "burton-family-tree-sketch-artist-camber-snowboard",
+    "search": "Sketch Artist",
+    "type": "Сноуборди",
+    "flex": "6/10",
+    "flexNum": 6,
+    "profile": "Directional Camber (Carving & Powder)",
+    "camberType": "camber",
+    "shape": "Directional Freeride",
+    "terrain": "All-Mountain / Deep Snow",
+    "title": "Burton Family Tree Sketch Artist Camber Snowboard",
+    "vendor": "Burton",
+    "price": 510.95,
+    "compareAtPrice": 639,
+    "localImage": "/products/burton-family-tree-sketch-artist-camber-snowboard.jpg",
+    "tacticsImage": "https://www.tactics.com/a/gfjq/o/burton-family-tree-sketch-artist-camber-snowboard.jpg",
+    "description": "Burton Family Tree Sketch Artist Camber Snowboard — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Burton та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/burton-family-tree-sketch-artist-camber-snowboard.jpg",
+        "alt": "Burton Family Tree Sketch Artist Camber Snowboard - Main View"
+      },
+      {
+        "url": "/products/burton-family-tree-sketch-artist-camber-snowboard-family-tree-sketch-artist-camber-snowboard.jpg",
+        "alt": "Burton Family Tree Sketch Artist Camber Snowboard - family-tree-sketch-artist-camber-snowboard"
+      }
+    ]
+  },
+  {
+    "handle": "gnu-airblaster-snarf-camber-snowboard",
+    "search": "Airblaster SNARF",
+    "type": "Сноуборди",
+    "flex": "6.5/10",
+    "flexNum": 6.5,
+    "profile": "C3 Camber (Dominant Pop & Edge Hold)",
+    "camberType": "camber",
+    "shape": "Directional Twin",
+    "terrain": "All-Mountain Freestyle",
+    "title": "Gnu Airblaster SNARF Camber Snowboard",
+    "vendor": "Gnu",
+    "price": 440.99,
+    "compareAtPrice": 551,
+    "localImage": "/products/gnu-airblaster-snarf-camber-snowboard.jpg",
+    "tacticsImage": "https://www.tactics.com/a/ggdo/o/gnu-airblaster-snarf-c3-snowboard.jpg",
+    "description": "Gnu Airblaster SNARF Camber Snowboard — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Gnu та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/gnu-airblaster-snarf-camber-snowboard.jpg",
+        "alt": "Gnu Airblaster SNARF Camber Snowboard - Main View"
+      },
+      {
+        "url": "/products/gnu-airblaster-snarf-camber-snowboard-airblaster-snarf-c3-snowboard.jpg",
+        "alt": "Gnu Airblaster SNARF Camber Snowboard - airblaster-snarf-c3-snowboard"
+      }
+    ]
+  },
+  {
+    "handle": "sims-uap-snowboard",
+    "search": "SIMS UAP",
+    "type": "Сноуборди",
+    "flex": "5/10",
+    "flexNum": 5,
+    "profile": "Traditional Camber",
+    "camberType": "camber",
+    "shape": "True Twin",
+    "terrain": "Park & Street",
+    "title": "SIMS UAP Snowboard",
+    "vendor": "SIMS",
+    "price": 433.95,
+    "compareAtPrice": 542,
+    "localImage": "/products/sims-uap-snowboard.jpg",
+    "tacticsImage": "https://www.tactics.com/a/gedc/o/sims-uap-snowboard.jpg",
+    "description": "SIMS UAP Snowboard — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду SIMS та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/sims-uap-snowboard.jpg",
+        "alt": "SIMS UAP Snowboard - Main View"
+      },
+      {
+        "url": "/products/sims-uap-snowboard-uap-snowboard.jpg",
+        "alt": "SIMS UAP Snowboard - uap-snowboard"
+      },
+      {
+        "url": "/products/sims-uap-snowboard-uap-snowboard-detail-1.jpg",
+        "alt": "SIMS UAP Snowboard - uap-snowboard-detail-1"
+      },
+      {
+        "url": "/products/sims-uap-snowboard-uap-snowboard-detail-2.jpg",
+        "alt": "SIMS UAP Snowboard - uap-snowboard-detail-2"
+      }
+    ]
+  },
+  {
+    "handle": "arbor-jared-elston-el-camino-snowboard",
+    "search": "El Camino",
+    "type": "Сноуборди",
+    "flex": "7.5/10",
+    "flexNum": 7.5,
+    "profile": "Camber System with Grip Tech",
+    "camberType": "camber",
+    "shape": "Directional Twin",
+    "terrain": "Big Mountain / Freestyle",
+    "title": "Arbor Jared Elston El Camino Snowboard",
+    "vendor": "Arbor",
+    "price": 440.95,
+    "compareAtPrice": 551,
+    "localImage": "/products/arbor-jared-elston-el-camino-snowboard.jpg",
+    "tacticsImage": "https://www.tactics.com/a/g7gi/o/arbor-jared-elston-el-camino-snowboard.jpg",
+    "description": "Arbor Jared Elston El Camino Snowboard — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Arbor та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/arbor-jared-elston-el-camino-snowboard.jpg",
+        "alt": "Arbor Jared Elston El Camino Snowboard - Main View"
+      },
+      {
+        "url": "/products/arbor-jared-elston-el-camino-snowboard-jared-elston-el-camino-snowboard.jpg",
+        "alt": "Arbor Jared Elston El Camino Snowboard - jared-elston-el-camino-snowboard"
+      },
+      {
+        "url": "/products/arbor-jared-elston-el-camino-snowboard-jared-elston-el-camino-snowboard-alternate-1.jpg",
+        "alt": "Arbor Jared Elston El Camino Snowboard - jared-elston-el-camino-snowboard-alternate-1"
+      },
+      {
+        "url": "/products/arbor-jared-elston-el-camino-snowboard-jared-elston-el-camino-snowboard-alternate-2.jpg",
+        "alt": "Arbor Jared Elston El Camino Snowboard - jared-elston-el-camino-snowboard-alternate-2"
+      }
+    ]
+  },
+  {
+    "handle": "jones-mind-expander-splitboard",
+    "search": "Mind Expander Splitboard",
+    "type": "Сноуборди",
+    "flex": "6/10",
+    "flexNum": 6,
+    "profile": "Surf Rocker (Maximum Float)",
+    "camberType": "hybrid",
+    "shape": "Directional Surf",
+    "terrain": "Backcountry Powder",
+    "title": "Jones Mind Expander Splitboard",
+    "vendor": "Jones",
+    "price": 685.95,
+    "compareAtPrice": 857,
+    "localImage": "/products/jones-mind-expander-splitboard.jpg",
+    "tacticsImage": "https://www.tactics.com/a/fapy/o/jones-mind-expander-splitboard.jpg",
+    "description": "Jones Mind Expander Splitboard — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Jones та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/jones-mind-expander-splitboard.jpg",
+        "alt": "Jones Mind Expander Splitboard - Main View"
+      },
+      {
+        "url": "/products/jones-mind-expander-splitboard-mind-expander-splitboard.jpg",
+        "alt": "Jones Mind Expander Splitboard - mind-expander-splitboard"
+      },
+      {
+        "url": "/products/jones-mind-expander-splitboard-mind-expander-splitboard-angle.jpg",
+        "alt": "Jones Mind Expander Splitboard - mind-expander-splitboard-angle"
+      },
+      {
+        "url": "/products/jones-mind-expander-splitboard-mind-expander-splitboard-detail.jpg",
+        "alt": "Jones Mind Expander Splitboard - mind-expander-splitboard-detail"
+      }
+    ]
+  },
+  {
+    "handle": "ride-deep-fake-snowboard",
+    "search": "Deep Fake",
+    "type": "Сноуборди",
+    "flex": "8/10",
+    "flexNum": 8,
+    "profile": "Directional Hybrid Camber",
+    "camberType": "hybrid",
+    "shape": "Tapered Directional",
+    "terrain": "All-Mountain Steeps",
+    "title": "Ride Deep Fake Snowboard",
+    "vendor": "Ride",
+    "price": 487.95,
+    "compareAtPrice": 610,
+    "localImage": "/products/ride-deep-fake-snowboard.jpg",
+    "tacticsImage": "https://www.tactics.com/a/f6ri/o/ride-deep-fake-snowboard.jpg",
+    "description": "Ride Deep Fake Snowboard — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Ride та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/ride-deep-fake-snowboard.jpg",
+        "alt": "Ride Deep Fake Snowboard - Main View"
+      },
+      {
+        "url": "/products/ride-deep-fake-snowboard-deep-fake-snowboard.jpg",
+        "alt": "Ride Deep Fake Snowboard - deep-fake-snowboard"
+      },
+      {
+        "url": "/products/ride-deep-fake-snowboard-deep-fake-snowboard-angle.jpg",
+        "alt": "Ride Deep Fake Snowboard - deep-fake-snowboard-angle"
+      },
+      {
+        "url": "/products/ride-deep-fake-snowboard-deep-fake-snowboard-detail.jpg",
+        "alt": "Ride Deep Fake Snowboard - deep-fake-snowboard-detail"
+      }
+    ]
+  },
+  {
+    "handle": "salomon-jetstream-snowboard",
+    "search": "Salomon Jetstream",
+    "type": "Сноуборди",
+    "flex": "6/10",
+    "flexNum": 6,
+    "profile": "Quad Camber (Speed & Precision)",
+    "camberType": "camber",
+    "shape": "Directional Twin",
+    "terrain": "Resort Carving & Park",
+    "title": "Salomon Jetstream Snowboard",
+    "vendor": "Salomon",
+    "price": 454.95,
+    "compareAtPrice": 569,
+    "localImage": "/products/salomon-jetstream-snowboard.jpg",
+    "tacticsImage": "https://www.tactics.com/a/g7eg/o/salomon-jetstream-snowboard.jpg",
+    "description": "Salomon Jetstream Snowboard — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Salomon та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/salomon-jetstream-snowboard.jpg",
+        "alt": "Salomon Jetstream Snowboard - Main View"
+      },
+      {
+        "url": "/products/salomon-jetstream-snowboard-jetstream-snowboard.jpg",
+        "alt": "Salomon Jetstream Snowboard - jetstream-snowboard"
+      },
+      {
+        "url": "/products/salomon-jetstream-snowboard-jetstream-snowboard-alternate-1.jpg",
+        "alt": "Salomon Jetstream Snowboard - jetstream-snowboard-alternate-1"
+      },
+      {
+        "url": "/products/salomon-jetstream-snowboard-jetstream-snowboard-alternate-2.jpg",
+        "alt": "Salomon Jetstream Snowboard - jetstream-snowboard-alternate-2"
+      }
+    ]
+  },
+  {
+    "handle": "gnu-gremlin-c3-snowboard",
+    "search": "Gremlin C3",
+    "type": "Сноуборди",
+    "flex": "7/10",
+    "flexNum": 7,
+    "profile": "C3 Camber + Magne-Traction",
+    "camberType": "camber",
+    "shape": "Directional Tapered",
+    "terrain": "All-Terrain Predator",
+    "title": "Gnu Gremlin C3 Snowboard",
+    "vendor": "Gnu",
+    "price": 405.99,
+    "compareAtPrice": 507,
+    "localImage": "/products/gnu-gremlin-c3-snowboard.jpg",
+    "tacticsImage": "https://www.tactics.com/a/g63h/o/gnu-gremlin-c3-snowboard.jpg",
+    "description": "Gnu Gremlin C3 Snowboard — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Gnu та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/gnu-gremlin-c3-snowboard.jpg",
+        "alt": "Gnu Gremlin C3 Snowboard - Main View"
+      },
+      {
+        "url": "/products/gnu-gremlin-c3-snowboard-gremlin-c3-snowboard.jpg",
+        "alt": "Gnu Gremlin C3 Snowboard - gremlin-c3-snowboard"
+      }
+    ]
+  },
+  {
+    "handle": "burton-step-on-snowboard-boots",
+    "search": "Waverange Step On",
+    "type": "Взуття",
+    "flex": "6/10",
+    "flexNum": 6,
+    "profile": "Step On Compatible",
+    "camberType": "hybrid",
+    "shape": "Ergonomic",
+    "terrain": "All-Mountain Comfort",
+    "title": "Burton Women's Waverange Step On Snowboard Boots - gray cloud",
+    "vendor": "Burton",
+    "price": 227.95,
+    "compareAtPrice": 285,
+    "localImage": "/products/burton-step-on-snowboard-boots.jpg",
+    "tacticsImage": "https://www.tactics.com/a/gg3q/o/burton-womens-waverange-step-on-snowboard-boots-gray-cloud.jpg",
+    "description": "Burton Women's Waverange Step On Snowboard Boots - gray cloud — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Burton та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/burton-step-on-snowboard-boots.jpg",
+        "alt": "Burton Women's Waverange Step On Snowboard Boots - gray cloud - Main View"
+      },
+      {
+        "url": "/products/burton-step-on-snowboard-boots-womens-waverange-step-on-snowboard-boots-gray-cloud.jpg",
+        "alt": "Burton Women's Waverange Step On Snowboard Boots - gray cloud - womens-waverange-step-on-snowboard-boots-gray-cloud"
+      },
+      {
+        "url": "/products/burton-step-on-snowboard-boots-womens-waverange-step-on-snowboard-boots-gray-cloud-liner.jpg",
+        "alt": "Burton Women's Waverange Step On Snowboard Boots - gray cloud - womens-waverange-step-on-snowboard-boots-gray-cloud-liner"
+      },
+      {
+        "url": "/products/burton-step-on-snowboard-boots-womens-waverange-step-on-snowboard-boots-gray-cloud-sole.jpg",
+        "alt": "Burton Women's Waverange Step On Snowboard Boots - gray cloud - womens-waverange-step-on-snowboard-boots-gray-cloud-sole"
+      }
+    ]
+  },
+  {
+    "handle": "thirtytwo-lashed-snowboard-boots",
+    "search": "Thirtytwo Lashed",
+    "type": "Взуття",
+    "flex": "6/10",
+    "flexNum": 6,
+    "profile": "Team Fit Dual BOA",
+    "camberType": "camber",
+    "shape": "Articulated Cuff",
+    "terrain": "Freestyle / All-Mountain",
+    "title": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print",
+    "vendor": "Thirtytwo",
+    "price": 209.95,
+    "compareAtPrice": 262,
+    "localImage": "/products/thirtytwo-lashed-snowboard-boots.jpg",
+    "tacticsImage": "https://www.tactics.com/a/gh5k/o/thirtytwo-lashed-snowboard-boots-corduroy-black-print.jpg",
+    "description": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Thirtytwo та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/thirtytwo-lashed-snowboard-boots.jpg",
+        "alt": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print - Main View"
+      },
+      {
+        "url": "/products/thirtytwo-lashed-snowboard-boots-lashed-snowboard-boots-corduroy-black-print.jpg",
+        "alt": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print - lashed-snowboard-boots-corduroy-black-print"
+      },
+      {
+        "url": "/products/thirtytwo-lashed-snowboard-boots-lashed-snowboard-boots-corduroy-black-print-sole.jpg",
+        "alt": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print - lashed-snowboard-boots-corduroy-black-print-sole"
+      },
+      {
+        "url": "/products/thirtytwo-lashed-snowboard-boots-lashed-snowboard-boots-corduroy-black-print-top.jpg",
+        "alt": "Thirtytwo Lashed Snowboard Boots - (corduroy) black/print - lashed-snowboard-boots-corduroy-black-print-top"
+      }
+    ]
+  },
+  {
+    "handle": "vans-invado-pro-snowboard-boots",
+    "search": "Vans Invado Pro",
+    "type": "Взуття",
+    "flex": "5-7/10",
+    "flexNum": 6,
+    "profile": "Hybrid BOA + Traditional Lace",
+    "camberType": "hybrid",
+    "shape": "V2 Waffle Pro",
+    "terrain": "Park & Resort",
+    "title": "Vans Invado Pro Snowboard Boots - mushroom",
+    "vendor": "Vans",
+    "price": 188.95,
+    "compareAtPrice": 236,
+    "localImage": "/products/vans-invado-pro-snowboard-boots.jpg",
+    "tacticsImage": "https://www.tactics.com/a/gg7b/o/vans-invado-pro-snowboard-boots-mushroom.jpg",
+    "description": "Vans Invado Pro Snowboard Boots - mushroom — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Vans та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/vans-invado-pro-snowboard-boots.jpg",
+        "alt": "Vans Invado Pro Snowboard Boots - mushroom - Main View"
+      },
+      {
+        "url": "/products/vans-invado-pro-snowboard-boots-invado-pro-snowboard-boots-mushroom.jpg",
+        "alt": "Vans Invado Pro Snowboard Boots - mushroom - invado-pro-snowboard-boots-mushroom"
+      },
+      {
+        "url": "/products/vans-invado-pro-snowboard-boots-invado-pro-snowboard-boots-mushroom-sole.jpg",
+        "alt": "Vans Invado Pro Snowboard Boots - mushroom - invado-pro-snowboard-boots-mushroom-sole"
+      },
+      {
+        "url": "/products/vans-invado-pro-snowboard-boots-invado-pro-snowboard-boots-mushroom-top.jpg",
+        "alt": "Vans Invado Pro Snowboard Boots - mushroom - invado-pro-snowboard-boots-mushroom-top"
+      }
+    ]
+  },
+  {
+    "handle": "salomon-launch-boa-snowboard-boots",
+    "search": "Salomon Launch Boa",
+    "type": "Взуття",
+    "flex": "5/10",
+    "flexNum": 5,
+    "profile": "Fit To Ride SJ Boa",
+    "camberType": "hybrid",
+    "shape": "Compact Footprint",
+    "terrain": "Freestyle Progression",
+    "title": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk",
+    "vendor": "Salomon",
+    "price": 227.95,
+    "compareAtPrice": 285,
+    "localImage": "/products/salomon-launch-boa-snowboard-boots.jpg",
+    "tacticsImage": "https://www.tactics.com/a/gbyl/o/salomon-launch-boa-sj-boa-snowboard-boots-almond-milk.jpg",
+    "description": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Salomon та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/salomon-launch-boa-snowboard-boots.jpg",
+        "alt": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk - Main View"
+      },
+      {
+        "url": "/products/salomon-launch-boa-snowboard-boots-launch-boa-sj-boa-snowboard-boots-almond-milk.jpg",
+        "alt": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk - launch-boa-sj-boa-snowboard-boots-almond-milk"
+      },
+      {
+        "url": "/products/salomon-launch-boa-snowboard-boots-launch-boa-sj-boa-snowboard-boots-almond-milk-liner.jpg",
+        "alt": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk - launch-boa-sj-boa-snowboard-boots-almond-milk-liner"
+      },
+      {
+        "url": "/products/salomon-launch-boa-snowboard-boots-launch-boa-sj-boa-snowboard-boots-almond-milk-sole.jpg",
+        "alt": "Salomon Launch Boa SJ Boa Snowboard Boots - almond milk - launch-boa-sj-boa-snowboard-boots-almond-milk-sole"
+      }
+    ]
+  },
+  {
+    "handle": "burton-step-on-cartel-x-bindings",
+    "search": "Cartel X",
+    "type": "Кріплення",
+    "flex": "8/10",
+    "flexNum": 8,
+    "profile": "Step On System",
+    "camberType": "camber",
+    "shape": "FullBED Cushioning",
+    "terrain": "Aggressive All-Mountain",
+    "title": "Burton Step On Cartel X EST Snowboard Bindings - black",
+    "vendor": "Burton",
+    "price": 209.95,
+    "compareAtPrice": 262,
+    "localImage": "/products/burton-step-on-cartel-x-bindings.jpg",
+    "tacticsImage": "https://www.tactics.com/a/ghrq/o/burton-step-on-cartel-x-snowboard-bindings-black.jpg",
+    "description": "Burton Step On Cartel X EST Snowboard Bindings - black — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Burton та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/burton-step-on-cartel-x-bindings.jpg",
+        "alt": "Burton Step On Cartel X EST Snowboard Bindings - black - Main View"
+      },
+      {
+        "url": "/products/burton-step-on-cartel-x-bindings-step-on-cartel-x-snowboard-bindings-black.jpg",
+        "alt": "Burton Step On Cartel X EST Snowboard Bindings - black - step-on-cartel-x-snowboard-bindings-black"
+      },
+      {
+        "url": "/products/burton-step-on-cartel-x-bindings-step-on-cartel-x-snowboard-bindings-black-reverse.jpg",
+        "alt": "Burton Step On Cartel X EST Snowboard Bindings - black - step-on-cartel-x-snowboard-bindings-black-reverse"
+      },
+      {
+        "url": "/products/burton-step-on-cartel-x-bindings-step-on-cartel-x-snowboard-bindings-black-top.jpg",
+        "alt": "Burton Step On Cartel X EST Snowboard Bindings - black - step-on-cartel-x-snowboard-bindings-black-top"
+      }
+    ]
+  },
+  {
+    "handle": "bent-metal-logic-snowboard-bindings",
+    "search": "Bent Metal",
+    "type": "Кріплення",
+    "flex": "4/10",
+    "flexNum": 4,
+    "profile": "Flex Control Drive Plate",
+    "camberType": "hybrid",
+    "shape": "Urethane Highback",
+    "terrain": "Freestyle Jibbing",
+    "title": "Bent Metal Lightning Supermatic Snowboard Bindings - white",
+    "vendor": "Bent Metal",
+    "price": 479.99,
+    "compareAtPrice": 600,
+    "localImage": "/products/bent-metal-logic-snowboard-bindings.jpg",
+    "tacticsImage": "https://www.tactics.com/a/gaqy/o/bent-metal-lightning-supermatic-snowboard-bindings-white.jpg",
+    "description": "Bent Metal Lightning Supermatic Snowboard Bindings - white — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Bent Metal та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/bent-metal-logic-snowboard-bindings.jpg",
+        "alt": "Bent Metal Lightning Supermatic Snowboard Bindings - white - Main View"
+      },
+      {
+        "url": "/products/bent-metal-logic-snowboard-bindings-metal-lightning-supermatic-snowboard-bindings-white.jpg",
+        "alt": "Bent Metal Lightning Supermatic Snowboard Bindings - white - metal-lightning-supermatic-snowboard-bindings-white"
+      },
+      {
+        "url": "/products/bent-metal-logic-snowboard-bindings-metal-lightning-supermatic-snowboard-bindings-white-reverse.jpg",
+        "alt": "Bent Metal Lightning Supermatic Snowboard Bindings - white - metal-lightning-supermatic-snowboard-bindings-white-reverse"
+      }
+    ]
+  },
+  {
+    "handle": "smith-squad-s-goggles",
+    "search": "Smith Squad",
+    "type": "Оптика",
+    "flex": "Responsive",
+    "flexNum": 5,
+    "profile": "ChromaPop Cylindrical",
+    "camberType": "hybrid",
+    "shape": "Medium/Large Fit",
+    "terrain": "All Conditions",
+    "title": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens",
+    "vendor": "Smith",
+    "price": 135,
+    "compareAtPrice": 169,
+    "localImage": "/products/smith-squad-s-goggles.jpg",
+    "tacticsImage": "https://www.tactics.com/a/g9nk/o/smith-squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens.jpg",
+    "description": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Smith та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/smith-squad-s-goggles.jpg",
+        "alt": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens - Main View"
+      },
+      {
+        "url": "/products/smith-squad-s-goggles-squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens.jpg",
+        "alt": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens - squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens"
+      },
+      {
+        "url": "/products/smith-squad-s-goggles-squad-s-goggles-chalk-rose-split-everyday-gold-mirror-clear-lens.jpg",
+        "alt": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens - squad-s-goggles-chalk-rose-split-everyday-gold-mirror-clear-lens"
+      },
+      {
+        "url": "/products/smith-squad-s-goggles-squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens.jpg",
+        "alt": "Smith Squad S Goggles - malachite/everyday rose gold mirror + clear lens - squad-s-goggles-malachite-everyday-rose-gold-mirror-clear-lens"
+      }
+    ]
+  },
+  {
+    "handle": "anon-m5-toric-goggles",
+    "search": "Anon M5",
+    "type": "Оптика",
+    "flex": "Toric Lens",
+    "flexNum": 6,
+    "profile": "Magna-Tech Quick Change",
+    "camberType": "camber",
+    "shape": "Toric Curvature",
+    "terrain": "Bright Sun & Low Light",
+    "title": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens",
+    "vendor": "Anon",
+    "price": 188.95,
+    "compareAtPrice": 236,
+    "localImage": "/products/anon-m5-toric-goggles.jpg",
+    "tacticsImage": "https://www.tactics.com/a/ggic/o/anon-m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst.jpg",
+    "description": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Anon та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/anon-m5-toric-goggles.jpg",
+        "alt": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens - Main View"
+      },
+      {
+        "url": "/products/anon-m5-toric-goggles-m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst.jpg",
+        "alt": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens - m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst"
+      },
+      {
+        "url": "/products/anon-m5-toric-goggles-m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy.jpg",
+        "alt": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens - m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy"
+      },
+      {
+        "url": "/products/anon-m5-toric-goggles-m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst.jpg",
+        "alt": "Anon M5 Toric Goggles + Bonus Lens - black/perceive sunny red + perceive cloudy burst lens - m5-toric-goggles-bonus-lens-black-perceive-sunny-red-cloudy-burst"
+      }
+    ]
+  },
+  {
+    "handle": "smith-scout-mips-snowboard-helmet",
+    "search": "Smith Scout MIPS",
+    "type": "Захист",
+    "flex": "Impact Shell",
+    "flexNum": 8,
+    "profile": "MIPS Brain Protection",
+    "camberType": "camber",
+    "shape": "Low Profile",
+    "terrain": "All-Mountain Safety",
+    "title": "Smith Scout MIPS Snowboard Helmet - matte white",
+    "vendor": "Smith",
+    "price": 120,
+    "compareAtPrice": 150,
+    "localImage": "/products/smith-scout-mips-snowboard-helmet.jpg",
+    "tacticsImage": "https://www.tactics.com/a/emgr/o/smith-scout-mips-snowboard-helmet-matte-white.jpg",
+    "description": "Smith Scout MIPS Snowboard Helmet - matte white — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Smith та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/smith-scout-mips-snowboard-helmet.jpg",
+        "alt": "Smith Scout MIPS Snowboard Helmet - matte white - Main View"
+      },
+      {
+        "url": "/products/smith-scout-mips-snowboard-helmet-scout-mips-snowboard-helmet-matte-white.jpg",
+        "alt": "Smith Scout MIPS Snowboard Helmet - matte white - scout-mips-snowboard-helmet-matte-white"
+      },
+      {
+        "url": "/products/smith-scout-mips-snowboard-helmet-scout-mips-snowboard-helmet-matte-white-inside.jpg",
+        "alt": "Smith Scout MIPS Snowboard Helmet - matte white - scout-mips-snowboard-helmet-matte-white-inside"
+      },
+      {
+        "url": "/products/smith-scout-mips-snowboard-helmet-scout-mips-snowboard-helmet-matte-white-reverse.jpg",
+        "alt": "Smith Scout MIPS Snowboard Helmet - matte white - scout-mips-snowboard-helmet-matte-white-reverse"
+      }
+    ]
+  },
+  {
+    "handle": "volcom-rain-gore-tex-bib-pants",
+    "search": "Volcom Rain GORE-TEX",
+    "type": "Одяг",
+    "flex": "Relaxed Fit",
+    "flexNum": 5,
+    "profile": "GORE-TEX 2-Layer Waterproof",
+    "camberType": "hybrid",
+    "shape": "Bib Overalls",
+    "terrain": "Deep Powder & Storm",
+    "title": "Volcom Rain GORE-TEX Bib Overall Pants - black",
+    "vendor": "Volcom",
+    "price": 314.95,
+    "compareAtPrice": 394,
+    "localImage": "/products/volcom-rain-gore-tex-bib-pants.jpg",
+    "tacticsImage": "https://www.tactics.com/a/geql/o/volcom-rain-gore-tex-bib-overall-pants-black.jpg",
+    "description": "Volcom Rain GORE-TEX Bib Overall Pants - black — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Volcom та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/volcom-rain-gore-tex-bib-pants.jpg",
+        "alt": "Volcom Rain GORE-TEX Bib Overall Pants - black - Main View"
+      },
+      {
+        "url": "/products/volcom-rain-gore-tex-bib-pants-rain-gore-tex-bib-overall-pants-black.jpg",
+        "alt": "Volcom Rain GORE-TEX Bib Overall Pants - black - rain-gore-tex-bib-overall-pants-black"
+      },
+      {
+        "url": "/products/volcom-rain-gore-tex-bib-pants-rain-gore-tex-bib-overall-pants-black-cuff.jpg",
+        "alt": "Volcom Rain GORE-TEX Bib Overall Pants - black - rain-gore-tex-bib-overall-pants-black-cuff"
+      },
+      {
+        "url": "/products/volcom-rain-gore-tex-bib-pants-rain-gore-tex-bib-overall-pants-black-detail.jpg",
+        "alt": "Volcom Rain GORE-TEX Bib Overall Pants - black - rain-gore-tex-bib-overall-pants-black-detail"
+      }
+    ]
+  },
+  {
+    "handle": "santa-cruz-stranger-things-deck",
+    "search": "Stranger Things",
+    "type": "Скейтборди",
+    "flex": "7-Ply Maple",
+    "flexNum": 7,
+    "profile": "Medium Concave",
+    "camberType": "camber",
+    "shape": "Shaped 9.0\" Deck",
+    "terrain": "Street / Transition",
+    "title": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck",
+    "vendor": "Santa Cruz",
+    "price": 99.95,
+    "compareAtPrice": 125,
+    "localImage": "/products/santa-cruz-stranger-things-deck.jpg",
+    "tacticsImage": "https://www.tactics.com/a/gfua/o/santa-cruz-stranger-things-hellfire-club-flames-90-skateboard-deck.jpg",
+    "description": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Santa Cruz та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/santa-cruz-stranger-things-deck.jpg",
+        "alt": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck - Main View"
+      },
+      {
+        "url": "/products/santa-cruz-stranger-things-deck-cruz-stranger-things-hellfire-club-flames-90-skateboard-deck.jpg",
+        "alt": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck - cruz-stranger-things-hellfire-club-flames-90-skateboard-deck"
+      },
+      {
+        "url": "/products/santa-cruz-stranger-things-deck-cruz-stranger-things-hellfire-club-flames-90-skateboard-deck.jpg",
+        "alt": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck - cruz-stranger-things-hellfire-club-flames-90-skateboard-deck"
+      },
+      {
+        "url": "/products/santa-cruz-stranger-things-deck-cruz-stranger-things-hellfire-club-flames-90-skateboard-deck-top.jpg",
+        "alt": "Santa Cruz Stranger Things Hellfire Club Flames 9.0 Skateboard Deck - cruz-stranger-things-hellfire-club-flames-90-skateboard-deck-top"
+      }
+    ]
+  },
+  {
+    "handle": "tactics-oval-logo-skateboard-deck",
+    "search": "Oval Logo Skateboard Deck",
+    "type": "Скейтборди",
+    "flex": "Hard Rock Maple",
+    "flexNum": 6.5,
+    "profile": "Standard Popsicle",
+    "camberType": "camber",
+    "shape": "8.25\" Width",
+    "terrain": "Street / Park Skate",
+    "title": "Tactics Oval Logo Skateboard Deck - blue",
+    "vendor": "Tactics",
+    "price": 49.95,
+    "compareAtPrice": 62,
+    "localImage": "/products/tactics-oval-logo-skateboard-deck.jpg",
+    "tacticsImage": "https://www.tactics.com/a/ems4/o/tactics-oval-logo-skateboard-deck-blue.jpg",
+    "description": "Tactics Oval Logo Skateboard Deck - blue — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду Tactics та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/tactics-oval-logo-skateboard-deck.jpg",
+        "alt": "Tactics Oval Logo Skateboard Deck - blue - Main View"
+      },
+      {
+        "url": "/products/tactics-oval-logo-skateboard-deck-oval-logo-skateboard-deck-blue.jpg",
+        "alt": "Tactics Oval Logo Skateboard Deck - blue - oval-logo-skateboard-deck-blue"
+      },
+      {
+        "url": "/products/tactics-oval-logo-skateboard-deck-oval-logo-skateboard-deck-angle.jpg",
+        "alt": "Tactics Oval Logo Skateboard Deck - blue - oval-logo-skateboard-deck-angle"
+      },
+      {
+        "url": "/products/tactics-oval-logo-skateboard-deck-oval-logo-skateboard-deck-side.jpg",
+        "alt": "Tactics Oval Logo Skateboard Deck - blue - oval-logo-skateboard-deck-side"
+      }
+    ]
+  },
+  {
+    "handle": "dakine-goggle-stash-case",
+    "search": "Goggle Stash Case",
+    "type": "Аксесуари",
+    "flex": "Padded Protection",
+    "flexNum": 5,
+    "profile": "Fleece Lined",
+    "camberType": "hybrid",
+    "shape": "Molded Case",
+    "terrain": "Travel & Gear Care",
+    "title": "DAKINE Goggle Stash Case - mulled basil",
+    "vendor": "DAKINE",
+    "price": 17.95,
+    "compareAtPrice": 22,
+    "localImage": "/products/dakine-goggle-stash-case.jpg",
+    "tacticsImage": "https://www.tactics.com/a/gh39/o/dakine-goggle-stash-case-mulled-basil.jpg",
+    "description": "DAKINE Goggle Stash Case - mulled basil — професійне спорядження з офіційного каталогу провідного бордшопу. Висока якість збірки, офіційна гарантія бренду DAKINE та перевірена надійність на схилах і в парку.",
+    "gallery": [
+      {
+        "url": "/products/dakine-goggle-stash-case.jpg",
+        "alt": "DAKINE Goggle Stash Case - mulled basil - Main View"
+      },
+      {
+        "url": "/products/dakine-goggle-stash-case-goggle-stash-case-mulled-basil.jpg",
+        "alt": "DAKINE Goggle Stash Case - mulled basil - goggle-stash-case-mulled-basil"
+      },
+      {
+        "url": "/products/dakine-goggle-stash-case-goggle-stash-case-mulled-basil-reverse.jpg",
+        "alt": "DAKINE Goggle Stash Case - mulled basil - goggle-stash-case-mulled-basil-reverse"
+      }
+    ]
+  }
+]
