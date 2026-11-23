@@ -1,30 +1,31 @@
 [
   {
-    "id": "ORD-36249",
-    "createdAt": "2026-10-20T13:04:56.966Z",
+    "id": "ORD-33275",
+    "createdAt": "2026-11-23T20:21:09.381Z",
     "customer": {
-      "name": "???? ????????",
-      "phone": "+380 99 111 22 33",
-      "city": "?????, ???? ????? ?5",
+      "name": "Олександр Довженко",
+      "phone": "+380 67 111 22 33",
+      "city": "Київ, Відділення №42",
       "messenger": "Telegram"
     },
     "items": [
       {
-        "price": 189,
-        "title": "Minimalist Leather Backpack",
-        "variantTitle": "Black / One Size",
-        "id": "gid://shopify/ProductVariant/101",
-        "quantity": 1
+        "id": "gid://shopify/ProductVariant/1001",
+        "title": "Capita Super DOA Snowboard",
+        "variantTitle": "158W",
+        "price": 649.95,
+        "quantity": 1,
+        "image": "/products/capita-super-doa-snowboard.jpg"
       }
     ],
-    "total": 189,
-    "currency": "UAH",
+    "total": 649.95,
+    "currency": "USD",
     "status": "new",
     "paymentMethod": "cod"
   },
   {
-    "id": "ORD-10492",
-    "createdAt": "2026-10-20T11:30:00.000Z",
+    "id": "ORD-28941",
+    "createdAt": "2026-11-22T14:15:20.000Z",
     "customer": {
       "name": "Андрій Коваленко",
       "phone": "+380 67 123 45 67",
@@ -33,21 +34,30 @@
     },
     "items": [
       {
-        "id": "gid://shopify/ProductVariant/101",
-        "title": "Minimalist Leather Backpack",
-        "variantTitle": "Black / One Size",
-        "price": 189,
-        "quantity": 1
+        "id": "gid://shopify/ProductVariant/1002",
+        "title": "Burton Custom Camber Snowboard",
+        "variantTitle": "156",
+        "price": 659.95,
+        "quantity": 1,
+        "image": "/products/burton-custom-camber-snowboard.jpg"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/2001",
+        "title": "Union Force Classic Snowboard Bindings",
+        "variantTitle": "M (8-10)",
+        "price": 279.95,
+        "quantity": 1,
+        "image": "/products/union-force-classic-snowboard-bindings.jpg"
       }
     ],
-    "total": 189,
+    "total": 939.9,
     "currency": "USD",
-    "status": "new",
+    "status": "processing",
     "paymentMethod": "cod"
   },
   {
-    "id": "ORD-10491",
-    "createdAt": "2026-10-20T09:15:00.000Z",
+    "id": "ORD-19402",
+    "createdAt": "2026-11-21T09:40:00.000Z",
     "customer": {
       "name": "Ольга Мельник",
       "phone": "+380 50 987 65 43",
@@ -56,16 +66,17 @@
     },
     "items": [
       {
-        "id": "gid://shopify/ProductVariant/201",
-        "title": "Oversized Organic Cotton Hoodie",
-        "variantTitle": "S / Sand",
-        "price": 89,
-        "quantity": 1
+        "id": "gid://shopify/ProductVariant/3001",
+        "title": "Anon M4 Toric MFI Goggles",
+        "variantTitle": "Black / Perceive Sunny Red",
+        "price": 319.95,
+        "quantity": 1,
+        "image": "/products/anon-m4-toric-mfi-goggles.jpg"
       }
     ],
-    "total": 89,
+    "total": 319.95,
     "currency": "USD",
-    "status": "processing",
+    "status": "shipped",
     "paymentMethod": "online"
   }
 ]
