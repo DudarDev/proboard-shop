@@ -179,11 +179,11 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Gallery Column */}
           <div className="flex flex-col gap-4">
-            <div className="relative aspect-square w-full overflow-hidden rounded-3xl bg-zinc-50 border border-zinc-200/80 shadow-sm">
+            <div className="relative aspect-square w-full overflow-hidden rounded-3xl bg-zinc-50 border border-zinc-200/80 shadow-sm flex items-center justify-center p-6">
               <img
                 src={images[activeImageIndex] || images[0]}
                 alt={product.title}
-                className="h-full w-full object-cover object-center transition-all duration-300"
+                className="h-full w-full object-contain object-center transition-all duration-300"
               />
               <button
                 type="button"
@@ -206,13 +206,13 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                   <button
                     key={idx}
                     onClick={() => setActiveImageIndex(idx)}
-                    className={`relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border-2 transition-all ${
+                    className={`relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border-2 bg-zinc-50 transition-all ${
                       activeImageIndex === idx
                         ? 'border-zinc-900 shadow-md ring-2 ring-zinc-900/10'
                         : 'border-zinc-200 opacity-70 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt="thumbnail" className="h-full w-full object-cover" />
+                    <img src={img} alt="thumbnail" className="h-full w-full object-contain p-1" />
                   </button>
                 ))}
               </div>

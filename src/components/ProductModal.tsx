@@ -80,11 +80,11 @@ export function ProductModal() {
 
         {/* Left: Images */}
         <div className="md:w-1/2 p-6 bg-zinc-50 flex flex-col justify-between">
-          <div className="aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-inner">
+          <div className="aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-inner flex items-center justify-center p-4">
             <img
               src={images[activeImageIndex] || images[0]}
               alt={quickViewProduct.title}
-              className="h-full w-full object-cover object-center transition-all duration-300"
+              className="h-full w-full object-contain object-center transition-all duration-300"
             />
           </div>
 
@@ -94,11 +94,11 @@ export function ProductModal() {
                 <button
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
-                  className={`relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border-2 transition-all ${
+                  className={`relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border-2 bg-white transition-all ${
                     activeImageIndex === idx ? 'border-zinc-950 shadow-sm' : 'border-transparent opacity-70 hover:opacity-100'
                   }`}
                 >
-                  <img src={img} alt="thumbnail" className="h-full w-full object-cover" />
+                  <img src={img} alt="thumbnail" className="h-full w-full object-contain p-1" />
                 </button>
               ))}
             </div>

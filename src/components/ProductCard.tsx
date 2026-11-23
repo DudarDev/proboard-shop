@@ -25,10 +25,18 @@ export function ProductCard({ product }: ProductCardProps) {
   const firstVariant = product.variants?.edges?.[0]?.node || null;
   const price = product.priceRange?.minVariantPrice || firstVariant?.price || { amount: '0', currencyCode: 'USD' };
   const compareAtPrice = product.compareAtPrice || firstVariant?.compareAtPrice;
-  const initialImageUrl = product.featuredImage?.url || product.images?.edges?.[0]?.node?.url || 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=800&auto=format&fit=crop';
+  const primaryUrl = product.featuredImage?.url || product.images?.edges?.[0]?.node?.url || '';
+  const cdnBackupUrl = product.images?.edges?.[1]?.node?.url || '';
+  const initialImageUrl = primaryUrl || cdnBackupUrl;
   const [imgSrc, setImgSrc] = useState(initialImageUrl);
   const isFavorite = isInWishlist(product.id);
   const variants = product.variants?.edges || [];
+
+  const handleImageError = () => {
+    if (imgSrc !== cdnBackupUrl && cdnBackupUrl) {
+      setImgSrc(cdnBackupUrl);
+    }
+  };
 
   const handleQuickAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -64,12 +72,12 @@ export function ProductCard({ product }: ProductCardProps) {
       className="group relative flex flex-col border border-zinc-200 bg-white p-3 sm:p-4 hover:border-zinc-950 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md"
     >
       {/* Image container */}
-      <div className="relative aspect-[4/5] w-full overflow-hidden bg-zinc-100 flex items-center justify-center">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-zinc-50 flex items-center justify-center p-3">
         <img
           src={imgSrc}
           alt={product.title}
-          onError={() => setImgSrc('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=800&auto=format&fit=crop')}
-          className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+          onError={handleImageError}
+          className="h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
         />
 

@@ -55,7 +55,7 @@ const products = curated.map((item, idx) => {
         },
         {
           node: {
-            url: item.tacticsImage,
+            url: item.tacticsImage.replace('/o/', '/1b/'),
             altText: `${item.title} alternate view`,
           },
         },
