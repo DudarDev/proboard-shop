@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import { ShopifyProduct, ShopifyProductVariant } from '@/types/shopify';
 import { formatPrice } from '@/lib/utils';
 import { useConfig } from '@/context/ConfigContext';
-import { X, CheckCircle2, Zap, Phone, MapPin, Send } from 'lucide-react';
+import { TRANSLATIONS } from '@/lib/translations';
+import { X, CheckCircle2, Zap, Phone, MapPin, Send, Loader2 } from 'lucide-react';
 
 interface OneClickModalProps {
   product: ShopifyProduct | null;
@@ -21,13 +22,16 @@ export function OneClickModal({
   isOpen,
   onClose,
 }: OneClickModalProps) {
-  const { currency } = useConfig();
+  const { currency, language } = useConfig();
+  const t = TRANSLATIONS[language];
+
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [city, setCity] = useState('');
   const [messenger, setMessenger] = useState('Telegram');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedOrder, setSubmittedOrder] = useState<any>(null);
+  const [errorMessage, setErrorMessage] = useState('');
 
   if (!isOpen || !product) return null;
 
@@ -39,9 +43,14 @@ export function OneClickModal({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !phone.trim()) return;
+    if (!name.trim() || !phone.trim()) {
+      setErrorMessage(language === 'ua' ? 'Будь ласка, заповніть ім’я та телефон' : 'Please fill in name and phone');
+      return;
+    }
 
     setIsSubmitting(true);
+    setErrorMessage('');
+
     try {
       const res = await fetch('/api/orders', {
         method: 'POST',
@@ -51,16 +60,16 @@ export function OneClickModal({
           phone: phone.trim(),
           city: city.trim(),
           messenger,
-          total: totalPrice,
-          currency,
           paymentMethod: 'cod',
+          currency,
           items: [
             {
-              id: currentVariant?.id,
+              id: currentVariant?.id || product.id,
               title: product.title,
               variantTitle: currentVariant?.title || 'Стандарт',
               price: singlePrice,
               quantity,
+              image: imageUrl,
             },
           ],
         }),
@@ -69,9 +78,12 @@ export function OneClickModal({
       const data = await res.json();
       if (data.success) {
         setSubmittedOrder(data.order);
+      } else {
+        setErrorMessage(data.error || 'Помилка при створенні замовлення');
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error('Error submitting order:', err);
+      setErrorMessage(err.message || 'Помилка з’єднання із сервером');
     } finally {
       setIsSubmitting(false);
     }
@@ -82,6 +94,7 @@ export function OneClickModal({
     setName('');
     setPhone('');
     setCity('');
+    setErrorMessage('');
     onClose();
   };
 
@@ -107,24 +120,24 @@ export function OneClickModal({
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600 mb-4 shadow-inner">
               <CheckCircle2 className="h-8 w-8" />
             </div>
-            <h3 className="text-xl font-bold text-zinc-950">Замовлення прийнято!</h3>
+            <h3 className="text-xl font-bold text-zinc-950">{t.oneClickSuccessTitle}</h3>
             <p className="mt-1 text-xs text-zinc-500">
-              Номер замовлення: <strong className="text-zinc-900 font-mono">#{submittedOrder.id}</strong>
+              ID: <strong className="text-zinc-900 font-mono">#{submittedOrder.id}</strong>
             </p>
             <div className="my-6 rounded-2xl bg-zinc-50 p-4 border border-zinc-200/80 text-left text-xs text-zinc-600 space-y-1.5">
-              <p>👤 <strong>Клієнт:</strong> {submittedOrder.customer.name}</p>
-              <p>📞 <strong>Телефон:</strong> {submittedOrder.customer.phone}</p>
+              <p>👤 <strong>{t.fullNameLabel}:</strong> {submittedOrder.customer.name}</p>
+              <p>📞 <strong>{t.phoneLabel}:</strong> {submittedOrder.customer.phone}</p>
               <p>📦 <strong>Товар:</strong> {product.title} (x{quantity})</p>
-              <p>💰 <strong>До сплати при отриманні:</strong> {formatPrice(totalPrice, 'USD', currency)}</p>
+              <p>💰 <strong>{t.totalLabel}:</strong> {formatPrice(totalPrice, currency)}</p>
             </div>
             <p className="text-[11px] text-zinc-500 mb-6">
-              Менеджер зв'яжеться з вами через <strong>{messenger}</strong> протягом 15 хвилин для підтвердження відправки.
+              {t.oneClickSuccessDesc}
             </p>
             <button
               onClick={handleClose}
-              className="w-full rounded-xl bg-zinc-900 py-3 text-xs font-semibold text-white hover:bg-zinc-800 transition-all shadow-md"
+              className="w-full rounded-xl bg-zinc-950 py-3 text-xs font-black uppercase tracking-wider text-white hover:bg-zinc-800 transition-all shadow-md"
             >
-              Зрозуміло, дякую!
+              OK
             </button>
           </div>
         ) : (
@@ -135,8 +148,8 @@ export function OneClickModal({
                 <Zap className="h-4 w-4" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-zinc-950">Швидке замовлення в 1 клік</h3>
-                <p className="text-[11px] text-zinc-500">Без реєстрації та передоплати</p>
+                <h3 className="text-base font-black text-zinc-950">{t.oneClickTitle}</h3>
+                <p className="text-[11px] text-zinc-500">{t.oneClickDesc}</p>
               </div>
             </div>
 
@@ -146,82 +159,82 @@ export function OneClickModal({
                 <img
                   src={imageUrl}
                   alt={product.title}
-                  className="h-12 w-12 rounded-xl object-cover border border-zinc-200"
+                  className="h-12 w-12 rounded-xl object-contain border border-zinc-200 bg-white p-1"
                 />
               )}
               <div className="flex-1 min-w-0">
-                <h4 className="text-xs font-bold text-zinc-900 truncate">{product.title}</h4>
-                <p className="text-[11px] text-zinc-500">
-                  {currentVariant?.title} • {quantity} шт.
+                <p className="text-xs font-bold text-zinc-900 truncate">{product.title}</p>
+                <p className="text-[11px] text-zinc-500 font-medium">
+                  {currentVariant?.title || 'One Size'} • {quantity} шт.
                 </p>
               </div>
-              <span className="text-xs font-bold text-zinc-950">
-                {formatPrice(totalPrice, 'USD', currency)}
-              </span>
+              <div className="text-right">
+                <span className="text-sm font-black text-zinc-950 font-mono">
+                  {formatPrice(totalPrice, currency)}
+                </span>
+              </div>
             </div>
+
+            {errorMessage && (
+              <div className="mb-4 p-2.5 bg-rose-50 border border-rose-200 text-rose-700 rounded-xl text-xs font-medium">
+                {errorMessage}
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-3.5">
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1">
-                  Ваше ім'я *
-                </label>
+                <label className="block text-xs font-bold text-zinc-700 mb-1">{t.fullNameLabel} *</label>
                 <input
                   type="text"
                   required
-                  placeholder="Олександр Коваль"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-xs text-zinc-900 focus:border-zinc-900 focus:outline-none"
+                  placeholder="Олександр Коваленко"
+                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1">
-                  Номер телефону *
-                </label>
+                <label className="block text-xs font-bold text-zinc-700 mb-1">{t.phoneLabel} *</label>
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-zinc-400" />
                   <input
                     type="tel"
                     required
-                    placeholder="+380 67 000 00 00"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full rounded-xl border border-zinc-200 pl-8 pr-3.5 py-2 text-xs text-zinc-900 focus:border-zinc-900 focus:outline-none"
+                    placeholder="+380 (99) 000-00-00"
+                    className="w-full rounded-xl border border-zinc-200 pl-9 pr-3.5 py-2 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1">
-                  Місто та відділення пошти (необов'язково)
-                </label>
+                <label className="block text-xs font-bold text-zinc-700 mb-1">{t.cityLabel}</label>
                 <div className="relative">
                   <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-zinc-400" />
                   <input
                     type="text"
-                    placeholder="Київ, Нова Пошта №15"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    className="w-full rounded-xl border border-zinc-200 pl-8 pr-3.5 py-2 text-xs text-zinc-900 focus:border-zinc-900 focus:outline-none"
+                    placeholder="Київ, відділення Нової Пошти №..."
+                    className="w-full rounded-xl border border-zinc-200 pl-9 pr-3.5 py-2 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1">
-                  Де зручніше підтвердити замовлення?
-                </label>
+                <label className="block text-xs font-bold text-zinc-700 mb-1">{t.messengerLabel}</label>
                 <div className="grid grid-cols-3 gap-2">
-                  {['Telegram', 'Viber', 'Дзвінок'].map((m) => (
+                  {['Telegram', 'Viber', t.callMe].map((m) => (
                     <button
                       key={m}
                       type="button"
                       onClick={() => setMessenger(m)}
-                      className={`rounded-xl border py-1.5 text-xs font-semibold transition-all ${
+                      className={`py-1.5 px-2 rounded-xl text-xs font-semibold border transition-all text-center ${
                         messenger === m
-                          ? 'border-zinc-900 bg-zinc-900 text-white'
-                          : 'border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-50'
+                          ? 'border-zinc-950 bg-zinc-950 text-white shadow-sm'
+                          : 'border-zinc-200 text-zinc-600 hover:border-zinc-300 bg-white'
                       }`}
                     >
                       {m}
@@ -230,23 +243,23 @@ export function OneClickModal({
                 </div>
               </div>
 
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-amber-500 py-3 text-xs font-bold text-white hover:bg-amber-600 shadow-lg transition-all active:scale-[0.98] disabled:opacity-50"
-                >
-                  <Send className="h-3.5 w-3.5" />
-                  <span>
-                    {isSubmitting
-                      ? 'Оформлюємо...'
-                      : `Оформити замовлення • ${formatPrice(totalPrice, 'USD', currency)}`}
-                  </span>
-                </button>
-                <p className="mt-2 text-center text-[10px] text-zinc-400">
-                  Оплата при отриманні у відділенні пошти
-                </p>
-              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full mt-2 flex items-center justify-center gap-2 rounded-xl bg-zinc-950 py-3 text-xs font-black uppercase tracking-wider text-white hover:bg-zinc-800 active:scale-[0.98] transition-all shadow-md disabled:opacity-50"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    <span>{t.submitting}</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-3.5 w-3.5" />
+                    <span>{t.submitOneClick}</span>
+                  </>
+                )}
+              </button>
             </form>
           </div>
         )}

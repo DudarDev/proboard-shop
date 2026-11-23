@@ -24,6 +24,13 @@ export interface ShopifyProductVariant {
   image?: ShopifyImage;
 }
 
+export interface ShopifyMetafield {
+  key: string;
+  value: string;
+  namespace: string;
+  type?: string;
+}
+
 export interface BoardSpecs {
   flex?: string;
   flexRating?: number; // 1-10
@@ -69,6 +76,7 @@ export interface ShopifyProduct {
   productType?: string;
   vendor?: string;
   specs?: BoardSpecs;
+  metafields?: (ShopifyMetafield | null)[];
 }
 
 export interface CartItem {

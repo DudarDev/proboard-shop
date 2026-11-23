@@ -1,73 +1,104 @@
-# 🏂 PROBOARD SHOP — Headless E-Commerce & Dropshipping Storefront
+# 🏂 PROBOARD SHOP — Production-Ready Headless E-Commerce Starter Kit
 
 ![Next.js](https://img.shields.io/badge/Next.js-14_App_Router-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)
-![Shopify](https://img.shields.io/badge/Shopify-Storefront_API-95BF47?style=for-the-badge&logo=shopify)
-![Vercel](https://img.shields.io/badge/Vercel-Production_Live-black?style=for-the-badge&logo=vercel)
+![Shopify](https://img.shields.io/badge/Shopify-Storefront_API_2026--10-95BF47?style=for-the-badge&logo=shopify)
 ![License](https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge)
 
-> **Високопродуктивний інтернет-магазин бордспорту та дропшипінгу нового покоління, створений на базі Next.js 14, TypeScript та Shopify Storefront GraphQL API за зразком провідного магазину Proboardshop.**
-
-🔗 **Живе демо (Vercel Edge):** [https://shopify-store-nine-nu.vercel.app](https://shopify-store-nine-nu.vercel.app)  
-☁️ **Живий сервер (Oracle Cloud Dedicated VPS + Nginx + PM2):** [https://findarticles-striking-partners-control.trycloudflare.com](https://findarticles-striking-partners-control.trycloudflare.com)  
-📊 **Адмін-панель замовлень (CRM):** [https://shopify-store-nine-nu.vercel.app/admin](https://shopify-store-nine-nu.vercel.app/admin)  
-📦 **Трекінг посилок для клієнтів:** [https://shopify-store-nine-nu.vercel.app/track-order](https://shopify-store-nine-nu.vercel.app/track-order)
+> **Сучасна, високопродуктивна headless-вітрина інтернет-магазину бордспорту та дропшипінгу нового покоління, створена на базі Next.js 14 App Router, TypeScript та Shopify Storefront GraphQL API (версія 2026-10).**  
+> Поєднує 100% автономний Demo-режим із повноцінною підтримкою живого магазину Shopify, Cart API, вбудованою захищеною CRM, онлайн-калькулятором ростовки та повною двомовною локалізацією (UA / EN).
 
 ---
 
-## 📸 Галерея проєкту
+## ⚡ Швидкі посилання
 
-| Головна сторінка & Hero | Картка товару (PDP) з характеристиками |
+* 🌐 **GitHub Репозиторій:** [https://github.com/DudarDev/proboard-shop](https://github.com/DudarDev/proboard-shop)
+* 🚀 **Демо-вітрина:** [https://shopify-store-nine-nu.vercel.app](https://shopify-store-nine-nu.vercel.app)
+* 📊 **Панель керування замовленнями (CRM):** [/admin](https://shopify-store-nine-nu.vercel.app/admin)
+* 📦 **Трекінг відправок:** [/track-order](https://shopify-store-nine-nu.vercel.app/track-order)
+
+---
+
+## 📸 Галерея та візуальний огляд
+
+| Головна вітрина & Hero | Картка товару (PDP) з характеристиками |
 | :---: | :---: |
 | ![Homepage](portfolio/01_proboard_homepage_hero.png) | ![Snowboard Detail](portfolio/02_proboard_snowboard_nitro.png) |
 
-| Burton Custom Flying V & Огляди | Оптика Anon M4 Magna-Tech |
+| Огляди спорядження & Ростовки | Оптика та аксесуари |
 | :---: | :---: |
 | ![Burton Custom](portfolio/03_proboard_burton_custom.png) | ![Anon Optics](portfolio/04_proboard_anon_optics.png) |
 
-| Інтерактивний трекінг посилки | CRM Панель керування замовленнями |
+| Трекінг замовлення для покупця | Захищена CRM-панель замовлень |
 | :---: | :---: |
 | ![Track Order](portfolio/05_proboard_track_order.png) | ![Admin CRM](portfolio/06_proboard_admin_crm.png) |
 
 ---
 
-## ⚡ Ключові можливості та архітектура
+## 🏗️ Архітектура системи
 
-### 1. 🏂 Спеціалізований каталог екстремального спорядження
-* **Провідні світові бренди:** *Nitro, Burton, Capita, Union, ThirtyTwo, Santa Cruz, Anon, Oakley, Montec*.
-* **Категорії:** Сноуборди, Скейтборди, Кріплення & Черевики, Оптика & Маски, Шоломи & Захист, Анораки & Одяг, Сервіс & Парафін.
-* **Технічні мікро-бейджи:** відображення індексу жорсткості (`Flex: 8/10`), форми (`Directional Twin`, `True Twin`), прогину (`Trüe Camber`, `Flying V`), мембрани (`20,000 mm`) та технологій захисту (`MIPS`).
+```
+proboard-shop/
+├── src/
+│   ├── app/                      # Next.js 14 App Router
+│   │   ├── admin/                # Захищена панель CRM (AdminAuthGate + Orders)
+│   │   ├── api/orders/           # REST API: Rate limiting, order storage, Telegram bot
+│   │   ├── products/[handle]/    # Модульна сторінка товару (PDP)
+│   │   └── track-order/          # Сторінка трекінгу замовлення клієнта
+│   ├── components/               # UI Компоненти
+│   │   ├── admin/                # AdminAuthGate, AdminStatsCards, AdminOrdersTable
+│   │   ├── product/              # ProductGallery, ProductSpecsTable, ProductPurchaseBox
+│   │   ├── CartDrawer.tsx        # Shopify Cart API + Demo Drawer
+│   │   ├── OneClickModal.tsx     # Експрес-замовлення в 1 клік
+│   │   └── BoardSizeCalculatorModal.tsx # Алгоритм підбору ростовки
+│   ├── context/                  # React Context: Cart, Wishlist, Config (валюта/мова)
+│   ├── data/                     # mockProducts.ts, orders.json
+│   ├── lib/                      # Ядро інтеграцій та утиліти
+│   │   ├── shopify.ts            # GraphQL Storefront API v2026-10 + Cart mutation
+│   │   ├── orderStorage.ts       # Трьохрівневе сховище замовлень (JSON / /tmp / Memory)
+│   │   ├── rateLimit.ts          # In-memory IP-based Rate Limiter (sliding window)
+│   │   └── translations.ts       # Повна 100% двомовна локалізація (UA / EN)
+│   └── types/                    # TypeScript типи (Shopify, Metafields, Orders)
+```
 
-### 2. 📏 Онлайн-калькулятор підбору ростовки (`BoardSizeCalculatorModal`)
-* Інтерактивний алгоритм для сноубордистів:
-  * Враховує вагу, зріст, стиль катання (*All-Mountain*, *Park/Freestyle*, *Freeride/Powder*), рівень катання та розмір ноги.
-  * Розраховує діапазон довжини в сантиметрах (наприклад, `156 – 160 см`).
-  * Виявляє потребу у версії **WIDE (W)** для взуття 44.5+ EU для запобігання чіплянню схилу носками.
-  * Рекомендує оптимальний індекс Flex та форму прогину з можливістю застосувати фільтр до каталогу.
+---
 
-### 3. ⚡ 1-Click Checkout з месенджер-маршрутизацією
-* Форма оформлення замовлення за 10 секунд без реєстрації.
-* Вибір зручного каналу зв'язку: **Telegram**, **Viber** або телефонний дзвінок менеджера.
-* Введення міста та відділення / поштомату **Нової Пошти**.
-* Підтримка оплати при отриманні (**Накладений платіж COD**) та онлайн-еквайрингу.
+## 💎 Ключові можливості
 
-### 4. 📊 Вбудована CRM-панель замовлень (`/admin`)
-* Реальний REST API (`/api/orders`) для обробки замовлень.
-* Зміна життєвого циклу статусу: `Новий` ➔ `В обробці` ➔ `Відправлено` ➔ `Виконано`.
-* Метрики продажів: загальна виручка, середній чек, кількість замовлень.
-* Кнопки швидкого дзвінка та відкриття чату в Telegram.
-* Налаштування Telegram Webhook для миттєвих сповіщень про нові ліди.
+### 1. 🏂 Shopify Storefront API v2026-10 & Metafields
+* **Підтримка Metafields для дощок:** автоматична вибірка та безпечний мапінг параметрів:
+  * `custom.flex_rating` — шкала жорсткості (1–10)
+  * `custom.camber_type` — тип прогину (Camber, Rocker, Flying V, Flat)
+  * `custom.riding_style` — стиль (All-Mountain, Freestyle, Freeride, Powder)
+  * `custom.terrain` — локація та тип снігу
+* **Стійкий маппер (`mapShopifyProduct`):** безпечно приводить товари до єдиного інтерфейсу; якщо метаполя в магазині клієнта відсутні — вітрина та фільтри працюють без збоїв.
+* **Shopify Cart API (`cartCreate`):** створення реального кошика в Shopify та миттєвий редірект на офіційний `checkoutUrl`.
+* **Захист кошика:** перевірка формату GID (`gid://shopify/ProductVariant/...`) — при переході з Demo-режиму на реальний Shopify виводиться дружнє попередження з пропозицією очистити кошик.
 
-### 5. 📦 Інтерактивний трекінг замовлень (`/track-order`)
-* Клієнт може ввести номер замовлення (`ORD-...`) або номер телефону.
-* 4-кроковий візуальний прогрес-бар від підтвердження до отримання у відділенні Нової Пошти.
+### 2. 🔐 Безпека та захист API
+* **Ізоляція `/admin`:** жодні дані клієнтів чи замовлень не віддаються та не рендеряться без успішної перевірки секретного ключа `x-admin-key`.
+* **Криптографічний ключ:** генерація 32+ символьного `ADMIN_API_KEY` (зберігається в `.env.local`, плейсхолдер у `.env.local.example`).
+* **Rate Limiting (`rateLimit.ts`):** захист від спаму та перевантаження (10 запитів/хв на оформлення замовлень, 25 запитів/хв на адмін-роути) з урахуванням проксі (`x-forwarded-for`, `cf-connecting-ip`).
+* **Захист від XSS та санітизація:** сувора типізація та валідація номерів телефонів і текстових полів.
 
-### 6. 💱 Мультивалютний рушій
-* Миттєвий перерахунок цін між **UAH (₴)**, **USD ($)**, **EUR (€)** та **GBP (£)** у реальному часі.
+### 3. 💾 Трьохрівневе сховище замовлень (`orderStorage.ts`)
+* **Level 1 (Локальний файл):** `src/data/orders.json` з атомарним записом для надійності.
+* **Level 2 (Serverless /tmp):** автоматичне перемикання на `/tmp/proboard-orders.json` у середовищах із read-only файловою системою (Vercel, AWS Lambda) — запобігає 500 помилкам.
+* **Level 3 (In-Memory Fallback):** черга в оперативній пам'яті як захисний механізм.
 
-### 7. 🎁 Комплекти зі знижкою (Frequently Bought Together)
-* Крос-сейл блоки на сторінці товару (наприклад, Сноуборд + Кріплення Union зі знижкою -15%).
+### 4. 🧩 Модульна компонентна база
+* Сторінка товару (PDP) декомпозована на незалежні компоненти:
+  * `ProductGallery`: головний ракурс, мультиракурсні мініатюри, кнопка обраного
+  * `ProductSpecsTable`: візуальна 10-бальна шкала жорсткості, геометрія, канти, гарантія
+  * `ProductPurchaseBox`: ціни зі знижкою, селектор розмірів, калькулятор, кнопка в 1 клік
+* Панель управління (CRM) розділена на:
+  * `AdminAuthGate`: безпечний екран авторизації
+  * `AdminStatsCards`: метрики виручки, кількості замовлень, середнього чека
+  * `AdminOrdersTable`: фільтрація за статусами, керування життєвим циклом
+
+### 5. 🌐 Повна локалізація (UA / EN)
+* 100% текстів інтерфейсу підтримують миттєве перемикання між українською та англійською мовами через єдиний словник `src/lib/translations.ts`.
 
 ---
 
@@ -75,13 +106,12 @@
 
 | Сфера | Технології |
 | :--- | :--- |
-| **Фронтенд** | Next.js 14 (App Router, Server & Client Components), React 18, TypeScript |
-| **Стилізація** | Tailwind CSS, Lucide React Icons |
-| **Електронна комерція** | Shopify Storefront GraphQL API (v2026-10) + Cart API (`cartCreate`) + Fallback Catalog |
-| **Бекенд / API** | Next.js Route Handlers (`/api/orders`), Atomic Write Queue, x-admin-key Auth |
-| **Безпека** | HTML Sanitization (XSS guard), API Key Middleware/Gate, Whitelisted Statuses |
-| **SEO & Продуктивність** | Dynamic Metadata, OpenGraph, `sitemap.xml`, `robots.txt` |
-| **Деплой & Хостинг** | Oracle Cloud VPS (Ubuntu 22.04 + PM2 + Nginx + Cloudflare Tunnel) |
+| **Фронтенд** | Next.js 14 (App Router, Server & Client Components), React 18, TypeScript 5 |
+| **Стилізація** | Tailwind CSS 3.4, Lucide React Icons |
+| **Електронна комерція** | Shopify Storefront API (v2026-10), Cart API (`cartCreate`), GraphQL |
+| **Бекенд / API** | Next.js Route Handlers (`/api/orders`), Rate Limiter, Order Storage Service |
+| **Безпека** | Header-based Auth (`x-admin-key`), In-Memory Rate Limiting, Input Validation |
+| **Деплой** | Vercel Edge / Dedicated VPS (Ubuntu 22.04 LTS + PM2 + Nginx) |
 
 ---
 
@@ -99,25 +129,25 @@ npm install
 ```
 
 ### 3. Конфігурація змінних оточення
-Створіть файл `.env.local` на основі `.env.local.example`:
+Створіть `.env.local` на основі наданого зразка:
 ```bash
 cp .env.local.example .env.local
 ```
 
 | Змінна | Обов'язкова | Опис |
 | :--- | :---: | :--- |
-| `ADMIN_API_KEY` | **Так (для CRM)** | Секретний ключ для захисту `GET/PATCH /api/orders` та входу в панель `/admin`. Передається клієнтом у заголовку `x-admin-key`. |
+| `ADMIN_API_KEY` | **Так (для CRM)** | Секретний ключ для захисту `GET/PATCH /api/orders` та входу в `/admin` (мінімум 32 символи). |
 | `NEXT_PUBLIC_SHOPIFY_API_VERSION` | Ні | Версія Storefront API (за замовчуванням `2026-10`). |
-| `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN` | Ні | Домен вашого Shopify-магазину (наприклад, `my-shop.myshopify.com`). Якщо порожньо — працює Demo Mode. |
-| `NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN` | Ні | Публічний Storefront Access Token із додатку Shopify. |
-| `TELEGRAM_BOT_TOKEN` | Ні | Токен Telegram-бота для надсилання сповіщень про нові замовлення. |
-| `TELEGRAM_CHAT_ID` | Ні | Chat ID для отримання сповіщень у Telegram. |
+| `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN` | Ні | Домен вашого Shopify (`my-shop.myshopify.com`). Якщо порожньо — працює Demo Mode. |
+| `NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN` | Ні | Storefront Access Token із налаштувань додатку Shopify. |
+| `TELEGRAM_BOT_TOKEN` | Ні | Токен Telegram-бота для сповіщень про замовлення. |
+| `TELEGRAM_CHAT_ID` | Ні | Chat ID для отримання сповіщень. |
 
 ### 4. Запуск у режимі розробки
 ```bash
 npm run dev
 ```
-Відкрийте [http://localhost:3000](http://localhost:3000) у вашому браузері.
+Відкрийте [http://localhost:3000](http://localhost:3000) у браузері.
 
 ### 5. Збірка для продакшену
 ```bash
@@ -127,31 +157,21 @@ npm run start
 
 ---
 
-## 🔑 Підключення до реального магазину Shopify та Cart API
+## 🗺️ Дорожня карта розвитку (Production Roadmap)
 
-Проєкт підтримує два режими:
-1. **Автономний демо-режим (за замовчуванням):** повний каталог автентичного бордспорту (Capita, Burton, Lib Tech тощо) з локальною обробкою замовлень у CRM та симуляцією чекауту.
-2. **Shopify Live Storefront:**
-   * Вкажіть змінні у файлі `.env.local`:
-     ```env
-     NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN="your-shop-name.myshopify.com"
-     NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN="your_storefront_access_token"
-     NEXT_PUBLIC_SHOPIFY_API_VERSION="2026-10"
-     ```
-   * Або скористайтеся модальним вікном налаштувань прямо в інтерфейсі (кнопка в футері сайту) — воно містить автоматичний тест валідності ключів через `testShopifyConnection()`.
-   * При оформленні замовлення через кошик (`CartDrawer`) викликається мутація `cartCreate` Storefront API, яка повертає захищений `checkoutUrl` і редіректить покупця безпосередньо на офіційний платіжний шлюз Shopify.
-
----
-
-## 👨‍💻 Розробник & Портфоліо
-
-Розроблено як high-ticket демонстраційний проєкт для портфоліо e-commerce розробки.
-
-* **GitHub:** [@DudarDev](https://github.com/DudarDev)
-* **Live Store:** [https://shopify-store-nine-nu.vercel.app](https://shopify-store-nine-nu.vercel.app)
-* **Категорія:** Headless Shopify / Full-Stack Next.js E-Commerce / Dropshipping Platform
+1. **Міграція на повноцінну СУБД:**
+   * Підключення PostgreSQL / Supabase через Prisma ORM або Drizzle ORM для необмеженого масштабування замовлень та аналітики.
+2. **Shopify Admin Webhooks:**
+   * Підписка на події `orders/create`, `inventory_levels/update` для автоматичної двосторонньої синхронізації залишків на складі в режимі реального часу.
+3. **Платіжні шлюзи та логістика:**
+   * Інтеграція офіційного API Нової Пошти (автоматичне створення ЕН / ТТН, трекінг статусів).
+   * Підключення платіжних еквайрингів WayForPay, LiqPay, Monobank та Stripe.
+4. **Персоналізація покупця:**
+   * Кабінет покупця (Shopify Customer Account API), збереження улюблених товарів у хмарі, історія замовлень.
 
 ---
 
 ## 📄 Ліцензія
-MIT License © 2026 PROBOARD SHOP / DudarDev
+
+Розповсюджується під ліцензією **MIT License**. Дозволяється вільне комерційне використання, модифікація та адаптація.  
+© 2026 PROBOARD SHOP / [DudarDev](https://github.com/DudarDev)

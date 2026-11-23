@@ -1,4 +1,4 @@
-import { ShopifyProduct, ShopifyCollection, ShopifyCartUserError } from '@/types/shopify';
+import { ShopifyProduct, ShopifyCollection, ShopifyCartUserError, ShopifyMetafield, BoardSpecs } from '@/types/shopify';
 import {
   FALLBACK_PRODUCTS,
   FALLBACK_BRANDS,
@@ -12,6 +12,76 @@ export const SHOPIFY_API_VERSION = process.env.NEXT_PUBLIC_SHOPIFY_API_VERSION |
 export interface ShopifyCredentials {
   domain?: string;
   storefrontToken?: string;
+}
+
+/**
+ * Maps a raw Shopify product node (with optional metafields) to the unified ShopifyProduct interface.
+ * Safely defaults specs so catalog filtering and UI detail pages never crash.
+ */
+export function mapShopifyProduct(node: any): ShopifyProduct {
+  if (!node) return node;
+
+  const metafieldsList: (ShopifyMetafield | null)[] = Array.isArray(node.metafields)
+    ? node.metafields
+    : [];
+
+  const getMeta = (key: string) => {
+    const found = metafieldsList.find((m) => m && m.key === key);
+    return found ? found.value : undefined;
+  };
+
+  const rawFlex = getMeta('flex_rating');
+  let flexRating = rawFlex ? parseInt(rawFlex, 10) : undefined;
+  if (isNaN(flexRating as number) || (flexRating as number) < 1 || (flexRating as number) > 10) {
+    flexRating = undefined;
+  }
+
+  const rawCamber = getMeta('camber_type')?.toLowerCase();
+  let camberType: 'camber' | 'rocker' | 'hybrid' | 'flat' | undefined;
+  if (rawCamber && ['camber', 'rocker', 'hybrid', 'flat'].includes(rawCamber)) {
+    camberType = rawCamber as any;
+  } else if (node.title?.toLowerCase().includes('camber')) {
+    camberType = 'camber';
+  } else if (node.title?.toLowerCase().includes('rocker')) {
+    camberType = 'rocker';
+  }
+
+  const ridingStyle = getMeta('riding_style');
+  const terrain = getMeta('terrain') || (
+    node.tags?.find((t: string) =>
+      t.toLowerCase().includes('mountain') ||
+      t.toLowerCase().includes('park') ||
+      t.toLowerCase().includes('freeride')
+    ) || 'All-Mountain / Resort'
+  );
+
+  const existingSpecs: Partial<BoardSpecs> = node.specs || {};
+
+  const specs: BoardSpecs = {
+    flex: rawFlex ? `${rawFlex}/10` : (existingSpecs.flex || '6/10'),
+    flexRating: flexRating || existingSpecs.flexRating || 6,
+    camberType: camberType || existingSpecs.camberType || 'camber',
+    profile: existingSpecs.profile || (camberType === 'camber' ? 'Traditional Camber' : 'All-Mountain Hybrid'),
+    shape: ridingStyle || existingSpecs.shape || 'Directional Twin',
+    terrain: terrain || existingSpecs.terrain || 'All-Mountain / Resort',
+    level: existingSpecs.level || 'Intermediate – Advanced Pro',
+    gender: existingSpecs.gender || 'unisex',
+    subCategory: node.productType || existingSpecs.subCategory || 'Сноуборди',
+    origin: existingSpecs.origin || `${node.vendor || 'Brand'} Authorized Pro Shop`,
+    warranty: existingSpecs.warranty || 'Офіційна гарантія бренду (1-2 роки)',
+    waistWidth: existingSpecs.waistWidth || '250 – 256 мм',
+    features: existingSpecs.features || [
+      `Оригінальна продукція ${node.vendor || 'Proboard'}`,
+      'Фірмове пакування виробника',
+      'Офіційна гарантія та серійний номер',
+      'Швидка доставка Новою Поштою по Україні (1-3 дні)'
+    ],
+  };
+
+  return {
+    ...node,
+    specs,
+  };
 }
 
 export async function shopifyFetch<T>({
@@ -134,7 +204,7 @@ export async function testShopifyConnection(credentials: ShopifyCredentials): Pr
     const shopName = json.data?.shop?.name || cleanDomain;
     return { ok: true, shopName };
   } catch (err: any) {
-    return { ok: false, error: `Помилка з'єднання: ${err.message || 'Не вдалося зв’язатися із сервером'}` };
+    return { ok: false, error: `Помилка з'єднання: ${err.message || 'Не вдалося підключитися'}` };
   }
 }
 
@@ -149,6 +219,24 @@ export async function createShopifyCart(
   checkoutUrl?: string;
   userErrors?: ShopifyCartUserError[];
 }> {
+  // Validate merchandiseId format (must be gid://shopify/ProductVariant/...)
+  const invalidItems = lines.filter(
+    (l) => !l.merchandiseId || !l.merchandiseId.startsWith('gid://shopify/ProductVariant/')
+  );
+
+  if (invalidItems.length > 0) {
+    return {
+      userErrors: [
+        {
+          code: 'INVALID_MERCHANDISE_ID',
+          field: ['lines'],
+          message:
+            'У кошику виявлено товари з Demo-режиму або некоректні ID. Будь ласка, очистіть кошик перед оформленням замовлення через реальний Shopify.',
+        },
+      ],
+    };
+  }
+
   const mutation = `
     mutation createCart($input: CartInput!) {
       cartCreate(input: $input) {
@@ -265,6 +353,16 @@ export async function getShopifyProducts(credentials?: ShopifyCredentials): Prom
                 }
               }
             }
+            metafields(identifiers: [
+              { namespace: "custom", key: "flex_rating" },
+              { namespace: "custom", key: "camber_type" },
+              { namespace: "custom", key: "riding_style" },
+              { namespace: "custom", key: "terrain" }
+            ]) {
+              key
+              value
+              namespace
+            }
           }
         }
       }
@@ -274,12 +372,12 @@ export async function getShopifyProducts(credentials?: ShopifyCredentials): Prom
   try {
     const data = await shopifyFetch<{
       products: {
-        edges: { node: ShopifyProduct }[];
+        edges: { node: any }[];
       };
     }>({ query, credentials });
 
     if (data?.products?.edges && data.products.edges.length > 0) {
-      return data.products.edges.map((edge) => edge.node);
+      return data.products.edges.map((edge) => mapShopifyProduct(edge.node));
     }
   } catch (err) {
     if (credentials?.domain && credentials?.storefrontToken) {
@@ -287,7 +385,7 @@ export async function getShopifyProducts(credentials?: ShopifyCredentials): Prom
     }
   }
 
-  return FALLBACK_PRODUCTS;
+  return FALLBACK_PRODUCTS.map(mapShopifyProduct);
 }
 
 export async function getProductByHandle(handle: string, credentials?: ShopifyCredentials): Promise<ShopifyProduct | null> {
@@ -338,19 +436,29 @@ export async function getProductByHandle(handle: string, credentials?: ShopifyCr
             }
           }
         }
+        metafields(identifiers: [
+          { namespace: "custom", key: "flex_rating" },
+          { namespace: "custom", key: "camber_type" },
+          { namespace: "custom", key: "riding_style" },
+          { namespace: "custom", key: "terrain" }
+        ]) {
+          key
+          value
+          namespace
+        }
       }
     }
   `;
 
   try {
-    const data = await shopifyFetch<{ product: ShopifyProduct | null }>({
+    const data = await shopifyFetch<{ product: any | null }>({
       query,
       variables: { handle },
       credentials,
     });
 
     if (data?.product) {
-      return data.product;
+      return mapShopifyProduct(data.product);
     }
   } catch (err) {
     if (credentials?.domain && credentials?.storefrontToken) {
@@ -359,7 +467,7 @@ export async function getProductByHandle(handle: string, credentials?: ShopifyCr
   }
 
   const found = FALLBACK_PRODUCTS.find((p) => p.handle === handle);
-  return found || null;
+  return found ? mapShopifyProduct(found) : null;
 }
 
 export async function getRelatedProducts(currentHandle: string, credentials?: ShopifyCredentials): Promise<ShopifyProduct[]> {

@@ -1,45 +1,17 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-
-const dataFilePath = path.join(process.cwd(), 'src', 'data', 'orders.json');
-
-const ALLOWED_STATUSES = ['new', 'processing', 'shipped', 'delivered', 'completed', 'cancelled'] as const;
-type OrderStatus = typeof ALLOWED_STATUSES[number];
-
-// Simple in-memory mutex/write queue to guarantee atomic sequential writes
-let writeQueue = Promise.resolve();
-
-async function atomicSaveOrders(orders: any[]): Promise<void> {
-  const dir = path.dirname(dataFilePath);
-  await fs.promises.mkdir(dir, { recursive: true });
-  const tempPath = `${dataFilePath}.${Date.now()}.${Math.random().toString(36).substring(2)}.tmp`;
-  await fs.promises.writeFile(tempPath, JSON.stringify(orders, null, 2), 'utf8');
-  await fs.promises.rename(tempPath, dataFilePath);
-}
-
-function saveOrders(orders: any[]): Promise<void> {
-  writeQueue = writeQueue.then(() => atomicSaveOrders(orders));
-  return writeQueue;
-}
-
-async function getOrders(): Promise<any[]> {
-  try {
-    if (!fs.existsSync(dataFilePath)) {
-      return [];
-    }
-    const content = await fs.promises.readFile(dataFilePath, 'utf8');
-    return JSON.parse(content || '[]');
-  } catch (err) {
-    console.error('Error reading orders.json:', err);
-    return [];
-  }
-}
+import {
+  getAllOrders,
+  createOrder,
+  updateOrderStatus,
+  ALLOWED_ORDER_STATUSES,
+  OrderStatus,
+  OrderItem,
+} from '@/lib/orderStorage';
+import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 function verifyAdminAuth(req: Request): boolean {
   const adminApiKey = process.env.ADMIN_API_KEY;
   if (!adminApiKey || adminApiKey.trim() === '') {
-    // If ADMIN_API_KEY is not configured on server, disallow access
     return false;
   }
   const clientKey = req.headers.get('x-admin-key');
@@ -66,10 +38,14 @@ async function sendTelegramNotification(order: any) {
   }
 
   const itemsList = order.items
-    .map((i: any) => `• ${escapeHtml(i.title)} (${escapeHtml(i.variantTitle || '')}) x${i.quantity} — ${i.price * i.quantity} ${escapeHtml(order.currency || 'UAH')}`)
+    .map(
+      (i: any) =>
+        `• ${escapeHtml(i.title)} (${escapeHtml(i.variantTitle || '')}) x${i.quantity} — ${i.price * i.quantity} ${escapeHtml(order.currency || 'UAH')}`
+    )
     .join('\n');
 
-  const text = `🛍 <b>НОВЕ ЗАМОВЛЕННЯ #${escapeHtml(order.id)}</b>\n\n` +
+  const text =
+    `🛍 <b>НОВЕ ЗАМОВЛЕННЯ #${escapeHtml(order.id)}</b>\n\n` +
     `👤 <b>Клієнт:</b> ${escapeHtml(order.customer.name)}\n` +
     `📞 <b>Телефон:</b> ${escapeHtml(order.customer.phone)}\n` +
     `📍 <b>Доставка:</b> ${escapeHtml(order.customer.city || 'Не вказано')}\n` +
@@ -93,6 +69,15 @@ async function sendTelegramNotification(order: any) {
 }
 
 export async function GET(req: Request) {
+  const ip = getClientIp(req);
+  const rl = checkRateLimit(`admin-auth:${ip}`, 25, 60_000);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { success: false, error: `Забагато спроб запиту. Спробуйте через ${rl.resetInSec} сек.` },
+      { status: 429, headers: { 'Retry-After': String(rl.resetInSec) } }
+    );
+  }
+
   if (!verifyAdminAuth(req)) {
     return NextResponse.json(
       { success: false, error: 'Unauthorized: Відсутній або недійсний заголовок x-admin-key' },
@@ -101,7 +86,7 @@ export async function GET(req: Request) {
   }
 
   try {
-    const orders = await getOrders();
+    const orders = await getAllOrders();
     return NextResponse.json({ success: true, orders });
   } catch (err: any) {
     return NextResponse.json(
@@ -112,6 +97,15 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
+  const ip = getClientIp(req);
+  const rl = checkRateLimit(`orders:${ip}`, 10, 60_000);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { success: false, error: `Забагато запитів на оформлення. Зачекайте ${rl.resetInSec} сек.` },
+      { status: 429, headers: { 'Retry-After': String(rl.resetInSec) } }
+    );
+  }
+
   try {
     const body = await req.json();
 
@@ -126,33 +120,34 @@ export async function POST(req: Request) {
 
     // 2. Validate phone number
     const rawPhone = body.phone;
-    const phoneRegex = /^\+?[0-9\s\-()]{8,25}$/;
+    const phoneRegex = /^[\d\s+\-()]{8,25}$/;
     if (typeof rawPhone !== 'string' || !phoneRegex.test(rawPhone.trim())) {
       return NextResponse.json(
-        { success: false, error: "Поле 'phone' повинно містити коректний номер телефону (від 8 цифр)" },
+        { success: false, error: "Некоректний формат телефону 'phone'" },
         { status: 400 }
       );
     }
 
-    // 3. Validate items array
-    if (!Array.isArray(body.items) || body.items.length === 0) {
+    // 3. Validate items
+    const rawItems = body.items;
+    if (!Array.isArray(rawItems) || rawItems.length === 0) {
       return NextResponse.json(
-        { success: false, error: "Поле 'items' повинно містити хоча б один товар" },
+        { success: false, error: "Поле 'items' має бути непорожнім масивом" },
         { status: 400 }
       );
     }
 
-    const validatedItems = [];
-    for (const item of body.items) {
+    const validatedItems: OrderItem[] = [];
+    for (const item of rawItems) {
       if (!item || typeof item !== 'object') {
         return NextResponse.json(
-          { success: false, error: 'Невірний формат елемента товару' },
+          { success: false, error: 'Кожен елемент у items має бути валідним об’єктом' },
           { status: 400 }
         );
       }
       if (typeof item.title !== 'string' || item.title.trim() === '') {
         return NextResponse.json(
-          { success: false, error: "Кожен товар повинен містити непусту назву 'title'" },
+          { success: false, error: "Кожен товар повинен містити непорожню назву 'title'" },
           { status: 400 }
         );
       }
@@ -184,11 +179,7 @@ export async function POST(req: Request) {
     // 4. Recalculate total on server (ignore untrusted client total)
     const calculatedTotal = validatedItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-    const orders = await getOrders();
-
-    const newOrder = {
-      id: `ORD-${Math.floor(10000 + Math.random() * 90000)}`,
-      createdAt: new Date().toISOString(),
+    const newOrder = await createOrder({
       customer: {
         name: rawName.trim(),
         phone: rawPhone.trim(),
@@ -198,16 +189,11 @@ export async function POST(req: Request) {
       items: validatedItems,
       total: Math.round(calculatedTotal * 100) / 100,
       currency: typeof body.currency === 'string' ? body.currency.slice(0, 5) : 'UAH',
-      status: 'new' as OrderStatus,
+      status: 'new',
       paymentMethod: body.paymentMethod === 'online' ? 'online' : 'cod',
-    };
+    });
 
-    orders.unshift(newOrder);
-
-    // 5. Persist with atomic write queue and propagate errors
-    await saveOrders(orders);
-
-    // Send telegram notification asynchronously (safe, sanitized)
+    // Send telegram notification asynchronously
     sendTelegramNotification(newOrder).catch((e) => console.warn(e));
 
     return NextResponse.json({ success: true, order: newOrder });
@@ -239,30 +225,25 @@ export async function PATCH(req: Request) {
       );
     }
 
-    // Validate status against whitelist
-    if (!ALLOWED_STATUSES.includes(status as OrderStatus)) {
+    if (!ALLOWED_ORDER_STATUSES.includes(status as OrderStatus)) {
       return NextResponse.json(
         {
           success: false,
-          error: `Неприпустимий статус. Дозволені статуси: ${ALLOWED_STATUSES.join(', ')}`,
+          error: `Неприпустимий статус. Дозволені статуси: ${ALLOWED_ORDER_STATUSES.join(', ')}`,
         },
         { status: 400 }
       );
     }
 
-    const orders = await getOrders();
-    const orderIndex = orders.findIndex((o: any) => o.id === orderId);
-    if (orderIndex === -1) {
+    const updated = await updateOrderStatus(orderId, status as OrderStatus);
+    if (!updated) {
       return NextResponse.json(
         { success: false, error: 'Замовлення не знайдено' },
         { status: 404 }
       );
     }
 
-    orders[orderIndex].status = status;
-    await saveOrders(orders);
-
-    return NextResponse.json({ success: true, order: orders[orderIndex] });
+    return NextResponse.json({ success: true, order: updated });
   } catch (err: any) {
     console.error('Failed updating order status:', err);
     return NextResponse.json(
