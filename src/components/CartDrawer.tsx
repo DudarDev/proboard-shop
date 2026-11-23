@@ -4,13 +4,14 @@ import React, { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { useConfig } from '@/context/ConfigContext';
 import { formatPrice } from '@/lib/utils';
-import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, CheckCircle2, Tag } from 'lucide-react';
+import { createShopifyCart } from '@/lib/shopify';
+import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, CheckCircle2, Tag, Loader2 } from 'lucide-react';
 
 const FREE_SHIPPING_THRESHOLD = 150;
 
 export function CartDrawer() {
   const { items, isCartOpen, closeCart, updateQuantity, removeFromCart, subtotal, currency, clearCart } = useCart();
-  const { storeDomain } = useConfig();
+  const { storeDomain, storefrontToken } = useConfig();
   const [promoCode, setPromoCode] = useState('');
   const [discountPercent, setDiscountPercent] = useState(0);
   const [promoMessage, setPromoMessage] = useState('');
@@ -40,27 +41,44 @@ export function CartDrawer() {
   const remainingForFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
   const freeShippingProgress = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100);
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     setIsCheckingOut(true);
+    setPromoMessage('');
 
-    // If real shopify store is connected:
-    if (storeDomain && storeDomain.includes('.myshopify.com')) {
-      // Direct checkout URL construction for Shopify cart
-      // Example: https://{storeDomain}/cart/{variant_id}:{quantity},{variant_id}:{quantity}
-      const cartParams = items
-        .map((i) => {
-          const rawId = i.id.replace('gid://shopify/ProductVariant/', '');
-          return `${rawId}:${i.quantity}`;
-        })
-        .join(',');
-      
-      const checkoutUrl = `https://${storeDomain}/cart/${cartParams}`;
-      window.open(checkoutUrl, '_blank');
-      setIsCheckingOut(false);
-      return;
+    // If real Shopify store is connected via credentials
+    if (storeDomain && storefrontToken) {
+      try {
+        const lines = items.map((i) => ({
+          merchandiseId: i.id.startsWith('gid://') ? i.id : `gid://shopify/ProductVariant/${i.id}`,
+          quantity: i.quantity,
+        }));
+
+        const res = await createShopifyCart(lines, {
+          domain: storeDomain,
+          storefrontToken,
+        });
+
+        if (res.checkoutUrl) {
+          clearCart();
+          closeCart();
+          window.location.href = res.checkoutUrl;
+          return;
+        }
+
+        if (res.userErrors && res.userErrors.length > 0) {
+          const errText = res.userErrors.map((e) => e.message).join(', ');
+          setPromoMessage(`Помилка Shopify кошика: ${errText}`);
+          setIsCheckingOut(false);
+          return;
+        }
+      } catch (err: any) {
+        setPromoMessage(`Помилка підключення до Shopify: ${err.message || err}`);
+        setIsCheckingOut(false);
+        return;
+      }
     }
 
-    // Demo checkout simulation: redirect to beautiful success confirmation
+    // Demo checkout simulation: redirect to confirmation
     setTimeout(() => {
       setIsCheckingOut(false);
       setIsSuccess(true);
@@ -69,8 +87,8 @@ export function CartDrawer() {
         setIsSuccess(false);
         closeCart();
         window.location.href = '/checkout/success';
-      }, 1500);
-    }, 1000);
+      }, 1200);
+    }, 800);
   };
 
   return (

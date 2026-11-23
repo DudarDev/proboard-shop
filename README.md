@@ -77,10 +77,11 @@
 | :--- | :--- |
 | **Фронтенд** | Next.js 14 (App Router, Server & Client Components), React 18, TypeScript |
 | **Стилізація** | Tailwind CSS, Lucide React Icons |
-| **Електронна комерція** | Shopify Storefront GraphQL API (v2024-01) + Live Fallback Engine |
-| **Бекенд / API** | Next.js Route Handlers (`/api/orders`), Webhook Dispatcher |
+| **Електронна комерція** | Shopify Storefront GraphQL API (v2026-10) + Cart API (`cartCreate`) + Fallback Catalog |
+| **Бекенд / API** | Next.js Route Handlers (`/api/orders`), Atomic Write Queue, x-admin-key Auth |
+| **Безпека** | HTML Sanitization (XSS guard), API Key Middleware/Gate, Whitelisted Statuses |
 | **SEO & Продуктивність** | Dynamic Metadata, OpenGraph, `sitemap.xml`, `robots.txt` |
-| **Деплой & Хостинг** | Vercel Serverless Edge Platform |
+| **Деплой & Хостинг** | Oracle Cloud VPS (Ubuntu 22.04 + PM2 + Nginx + Cloudflare Tunnel) |
 
 ---
 
@@ -97,13 +98,28 @@ cd proboard-shop
 npm install
 ```
 
-### 3. Запуск у режимі розробки
+### 3. Конфігурація змінних оточення
+Створіть файл `.env.local` на основі `.env.local.example`:
+```bash
+cp .env.local.example .env.local
+```
+
+| Змінна | Обов'язкова | Опис |
+| :--- | :---: | :--- |
+| `ADMIN_API_KEY` | **Так (для CRM)** | Секретний ключ для захисту `GET/PATCH /api/orders` та входу в панель `/admin`. Передається клієнтом у заголовку `x-admin-key`. |
+| `NEXT_PUBLIC_SHOPIFY_API_VERSION` | Ні | Версія Storefront API (за замовчуванням `2026-10`). |
+| `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN` | Ні | Домен вашого Shopify-магазину (наприклад, `my-shop.myshopify.com`). Якщо порожньо — працює Demo Mode. |
+| `NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN` | Ні | Публічний Storefront Access Token із додатку Shopify. |
+| `TELEGRAM_BOT_TOKEN` | Ні | Токен Telegram-бота для надсилання сповіщень про нові замовлення. |
+| `TELEGRAM_CHAT_ID` | Ні | Chat ID для отримання сповіщень у Telegram. |
+
+### 4. Запуск у режимі розробки
 ```bash
 npm run dev
 ```
 Відкрийте [http://localhost:3000](http://localhost:3000) у вашому браузері.
 
-### 4. Збірка для продакшену
+### 5. Збірка для продакшену
 ```bash
 npm run build
 npm run start
@@ -111,17 +127,19 @@ npm run start
 
 ---
 
-## 🔑 Підключення до реального магазину Shopify
+## 🔑 Підключення до реального магазину Shopify та Cart API
 
 Проєкт підтримує два режими:
-1. **Автономний демо-режим:** повний каталог бордспорту з локальним збереженням замовлень та синхронізацією.
+1. **Автономний демо-режим (за замовчуванням):** повний каталог автентичного бордспорту (Capita, Burton, Lib Tech тощо) з локальною обробкою замовлень у CRM та симуляцією чекауту.
 2. **Shopify Live Storefront:**
    * Вкажіть змінні у файлі `.env.local`:
      ```env
      NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN="your-shop-name.myshopify.com"
      NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN="your_storefront_access_token"
+     NEXT_PUBLIC_SHOPIFY_API_VERSION="2026-10"
      ```
-   * Або скористайтеся модальним вікном налаштувань прямо в інтерфейсі (іконка шестерні в шапці сайту).
+   * Або скористайтеся модальним вікном налаштувань прямо в інтерфейсі (кнопка в футері сайту) — воно містить автоматичний тест валідності ключів через `testShopifyConnection()`.
+   * При оформленні замовлення через кошик (`CartDrawer`) викликається мутація `cartCreate` Storefront API, яка повертає захищений `checkoutUrl` і редіректить покупця безпосередньо на офіційний платіжний шлюз Shopify.
 
 ---
 

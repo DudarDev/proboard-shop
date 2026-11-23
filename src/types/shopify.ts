@@ -89,3 +89,15 @@ export interface ShopifyCollection {
   description?: string;
   image?: ShopifyImage;
 }
+
+export interface ShopifyCartUserError {
+  code?: string;
+  field: string[];
+  message: string;
+}
+
+export interface ShopifyCart {
+  id: string;
+  checkoutUrl: string;
+  totalQuantity: number;
+}
