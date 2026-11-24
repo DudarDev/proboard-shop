@@ -6,7 +6,7 @@ import { Sparkles, ArrowRight } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer id="features" className="border-t border-zinc-200 bg-zinc-50 pt-16 pb-12">
+    <footer id="features" className="border-t border-zinc-200 bg-zinc-50 pt-16 pb-12 w-full max-w-full overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-zinc-200">
           

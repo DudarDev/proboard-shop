@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ShoppingBag, X, CheckCircle } from 'lucide-react';
+import { X, CheckCircle } from 'lucide-react';
 import { FALLBACK_PRODUCTS } from '@/lib/shopify';
 import { useConfig } from '@/context/ConfigContext';
 
@@ -63,25 +63,27 @@ export function LiveSalesToasts() {
   const product = FALLBACK_PRODUCTS[current.productIdx] || FALLBACK_PRODUCTS[0];
 
   return (
-    <div className="fixed bottom-20 sm:bottom-6 left-4 z-40 max-w-sm animate-in fade-in slide-in-from-bottom-5 duration-300">
-      <div className="flex items-center gap-3 rounded-2xl border border-zinc-200/90 bg-white/95 backdrop-blur-md p-3.5 shadow-xl">
-        
-        {/* Product image */}
+    <aside
+      aria-live="polite"
+      className="fixed bottom-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:bottom-6 left-3 right-3 sm:right-auto sm:max-w-sm z-30 pointer-events-auto animate-in fade-in slide-in-from-bottom-3 duration-300"
+    >
+      <div className="flex items-center gap-3 rounded-2xl border border-zinc-200/90 bg-white/95 backdrop-blur-md p-3 shadow-xl">
+        {/* Product thumbnail */}
         <Link href={`/products/${product.handle}`} className="shrink-0">
           <img
             src={product.featuredImage?.url}
             alt={product.title}
-            className="h-12 w-12 rounded-xl object-cover border border-zinc-200 hover:scale-105 transition-transform"
+            className="h-11 w-11 rounded-xl object-contain bg-zinc-50 border border-zinc-200 p-0.5 hover:scale-105 transition-transform"
           />
         </Link>
 
         {/* Text info */}
         <div className="flex-1 min-w-0 pr-1">
           <div className="flex items-center gap-1 text-[11px] text-zinc-500">
-            <span className="font-semibold text-zinc-900">{current.name}</span>
+            <span className="font-bold text-zinc-900">{current.name}</span>
             <span>({current.city})</span>
             <span>•</span>
-            <span className="text-emerald-600 font-medium">{current.time}</span>
+            <span className="text-emerald-600 font-semibold">{current.time}</span>
           </div>
 
           <Link
@@ -93,20 +95,20 @@ export function LiveSalesToasts() {
 
           <span className="inline-flex items-center gap-1 text-[10px] text-zinc-400">
             <CheckCircle className="h-3 w-3 text-emerald-500" />
-            <span>{language === 'ua' ? 'Перевірена покупка' : 'Verified Purchase'}</span>
+            <span>{language === 'ua' ? 'Підтверджене замовлення' : 'Verified Order'}</span>
           </span>
         </div>
 
-        {/* Close */}
+        {/* Close Button */}
         <button
+          type="button"
           onClick={() => setIsDismissed(true)}
-          className="text-zinc-400 hover:text-zinc-700 p-1 transition-colors"
-          title="Приховати сповіщення"
+          className="text-zinc-400 hover:text-zinc-700 p-1 rounded-lg"
+          aria-label="Закрити"
         >
           <X className="h-3.5 w-3.5" />
         </button>
-
       </div>
-    </div>
+    </aside>
   );
 }

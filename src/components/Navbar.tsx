@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ShoppingBag, Settings2, Search, Heart, Ruler, Percent, Globe } from 'lucide-react';
+import { ShoppingBag, Settings2, Search, Heart, Ruler, Percent } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { useConfig } from '@/context/ConfigContext';
@@ -31,33 +31,31 @@ export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator, onS
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-zinc-200 bg-white shadow-sm transition-all">
-      {/* 1. Main Header Bar */}
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 gap-4">
+    <header className="sticky top-0 z-40 w-full border-b border-zinc-200 bg-white/95 backdrop-blur-md shadow-sm transition-all">
+      {/* 1. Main Header Bar: Single-row, vertically centered, zero horizontal overflow */}
+      <div className="mx-auto flex h-14 sm:h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 gap-2 sm:gap-4 w-full">
         
-        {/* Brand / Logo (PROBOARD Clean Retail Aesthetic - No Demo/Dropship/Tactics Badges) */}
-        <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="flex h-10 w-10 items-center justify-center bg-zinc-950 text-white font-black text-xl tracking-tighter group-hover:bg-emerald-600 transition-colors">
-              P
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1.5 leading-none">
-                <span className="font-black text-xl tracking-tighter text-zinc-950 uppercase">
-                  PROBOARD
-                </span>
-                <span className="text-[10px] font-black uppercase tracking-wider text-white bg-zinc-950 px-1.5 py-0.5">
-                  SHOP
-                </span>
-              </div>
-              <span className="text-[9px] font-black tracking-widest text-zinc-400 uppercase mt-0.5">
-                PREMIUM BOARDSPORTS STORE
+        {/* Brand / Logo */}
+        <Link href="/" className="flex items-center gap-2 group shrink-0">
+          <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center bg-zinc-950 text-white font-black text-lg sm:text-xl tracking-tighter group-hover:bg-emerald-600 transition-colors">
+            P
+          </div>
+          <div className="flex flex-col">
+            <div className="flex items-center gap-1 leading-none">
+              <span className="font-black text-lg sm:text-xl tracking-tighter text-zinc-950 uppercase">
+                PROBOARD
+              </span>
+              <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-white bg-zinc-950 px-1 py-0.5">
+                SHOP
               </span>
             </div>
-          </Link>
-        </div>
+            <span className="hidden sm:block text-[9px] font-black tracking-widest text-zinc-400 uppercase mt-0.5">
+              PREMIUM BOARDSPORTS STORE
+            </span>
+          </div>
+        </Link>
 
-        {/* Search Bar - Clean Rectangular Pro Styling */}
+        {/* Search Bar - Desktop Only */}
         {onSearchChange && (
           <div className="flex-1 max-w-md mx-2 hidden md:block">
             <div className="relative flex items-center">
@@ -79,9 +77,9 @@ export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator, onS
           </div>
         )}
 
-        {/* Right Actions: Language Switcher, Currency, Wishlist, Calculator, Cart */}
-        <div className="flex items-center gap-2 sm:gap-2.5">
-          {/* Board Size Calculator Pill */}
+        {/* Right Actions: Compact on mobile, rich on desktop */}
+        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          {/* Board Size Calculator Pill (Desktop Only) */}
           {onOpenCalculator && (
             <button
               onClick={onOpenCalculator}
@@ -94,11 +92,11 @@ export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator, onS
           )}
 
           {/* Language Switcher (UA / EN) */}
-          <div className="flex items-center border border-zinc-300 bg-zinc-50 overflow-hidden text-xs font-black">
+          <div className="flex items-center border border-zinc-300 bg-zinc-50 overflow-hidden text-[11px] sm:text-xs font-black">
             <button
               type="button"
               onClick={() => setLanguage('ua')}
-              className={`px-2 py-1 transition-colors ${
+              className={`px-1.5 sm:px-2 py-1 transition-colors ${
                 language === 'ua'
                   ? 'bg-zinc-950 text-white'
                   : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200'
@@ -110,7 +108,7 @@ export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator, onS
             <button
               type="button"
               onClick={() => setLanguage('en')}
-              className={`px-2 py-1 transition-colors ${
+              className={`px-1.5 sm:px-2 py-1 transition-colors ${
                 language === 'en'
                   ? 'bg-zinc-950 text-white'
                   : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200'
@@ -126,7 +124,7 @@ export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator, onS
             <select
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
-              className="appearance-none border border-zinc-300 bg-white pl-2.5 pr-6 py-1 text-xs font-black uppercase text-zinc-800 hover:border-zinc-400 focus:outline-none cursor-pointer"
+              className="appearance-none border border-zinc-300 bg-white pl-2 pr-5 sm:pl-2.5 sm:pr-6 py-1 text-[11px] sm:text-xs font-black uppercase text-zinc-800 hover:border-zinc-400 focus:outline-none cursor-pointer"
               title="Змінити валюту"
             >
               {Object.keys(CURRENCY_RATES).map((c) => (
@@ -135,23 +133,23 @@ export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator, onS
                 </option>
               ))}
             </select>
-            <span className="pointer-events-none absolute right-2 text-[10px] text-zinc-400">▾</span>
+            <span className="pointer-events-none absolute right-1.5 text-[9px] text-zinc-400">▾</span>
           </div>
 
-          {/* Settings button */}
+          {/* Settings button - Hidden on mobile, present in Bottom Tab Bar */}
           <button
             onClick={() => setIsSettingsOpen(true)}
-            className="p-1.5 text-zinc-600 hover:text-zinc-950 border border-transparent hover:border-zinc-200 transition-colors"
+            className="hidden md:flex p-1.5 text-zinc-600 hover:text-zinc-950 border border-transparent hover:border-zinc-200 transition-colors"
             title="Shopify Credentials"
             aria-label="Settings"
           >
             <Settings2 className="h-4 w-4" />
           </button>
 
-          {/* Wishlist Button */}
+          {/* Wishlist Button - Hidden on mobile, present in Bottom Tab Bar */}
           <button
             onClick={openWishlist}
-            className="relative flex items-center justify-center h-8 w-8 border border-zinc-200 bg-white text-zinc-700 hover:text-rose-500 hover:border-zinc-300 transition-colors"
+            className="hidden md:flex relative items-center justify-center h-8 w-8 border border-zinc-200 bg-white text-zinc-700 hover:text-rose-500 hover:border-zinc-300 transition-colors"
             title="Обране"
             aria-label="Wishlist"
           >
@@ -163,10 +161,24 @@ export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator, onS
             )}
           </button>
 
-          {/* Cart Trigger */}
+          {/* Cart Trigger: Mobile (Icon + Badge only, no heavy text) */}
           <button
             onClick={toggleCart}
-            className="relative flex items-center gap-1.5 bg-zinc-950 px-3.5 py-1.5 text-xs font-black uppercase tracking-wider text-white hover:bg-zinc-800 active:scale-95 transition-all shadow-sm"
+            className="md:hidden relative flex items-center justify-center h-9 w-9 bg-zinc-950 text-white hover:bg-zinc-800 active:scale-95 transition-all shadow-sm"
+            aria-label="Кошик"
+          >
+            <ShoppingBag className="h-4 w-4 text-emerald-400" />
+            {totalCount > 0 && (
+              <span className="absolute -top-1 -right-1 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full bg-emerald-500 text-[9px] font-black text-zinc-950 shadow-sm">
+                {totalCount}
+              </span>
+            )}
+          </button>
+
+          {/* Cart Trigger: Desktop (Full text + count) */}
+          <button
+            onClick={toggleCart}
+            className="hidden md:flex relative items-center gap-1.5 bg-zinc-950 px-3.5 py-1.5 text-xs font-black uppercase tracking-wider text-white hover:bg-zinc-800 active:scale-95 transition-all shadow-sm"
           >
             <ShoppingBag className="h-3.5 w-3.5 text-emerald-400" />
             <span>{t.cart} ({totalCount})</span>
@@ -174,74 +186,71 @@ export function Navbar({ onSearchChange, searchQuery = '', onOpenCalculator, onS
         </div>
       </div>
 
-      {/* 2. Sub Navigation Bar - Pure Clean Categories without CRM/Tracking crowding */}
-      <nav className="border-t border-zinc-200 bg-zinc-50/70 overflow-x-auto scrollbar-none">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
-          <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs font-black uppercase tracking-wider text-zinc-800">
+      {/* 2. Sub Navigation Bar - Category Strip with Smooth Horizontal Scroll & Right Edge Fade Mask */}
+      <div className="relative w-full border-t border-zinc-200 bg-zinc-50/90">
+        <div className="relative mx-auto max-w-7xl">
+          <nav className="flex items-center gap-2 sm:gap-4 overflow-x-auto whitespace-nowrap scrollbar-none snap-x px-4 sm:px-6 lg:px-8 py-2 text-[11px] sm:text-xs font-black uppercase tracking-wider text-zinc-800">
             <button
               onClick={() => handleNavClick('Сноуборди')}
-              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+              className="snap-start px-2.5 py-1 rounded-lg hover:bg-zinc-200/70 hover:text-emerald-700 active:scale-95 transition-all whitespace-nowrap shrink-0"
             >
               {t.subnav.snowboards}
             </button>
             <button
               onClick={() => handleNavClick('Скейтборди')}
-              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+              className="snap-start px-2.5 py-1 rounded-lg hover:bg-zinc-200/70 hover:text-emerald-700 active:scale-95 transition-all whitespace-nowrap shrink-0"
             >
               {t.subnav.skate}
             </button>
             <button
               onClick={() => handleNavClick('Взуття')}
-              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+              className="snap-start px-2.5 py-1 rounded-lg hover:bg-zinc-200/70 hover:text-emerald-700 active:scale-95 transition-all whitespace-nowrap shrink-0"
             >
               {t.subnav.boots}
             </button>
             <button
               onClick={() => handleNavClick('Кріплення')}
-              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+              className="snap-start px-2.5 py-1 rounded-lg hover:bg-zinc-200/70 hover:text-emerald-700 active:scale-95 transition-all whitespace-nowrap shrink-0"
             >
               {t.subnav.bindings}
             </button>
             <button
               onClick={() => handleNavClick('Оптика')}
-              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+              className="snap-start px-2.5 py-1 rounded-lg hover:bg-zinc-200/70 hover:text-emerald-700 active:scale-95 transition-all whitespace-nowrap shrink-0"
             >
               {t.subnav.goggles}
             </button>
             <button
               onClick={() => handleNavClick('Захист')}
-              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+              className="snap-start px-2.5 py-1 rounded-lg hover:bg-zinc-200/70 hover:text-emerald-700 active:scale-95 transition-all whitespace-nowrap shrink-0"
             >
               {t.subnav.helmets}
             </button>
             <button
               onClick={() => handleNavClick('Одяг')}
-              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+              className="snap-start px-2.5 py-1 rounded-lg hover:bg-zinc-200/70 hover:text-emerald-700 active:scale-95 transition-all whitespace-nowrap shrink-0"
             >
               {t.subnav.clothing}
             </button>
             <button
               onClick={() => handleNavClick('Аксесуари')}
-              className="hover:text-emerald-600 transition-colors whitespace-nowrap"
+              className="snap-start px-2.5 py-1 rounded-lg hover:bg-zinc-200/70 hover:text-emerald-700 active:scale-95 transition-all whitespace-nowrap shrink-0"
             >
               {t.subnav.accessories}
             </button>
             <button
               onClick={() => handleNavClick('all')}
-              className="flex items-center gap-1 text-rose-600 hover:text-rose-700 font-black transition-colors whitespace-nowrap"
+              className="snap-start flex items-center gap-1 text-rose-600 hover:text-rose-700 hover:bg-rose-50 px-2.5 py-1 rounded-lg font-black active:scale-95 transition-all whitespace-nowrap shrink-0"
             >
               <Percent className="h-3 w-3" />
               <span>{t.subnav.sale}</span>
             </button>
-          </div>
+          </nav>
 
-          <div className="hidden lg:flex items-center gap-4 text-xs font-bold text-zinc-500 pl-4 border-l border-zinc-200">
-            <Link href="/about" className="hover:text-zinc-950 transition-colors uppercase whitespace-nowrap">
-              {t.aboutUs}
-            </Link>
-          </div>
+          {/* Soft right edge-fade gradient mask for mobile UX */}
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-zinc-50 via-zinc-50/80 to-transparent sm:hidden" />
         </div>
-      </nav>
+      </div>
     </header>
   );
 }

@@ -159,6 +159,20 @@ export const TRANSLATIONS = {
     totalCol: 'Сума',
     statusCol: 'Статус',
     actionsCol: 'Дія',
+
+    // Bottom Tab Bar
+    tabHome: 'Головна',
+    tabCatalog: 'Каталог',
+    tabWishlist: 'Обране',
+    tabCart: 'Кошик',
+    tabShopify: 'Shopify',
+
+    // Wishlist Drawer
+    wishlistTitle: 'Обране',
+    wishlistEmpty: 'Список порожній',
+    wishlistEmptyDesc: 'Натисніть на іконку сердечка на картці будь-якого товару, щоб зберегти його сюди.',
+    moveToCart: 'В кошик',
+    removeFromWishlist: 'Видалити з обраного',
   },
   en: {
     // Utility Bar
@@ -318,5 +332,19 @@ export const TRANSLATIONS = {
     totalCol: 'Total',
     statusCol: 'Status',
     actionsCol: 'Action',
+
+    // Bottom Tab Bar
+    tabHome: 'Home',
+    tabCatalog: 'Catalog',
+    tabWishlist: 'Saved',
+    tabCart: 'Cart',
+    tabShopify: 'Shopify',
+
+    // Wishlist Drawer
+    wishlistTitle: 'Saved Items',
+    wishlistEmpty: 'Your list is empty',
+    wishlistEmptyDesc: 'Tap the heart icon on any product card to save it here.',
+    moveToCart: 'Add to Cart',
+    removeFromWishlist: 'Remove from saved',
   },
 };

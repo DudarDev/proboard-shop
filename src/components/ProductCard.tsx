@@ -69,7 +69,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <div
       onClick={() => openQuickView(product)}
-      className="group relative flex flex-col border border-zinc-200 bg-white p-3 sm:p-4 hover:border-zinc-950 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md"
+      className="group relative flex flex-col border border-zinc-200 bg-white p-2.5 sm:p-4 hover:border-zinc-950 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md min-w-0 w-full overflow-hidden"
     >
       {/* Image container */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-zinc-50 flex items-center justify-center p-3">
@@ -206,11 +206,11 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-3 grid grid-cols-2 gap-2">
+        <div className="mt-3 grid grid-cols-2 gap-1.5 sm:gap-2">
           <button
             type="button"
             onClick={handleQuickAdd}
-            className={`flex items-center justify-center gap-1 py-1.5 text-[11px] font-black uppercase tracking-wider transition-all border ${
+            className={`flex items-center justify-center gap-1 py-1.5 px-1 text-[10px] sm:text-[11px] font-black uppercase tracking-wider transition-all border truncate ${
               isAdded
                 ? 'bg-emerald-600 text-white border-emerald-600'
                 : 'bg-zinc-100 text-zinc-900 border-zinc-200 hover:bg-zinc-200'
@@ -218,13 +218,13 @@ export function ProductCard({ product }: ProductCardProps) {
           >
             {isAdded ? (
               <>
-                <Check className="h-3 w-3" />
-                <span>{t.addedBtn}</span>
+                <Check className="h-3 w-3 shrink-0" />
+                <span className="truncate">{t.addedBtn}</span>
               </>
             ) : (
               <>
-                <ShoppingBag className="h-3 w-3" />
-                <span>{t.addBtn}</span>
+                <ShoppingBag className="h-3 w-3 shrink-0" />
+                <span className="truncate">{t.addBtn}</span>
               </>
             )}
           </button>
@@ -232,11 +232,11 @@ export function ProductCard({ product }: ProductCardProps) {
           <button
             type="button"
             onClick={handle1Click}
-            className="flex items-center justify-center gap-1 bg-zinc-950 text-white hover:bg-emerald-600 py-1.5 text-[11px] font-black uppercase tracking-wider transition-colors"
+            className="flex items-center justify-center gap-1 bg-zinc-950 text-white hover:bg-emerald-600 py-1.5 px-1 text-[10px] sm:text-[11px] font-black uppercase tracking-wider transition-colors truncate"
             title="Оформити замовлення в 1 клік"
           >
-            <Zap className="h-3 w-3 text-emerald-400 fill-emerald-400" />
-            <span>{t.oneClickBtn}</span>
+            <Zap className="h-3 w-3 text-emerald-400 fill-emerald-400 shrink-0" />
+            <span className="truncate">{t.oneClickBtn}</span>
           </button>
         </div>
       </div>

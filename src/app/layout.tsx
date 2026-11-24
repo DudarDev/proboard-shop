@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="uk" className="scroll-smooth">
-      <body className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-zinc-900 selection:text-white flex flex-col justify-between pb-16 sm:pb-0">
+    <html lang="uk" className="scroll-smooth overflow-x-clip max-w-full">
+      <body className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-zinc-900 selection:text-white flex flex-col justify-between pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] sm:pb-0 overflow-x-clip w-full max-w-full">
         <AnnouncementBar />
         <ConfigProvider>
           <CartProvider>

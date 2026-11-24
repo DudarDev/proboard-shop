@@ -58,7 +58,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-white w-full max-w-full overflow-x-clip">
       {/* Main Navbar */}
       <Navbar
         searchQuery={searchQuery}
@@ -70,7 +70,7 @@ export default function HomePage() {
         }}
       />
       
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-clip">
         {/* Hero Banner */}
         <Hero
           onOpenCalculator={() => setIsCalculatorOpen(true)}

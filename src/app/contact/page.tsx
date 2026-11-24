@@ -46,10 +46,10 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-white w-full max-w-full overflow-x-clip">
       <Navbar />
 
-      <main className="flex-1 mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 w-full">
+      <main className="flex-1 mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 w-full max-w-full overflow-x-clip">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-bold tracking-widest text-emerald-600 uppercase">

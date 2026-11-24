@@ -153,10 +153,10 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-white w-full max-w-full overflow-x-clip">
       <Navbar />
 
-      <main className="flex-1 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 w-full">
+      <main className="flex-1 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 w-full max-w-full overflow-x-clip">
         {/* Breadcrumbs & Navigation */}
         <div className="flex items-center justify-between pb-6 border-b border-zinc-100 mb-8">
           <nav className="flex items-center gap-2 text-xs text-zinc-500">

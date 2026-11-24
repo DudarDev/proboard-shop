@@ -149,16 +149,16 @@ export function ProductGrid({
         </div>
 
         {/* Secondary Filter Chips and Sort Dropdown */}
-        <div className="flex flex-wrap items-center gap-2.5">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 max-w-full">
           {/* Flex Filter */}
-          <div className="flex items-center border border-zinc-300 bg-white">
-            <span className="px-2.5 text-[10px] font-black uppercase tracking-wider text-zinc-400 bg-zinc-50 border-r border-zinc-200 py-1.5">
+          <div className="flex items-center border border-zinc-300 bg-white max-w-full">
+            <span className="px-2 sm:px-2.5 text-[10px] font-black uppercase tracking-wider text-zinc-400 bg-zinc-50 border-r border-zinc-200 py-1.5 shrink-0">
               {t.flexFilter}
             </span>
             <select
               value={flexFilter}
               onChange={(e) => setFlexFilter(e.target.value as any)}
-              className="bg-transparent px-2 py-1.5 text-xs font-bold uppercase text-zinc-800 focus:outline-none cursor-pointer"
+              className="bg-transparent px-1.5 sm:px-2 py-1.5 text-xs font-bold uppercase text-zinc-800 focus:outline-none cursor-pointer"
             >
               <option value="all">{t.allFlex}</option>
               <option value="soft">{t.softFlex}</option>
@@ -168,14 +168,14 @@ export function ProductGrid({
           </div>
 
           {/* Profile Filter */}
-          <div className="flex items-center border border-zinc-300 bg-white">
-            <span className="px-2.5 text-[10px] font-black uppercase tracking-wider text-zinc-400 bg-zinc-50 border-r border-zinc-200 py-1.5">
+          <div className="flex items-center border border-zinc-300 bg-white max-w-full">
+            <span className="px-2 sm:px-2.5 text-[10px] font-black uppercase tracking-wider text-zinc-400 bg-zinc-50 border-r border-zinc-200 py-1.5 shrink-0">
               {t.camberFilter}
             </span>
             <select
               value={camberFilter}
               onChange={(e) => setCamberFilter(e.target.value as any)}
-              className="bg-transparent px-2 py-1.5 text-xs font-bold uppercase text-zinc-800 focus:outline-none cursor-pointer"
+              className="bg-transparent px-1.5 sm:px-2 py-1.5 text-xs font-bold uppercase text-zinc-800 focus:outline-none cursor-pointer"
             >
               <option value="all">{t.allCamber}</option>
               <option value="camber">{t.camberOnly}</option>
@@ -184,14 +184,14 @@ export function ProductGrid({
           </div>
 
           {/* Sort Dropdown */}
-          <div className="flex items-center border border-zinc-300 bg-white">
-            <span className="px-2.5 text-[10px] font-black uppercase tracking-wider text-zinc-400 bg-zinc-50 border-r border-zinc-200 py-1.5">
+          <div className="flex items-center border border-zinc-300 bg-white max-w-full">
+            <span className="px-2 sm:px-2.5 text-[10px] font-black uppercase tracking-wider text-zinc-400 bg-zinc-50 border-r border-zinc-200 py-1.5 shrink-0">
               {t.sortFilter}
             </span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="bg-transparent px-2.5 py-1.5 text-xs font-bold uppercase text-zinc-800 focus:outline-none cursor-pointer"
+              className="bg-transparent px-2 sm:px-2.5 py-1.5 text-xs font-bold uppercase text-zinc-800 focus:outline-none cursor-pointer"
             >
               <option value="featured">{t.sortFeatured}</option>
               <option value="staff-picks">{t.sortStaffPicks}</option>
@@ -273,7 +273,7 @@ export function ProductGrid({
           </button>
         </div>
       ) : (
-        <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <div className="mt-8 grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-4 sm:gap-y-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

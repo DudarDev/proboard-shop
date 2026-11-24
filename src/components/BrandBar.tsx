@@ -48,8 +48,8 @@ export function BrandBar({ selectedBrand, onSelectBrand }: BrandBarProps) {
   };
 
   return (
-    <div className="relative w-full border-y border-zinc-200 bg-white py-2.5">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+    <div className="relative w-full max-w-full overflow-hidden border-y border-zinc-200 bg-white py-2.5">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative w-full overflow-hidden">
         
         {/* Scroll Left Button */}
         <button
@@ -64,7 +64,7 @@ export function BrandBar({ selectedBrand, onSelectBrand }: BrandBarProps) {
         {/* Brand Items Row */}
         <div
           ref={scrollRef}
-          className="flex items-center gap-2.5 overflow-x-auto scrollbar-none px-6 py-1 scroll-smooth"
+          className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto scrollbar-none px-1 sm:px-6 py-1 scroll-smooth"
         >
           <button
             onClick={() => onSelectBrand('')}

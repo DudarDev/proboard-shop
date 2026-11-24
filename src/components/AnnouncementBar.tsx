@@ -14,8 +14,8 @@ export function AnnouncementBar() {
   if (!isVisible) return null;
 
   return (
-    <div className="relative bg-zinc-950 px-4 py-2 text-white text-[11px] font-semibold border-b border-zinc-800 tracking-wide">
-      <div className="mx-auto max-w-7xl flex items-center justify-between gap-4">
+    <div className="relative bg-zinc-950 px-3 sm:px-4 py-2 text-white text-[11px] font-semibold border-b border-zinc-800 tracking-wide w-full max-w-full overflow-hidden">
+      <div className="mx-auto max-w-7xl flex items-center justify-between gap-2 sm:gap-4 w-full">
         
         {/* Left: Clearance / Deal badge */}
         <div className="hidden lg:flex items-center gap-2">

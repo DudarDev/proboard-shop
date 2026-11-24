@@ -211,7 +211,7 @@ export default function AdminPage() {
   const newOrdersCount = orders.filter((o) => o.status === 'new').length;
 
   return (
-    <div className="flex flex-col min-h-screen bg-zinc-50/70">
+    <div className="flex flex-col min-h-screen bg-zinc-50/70 w-full max-w-full overflow-x-clip">
       <Navbar />
 
       {!isAuthenticated ? (
@@ -221,7 +221,7 @@ export default function AdminPage() {
           authError={authError}
         />
       ) : (
-        <main className="flex-1 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 w-full">
+        <main className="flex-1 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 w-full max-w-full overflow-x-clip">
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-6 border-b border-zinc-200 mb-8 gap-4">
             <div>

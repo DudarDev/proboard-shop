@@ -26,19 +26,19 @@ export function Hero({ onOpenCalculator, onShopClick }: HeroProps) {
   return (
     <div className="w-full bg-white">
       {/* 1. Promo Clearance Bar */}
-      <div className="bg-zinc-100 border-b border-zinc-200 py-2.5 px-4">
-        <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="bg-zinc-950 text-white font-black text-[10px] uppercase px-2 py-0.5 tracking-wider">
+      <div className="bg-zinc-100 border-b border-zinc-200 py-2.5 px-4 w-full">
+        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5">
+          <div className="flex items-center gap-2 max-w-full overflow-hidden">
+            <span className="bg-zinc-950 text-white font-black text-[10px] uppercase px-2 py-0.5 tracking-wider shrink-0">
               {t.topClearanceBadge}
             </span>
-            <p className="text-xs sm:text-sm font-black tracking-wider uppercase text-zinc-950">
+            <p className="text-xs sm:text-sm font-black tracking-wider uppercase text-zinc-950 truncate">
               {t.promoHeading}
             </p>
           </div>
           <button
             onClick={scrollToCatalog}
-            className="bg-zinc-950 hover:bg-zinc-800 text-white text-[11px] font-black uppercase tracking-widest px-4 py-1.5 transition-all shadow-sm flex items-center gap-1.5"
+            className="bg-zinc-950 hover:bg-zinc-800 text-white text-[10px] sm:text-[11px] font-black uppercase tracking-widest px-3 sm:px-4 py-1.5 transition-all shadow-sm flex items-center gap-1.5 shrink-0 self-end sm:self-auto"
           >
             <span>{t.shopPromoBtn}</span>
             <ArrowRight className="h-3 w-3" />
@@ -78,8 +78,8 @@ export function Hero({ onOpenCalculator, onShopClick }: HeroProps) {
             </div>
 
             {/* Hero Title Box */}
-            <div className="bg-black/90 border border-zinc-700 px-6 sm:px-12 py-3 sm:py-5 shadow-2xl backdrop-blur-sm">
-              <h1 className="text-3xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-white leading-none">
+            <div className="bg-black/90 border border-zinc-700 px-4 sm:px-12 py-3 sm:py-5 shadow-2xl backdrop-blur-sm max-w-full">
+              <h1 className="text-2xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-white leading-none">
                 {t.heroTitle}
               </h1>
             </div>
@@ -92,7 +92,7 @@ export function Hero({ onOpenCalculator, onShopClick }: HeroProps) {
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <button
                 onClick={scrollToCatalog}
-                className="bg-white hover:bg-zinc-200 text-zinc-950 font-black text-xs sm:text-sm uppercase tracking-widest px-8 py-3.5 shadow-xl active:scale-95 transition-all"
+                className="bg-white hover:bg-zinc-200 text-zinc-950 font-black text-xs sm:text-sm uppercase tracking-widest px-6 sm:px-8 py-3.5 shadow-xl active:scale-95 transition-all"
               >
                 {t.shopBtn}
               </button>
@@ -100,7 +100,7 @@ export function Hero({ onOpenCalculator, onShopClick }: HeroProps) {
               {onOpenCalculator && (
                 <button
                   onClick={onOpenCalculator}
-                  className="bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs sm:text-sm uppercase tracking-widest px-6 py-3.5 shadow-xl active:scale-95 transition-all flex items-center gap-2"
+                  className="bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs sm:text-sm uppercase tracking-widest px-5 sm:px-6 py-3.5 shadow-xl active:scale-95 transition-all flex items-center gap-2"
                 >
                   <Ruler className="h-4 w-4" />
                   <span>{t.calculateBtn}</span>
@@ -109,7 +109,7 @@ export function Hero({ onOpenCalculator, onShopClick }: HeroProps) {
             </div>
 
             {/* Guarantees Strip */}
-            <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-black text-zinc-300 uppercase tracking-wider bg-black/60 px-4 py-2 border border-zinc-800">
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-[10px] sm:text-[11px] font-black text-zinc-300 uppercase tracking-wider bg-black/60 px-3 sm:px-4 py-2 border border-zinc-800 max-w-full">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
                 <span>{t.guarantee1}</span>

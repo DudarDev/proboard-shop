@@ -8,10 +8,10 @@ import { Sparkles, Shield, HeartHandshake, Compass, ArrowRight, Flame, Award, Tr
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-white w-full max-w-full overflow-x-clip">
       <Navbar />
 
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-clip">
         {/* Hero Section */}
         <div className="relative overflow-hidden bg-zinc-950 py-24 sm:py-32 text-white">
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:20px_20px]" />
