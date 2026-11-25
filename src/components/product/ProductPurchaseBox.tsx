@@ -4,6 +4,7 @@ import React from 'react';
 import { ShopifyProduct, ShopifyProductVariant } from '@/types/shopify';
 import { formatPrice } from '@/lib/utils';
 import { useConfig } from '@/context/ConfigContext';
+import { useCompare } from '@/context/CompareContext';
 import { TRANSLATIONS } from '@/lib/translations';
 import {
   ShoppingBag,
@@ -15,6 +16,7 @@ import {
   RefreshCw,
   Plus,
   Minus,
+  Scale,
 } from 'lucide-react';
 
 interface ProductPurchaseBoxProps {
@@ -43,6 +45,7 @@ export function ProductPurchaseBox({
   isAdded,
 }: ProductPurchaseBoxProps) {
   const { currency, language } = useConfig();
+  const { isInCompare, toggleCompare } = useCompare();
   const t = TRANSLATIONS[language];
 
   const variants = product.variants?.edges || [];
@@ -184,6 +187,21 @@ export function ProductPurchaseBox({
         >
           <Zap className="h-4 w-4 text-emerald-600" />
           <span>{t.oneClickBtn}</span>
+        </button>
+
+        {/* Compare Button */}
+        <button
+          type="button"
+          onClick={() => toggleCompare(product)}
+          className={`flex items-center justify-center gap-2 rounded-2xl border py-3.5 px-4 text-xs font-bold transition-all sm:w-auto ${
+            isInCompare(product.id)
+              ? 'border-emerald-500 bg-emerald-50 text-emerald-800'
+              : 'border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-50 hover:border-zinc-300'
+          }`}
+          title={isInCompare(product.id) ? t.removeFromCompare : t.addToCompare}
+        >
+          <Scale className={`h-4 w-4 ${isInCompare(product.id) ? 'text-emerald-600' : 'text-zinc-500'}`} />
+          <span>{isInCompare(product.id) ? t.removeFromCompare : t.addToCompare}</span>
         </button>
       </div>
 

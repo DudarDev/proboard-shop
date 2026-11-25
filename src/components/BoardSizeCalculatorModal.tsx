@@ -1,7 +1,12 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { X, Sparkles, Check, ArrowRight, Compass, ShieldCheck, Ruler } from 'lucide-react';
+import Link from 'next/link';
+import { X, Sparkles, Check, ArrowRight, Compass, ShieldCheck, Ruler, ExternalLink } from 'lucide-react';
+import { FALLBACK_PRODUCTS } from '@/lib/shopify';
+import { useConfig } from '@/context/ConfigContext';
+import { TRANSLATIONS } from '@/lib/translations';
+import { formatPrice } from '@/lib/utils';
 
 interface BoardSizeCalculatorModalProps {
   isOpen: boolean;
@@ -14,6 +19,9 @@ export function BoardSizeCalculatorModal({
   onClose,
   onApplyFilter,
 }: BoardSizeCalculatorModalProps) {
+  const { currency, language } = useConfig();
+  const t = TRANSLATIONS[language];
+
   const [height, setHeight] = useState<number>(176);
   const [weight, setWeight] = useState<number>(75);
   const [style, setStyle] = useState<'allmountain' | 'freestyle' | 'freeride'>('allmountain');
@@ -95,6 +103,80 @@ export function BoardSizeCalculatorModal({
       displayRange: `${minLength} – ${maxLength} ${isWideRequired ? 'Wide (W)' : 'см'}`,
     };
   }, [height, weight, style, bootSize, skillLevel]);
+
+  // Filter top-3 matching snowboards from catalog
+  const recommendedProducts = useMemo(() => {
+    const snowboards = FALLBACK_PRODUCTS.filter(
+      (p) => p.productType === 'Сноуборди' || p.tags?.includes('Сноуборди')
+    );
+
+    const scored = snowboards.map((board) => {
+      let score = 0;
+      const reasons: string[] = [];
+
+      // 1. Flex match
+      const targetFlex = skillLevel === 'beginner' ? 4 : skillLevel === 'pro' ? 8 : 6;
+      const boardFlex = board.specs?.flexRating || 6;
+      const flexDiff = Math.abs(boardFlex - targetFlex);
+      if (flexDiff <= 1) {
+        score += 35;
+        reasons.push(`Жорсткість ${board.specs?.flex || boardFlex}/10`);
+      } else if (flexDiff <= 2) {
+        score += 20;
+      }
+
+      // 2. Style match
+      const terrain = (board.specs?.terrain || '').toLowerCase();
+      const shape = (board.specs?.shape || '').toLowerCase();
+      if (style === 'freestyle') {
+        if (terrain.includes('park') || terrain.includes('freestyle') || shape.includes('twin')) {
+          score += 40;
+          reasons.push('Park / True Twin');
+        } else {
+          score += 20;
+        }
+      } else if (style === 'freeride') {
+        if (terrain.includes('freeride') || terrain.includes('powder') || shape.includes('directional')) {
+          score += 40;
+          reasons.push('Freeride / Directional');
+        } else {
+          score += 20;
+        }
+      } else {
+        if (terrain.includes('all-mountain')) {
+          score += 40;
+          reasons.push('All-Mountain');
+        } else {
+          score += 25;
+        }
+      }
+
+      // 3. Wide match
+      const hasWide =
+        board.variants?.edges?.some((v) => v.node.title.toLowerCase().includes('w')) ||
+        parseFloat(board.specs?.waistWidth || '250') >= 256;
+      if (recommendation.isWideRequired) {
+        if (hasWide) {
+          score += 25;
+          reasons.push('Wide версія');
+        }
+      } else {
+        score += 15;
+      }
+
+      if (board.isStaffPick) score += 5;
+      if (board.rating && board.rating >= 4.8) score += 5;
+
+      return {
+        board,
+        score,
+        matchReason: reasons.slice(0, 2).join(' • '),
+      };
+    });
+
+    scored.sort((a, b) => b.score - a.score);
+    return scored.slice(0, 3);
+  }, [style, skillLevel, recommendation.isWideRequired]);
 
   if (!isOpen) return null;
 
@@ -332,6 +414,86 @@ export function BoardSizeCalculatorModal({
                     : '246 – 254 мм (Standard). Ідеальний швидкий перехід з канта на кант.'}
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Top 3 Recommended Boards */}
+          <div className="space-y-3 pt-1">
+            <div className="flex items-center justify-between">
+              <div>
+                <h4 className="text-sm font-extrabold text-zinc-950 flex items-center gap-1.5">
+                  <span>🏂 {t.calcTopRecommended}</span>
+                </h4>
+                <p className="text-[11px] text-zinc-500">{t.calcTopRecommendedSub}</p>
+              </div>
+              <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                AI Match
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {recommendedProducts.map(({ board, matchReason }) => {
+                const firstVariant = board.variants?.edges?.[0]?.node;
+                const price =
+                  board.priceRange?.minVariantPrice ||
+                  firstVariant?.price || { amount: '0', currencyCode: 'USD' };
+                const priceNum = parseFloat(price.amount) || 0;
+                const imgUrl =
+                  board.featuredImage?.url || board.images?.edges?.[0]?.node?.url || '';
+
+                return (
+                  <Link
+                    key={board.id}
+                    href={`/products/${board.handle}`}
+                    onClick={onClose}
+                    className="group relative flex flex-col justify-between rounded-2xl border border-zinc-200 bg-zinc-50/50 p-3 hover:border-emerald-600 hover:bg-white hover:shadow-lg transition-all"
+                  >
+                    <div>
+                      {/* Image */}
+                      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-white p-2 mb-2 flex items-center justify-center border border-zinc-100">
+                        {imgUrl ? (
+                          <img
+                            src={imgUrl}
+                            alt={board.title}
+                            className="h-full w-full object-contain group-hover:scale-105 transition-transform"
+                          />
+                        ) : (
+                          <span>🏂</span>
+                        )}
+                        <span className="absolute top-1.5 left-1.5 bg-emerald-600 text-white font-black text-[9px] px-1.5 py-0.5 rounded shadow-sm">
+                          {t.calcMatchScore}
+                        </span>
+                      </div>
+
+                      {/* Vendor & Title */}
+                      <span className="text-[10px] font-black uppercase tracking-wider text-zinc-500">
+                        {board.vendor}
+                      </span>
+                      <h5 className="text-xs font-bold text-zinc-950 line-clamp-1 group-hover:text-emerald-700 transition-colors">
+                        {board.title}
+                      </h5>
+
+                      {/* Match reasons */}
+                      {matchReason && (
+                        <p className="text-[10px] text-emerald-700 font-bold mt-1 bg-emerald-50 px-1.5 py-0.5 rounded line-clamp-1 border border-emerald-100">
+                          ✓ {matchReason}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Price & CTA */}
+                    <div className="mt-2.5 pt-2 border-t border-zinc-100 flex items-center justify-between">
+                      <span className="text-xs font-black text-zinc-950 font-mono">
+                        {formatPrice(priceNum, price.currencyCode || 'USD', currency)}
+                      </span>
+                      <span className="text-[10px] font-bold text-emerald-600 group-hover:translate-x-0.5 transition-transform flex items-center gap-0.5">
+                        <span>{t.calcViewBoard}</span>
+                        <ArrowRight className="h-2.5 w-2.5" />
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
 

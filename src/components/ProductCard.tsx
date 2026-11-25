@@ -5,8 +5,9 @@ import { ShopifyProduct } from '@/types/shopify';
 import { formatPrice } from '@/lib/utils';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
+import { useCompare } from '@/context/CompareContext';
 import { useConfig } from '@/context/ConfigContext';
-import { Eye, ShoppingBag, Check, Heart, Star, Zap } from 'lucide-react';
+import { Eye, ShoppingBag, Check, Heart, Star, Zap, Scale } from 'lucide-react';
 import { OneClickModal } from '@/components/OneClickModal';
 import { TRANSLATIONS } from '@/lib/translations';
 
@@ -17,6 +18,7 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const { addToCart, openQuickView } = useCart();
   const { isInWishlist, toggleWishlist } = useWishlist();
+  const { isInCompare, toggleCompare } = useCompare();
   const { currency, language } = useConfig();
   const t = TRANSLATIONS[language];
   const [isAdded, setIsAdded] = useState(false);
@@ -30,6 +32,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const initialImageUrl = primaryUrl || cdnBackupUrl;
   const [imgSrc, setImgSrc] = useState(initialImageUrl);
   const isFavorite = isInWishlist(product.id);
+  const inCompare = isInCompare(product.id);
   const variants = product.variants?.edges || [];
 
   const handleImageError = () => {
@@ -66,6 +69,11 @@ export function ProductCard({ product }: ProductCardProps) {
     toggleWishlist(product.id);
   };
 
+  const handleToggleCompare = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    toggleCompare(product);
+  };
+
   return (
     <div
       onClick={() => openQuickView(product)}
@@ -100,20 +108,36 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        {/* Wishlist Button */}
-        <button
-          type="button"
-          onClick={handleToggleWishlist}
-          className={`absolute top-2 right-2 z-10 flex h-7 w-7 items-center justify-center transition-colors ${
-            isFavorite
-              ? 'bg-rose-50 text-rose-600'
-              : 'bg-white/90 text-zinc-500 hover:text-rose-600'
-          }`}
-          title={isFavorite ? 'Видалити з обраного' : 'Додати в обране'}
-          aria-label="Wishlist"
-        >
-          <Heart className={`h-3.5 w-3.5 ${isFavorite ? 'fill-rose-600' : ''}`} />
-        </button>
+        {/* Action Buttons: Wishlist & Compare */}
+        <div className="absolute top-2 right-2 z-10 flex flex-col gap-1.5">
+          <button
+            type="button"
+            onClick={handleToggleWishlist}
+            className={`flex h-7 w-7 items-center justify-center rounded-lg shadow-sm transition-colors ${
+              isFavorite
+                ? 'bg-rose-50 text-rose-600'
+                : 'bg-white/90 text-zinc-500 hover:text-rose-600'
+            }`}
+            title={isFavorite ? t.removeFromWishlist : t.tabWishlist}
+            aria-label="Wishlist"
+          >
+            <Heart className={`h-3.5 w-3.5 ${isFavorite ? 'fill-rose-600' : ''}`} />
+          </button>
+
+          <button
+            type="button"
+            onClick={handleToggleCompare}
+            className={`flex h-7 w-7 items-center justify-center rounded-lg shadow-sm transition-colors ${
+              inCompare
+                ? 'bg-emerald-50 text-emerald-600 border border-emerald-300'
+                : 'bg-white/90 text-zinc-500 hover:text-emerald-600'
+            }`}
+            title={inCompare ? t.removeFromCompare : t.addToCompare}
+            aria-label="Compare"
+          >
+            <Scale className="h-3.5 w-3.5" />
+          </button>
+        </div>
 
         {/* Quick View Button overlay on hover */}
         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
